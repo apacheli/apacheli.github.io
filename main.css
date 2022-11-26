@@ -56,6 +56,11 @@ h2 {
   text-align: center;
 }
 
+h3 {
+  color: var(--color-1);
+  text-align: center;
+}
+
 header {
   padding: 128px 0 64px 0;
   width: 75%;
@@ -130,7 +135,6 @@ ul {
 .header-content {
   flex-direction: column;
   gap: 1vw;
-  width: 45%;
 }
 
 .icon {
@@ -201,31 +205,21 @@ ul {
   background: center/cover no-repeat url("assets/portrait.png");
   border: .5rem var(--color-0) solid;
   border-radius: 50%;
-  width: 45%;
 }
 
-.projects {
+.column-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 4vw 0;
+  gap: 8vw 0;
   padding: 64px 0 64px 0;
   width: 75%;
 }
 
-.latest,
 .project {
   background-position: center;
   background-size: 100%;
   border-radius: 1vw;
   height: 17.5vw;
-}
-
-.latest {
-  height: 35vw;
-  width: 90%;
-}
-
-.project {
   width: 45%;
 }
 
@@ -240,9 +234,44 @@ ul {
   border-radius: 50%;
   display: flex;
   fill: var(--color-0);
+  padding: 25%;
+}
+
+.social {
   height: 48px;
-  padding: 12px;
   width: 48px;
+}
+
+.blog-h2,
+.w45p {
+  width: 45%;
+}
+
+.post {
+  border-radius: 16px;
+  width: 30%;
+}
+
+.post:hover>.post-thumbnail {
+  background-size: 100%;
+}
+
+.post-content {
+  padding: 16px 0 16px 0;
+}
+
+.post-thumbnail {
+  background-position: center;
+  background-size: 110%;
+  height: 15vw;
+  transition: background-size var(--duration);
+  width: 100%;
+}
+
+.post-title {
+  color: var(--color-0);
+  font-size: 2rem;
+  font-style: normal;
 }
 
 @media (max-width: 72rem) {
@@ -275,12 +304,17 @@ ul {
     display: block;
   }
 
-  .footer-menu {
-    gap: 32px;
-  }
-
+  .blog-h2,
   .header-content {
     width: 100%;
+  }
+
+  .column-container {
+    flex-direction: column;
+  }
+
+  .footer-menu {
+    gap: 32px;
   }
 
   .header-content:after {
@@ -306,13 +340,17 @@ ul {
     margin-left: auto;
   }
 
-  .projects {
-    flex-direction: column;
-  }
-
   .project {
     width: 90%;
     height: 35vw;
+  }
+
+  .post {
+    width: 90%;
+  }
+
+  .post-thumbnail {
+    height: 45vw;
   }
 }
 
