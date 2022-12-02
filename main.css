@@ -3,14 +3,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital@0;1&display=swap");
 
 :root {
-  --color-0: rgb(228, 236, 244);
-  --color-1: rgb(64, 192, 224);
-  --color-2: rgb(12, 18, 20);
-  --color-3: rgb(6, 9, 10);
-  --color-4: rgb(3, 5, 6);
-  --color-5: rgb(24, 36, 40);
-  --color-6: rgb(48, 72, 80);
-  --color-7: rgb(171, 177, 183);
+  --bg-color: rgb(12, 18, 20);
+  --bg-color-dark-0: rgb(6, 9, 10);
+  --bg-color-dark-1: rgb(3, 5, 6);
+  --bg-color-light-0: rgb(24, 36, 40);
+  --bg-color-light-1: rgb(48, 72, 80);
+  --text-color-0: rgb(228, 236, 244);
+  --text-color-1: rgb(171, 177, 183);
+  --theme-color: rgb(64, 192, 224);
   --brighten: brightness(125%);
   --duration: .25s;
 }
@@ -27,16 +27,17 @@ html {
 }
 
 a {
-  color: var(--color-0);
+  color: var(--text-color-0);
   text-decoration: none;
 }
 
 body {
-  background-color: var(--color-2);
+  background-color: var(--bg-color);
   font-family: "Barlow Condensed", sans-serif;
 }
 
 header,
+.header,
 .header-content {
   align-items: center;
   display: flex;
@@ -44,19 +45,25 @@ header,
 }
 
 footer {
-  background-color: var(--color-3);
+  background-color: var(--bg-color-dark-0);
   padding: 4rem 0 4rem 0;
 }
 
 h1 {
-  color: var(--color-0);
+  color: var(--text-color-0);
   font-size: 8vw;
   text-align: center;
 }
 
 h2 {
-  color: var(--color-7);
+  color: var(--text-color-1);
   text-align: center;
+}
+
+.post-date {
+  color: var(--text-color-1);
+  font-size: 1.5rem;
+  margin: auto 1rem auto 1rem;
 }
 
 header {
@@ -67,7 +74,7 @@ header {
 .header::after,
 .header-content::after {
   content: "";
-  border: 2rem var(--color-3) solid;
+  border: 2rem var(--bg-color-dark-0) solid;
   height: 22.5vw;
   position: absolute;
   rotate: 45deg;
@@ -108,7 +115,7 @@ ul {
   padding: .5rem 3rem;
   position: relative;
   user-select: none;
-  transition: var(--duration);
+  transition: background-color var(--duration), color var(--duration);
 }
 
 .social {
@@ -120,7 +127,7 @@ ul {
 }
 
 .footer-text {
-  color: var(--color-6);
+  color: var(--bg-color-light-1);
   text-align: center;
   user-select: none;
 }
@@ -128,6 +135,7 @@ ul {
 .header-content {
   flex-direction: column;
   gap: 1vw;
+  width: 45%;
 }
 
 .menu {
@@ -136,7 +144,7 @@ ul {
 
 .menu-button {
   cursor: pointer;
-  fill: var(--color-0);
+  fill: var(--text-color-0);
   height: 2.5rem;
   margin: 1rem 1rem 0 0;
   position: absolute;
@@ -146,7 +154,7 @@ ul {
 }
 
 .menu-button:hover {
-  fill: var(--color-1);
+  fill: var(--theme-color);
 }
 
 .menu-button-close {
@@ -160,7 +168,7 @@ ul {
 }
 
 .navigation-bar {
-  background-color: var(--color-3);
+  background-color: var(--bg-color-dark-0);
   display: flex;
   height: 4rem;
   position: fixed;
@@ -169,20 +177,20 @@ ul {
 }
 
 .navigation-button::after {
-  background-color: var(--color-1);
+  background-color: var(--theme-color);
   border-radius: 2px;
   bottom: -12px;
   content: "";
   height: 4px;
   left: 0;
   position: absolute;
-  transition: var(--duration);
+  transition: width var(--duration);
   width: 0;
 }
 
 .navigation-button:hover {
-  background-color: var(--color-4);
-  color: var(--color-1);
+  background-color: var(--bg-color-dark-1);
+  color: var(--theme-color);
 }
 
 .navigation-button:hover::after {
@@ -192,8 +200,9 @@ ul {
 .portrait {
   aspect-ratio: 1/1;
   background: center/cover no-repeat url("assets/portrait.png");
-  border: .5rem var(--color-0) solid;
+  border: .5rem var(--text-color-0) solid;
   border-radius: 50%;
+  width: 45%;
 }
 
 .column-container {
@@ -224,18 +233,13 @@ ul {
 }
 
 .social {
-  background-color: var(--color-5);
+  background-color: var(--bg-color-light-0);
   border-radius: 50%;
   display: flex;
-  fill: var(--color-0);
+  fill: var(--text-color-0);
   height: 4rem;
   padding: 25%;
   width: 4rem;
-}
-
-.blog-h2,
-.w45p {
-  width: 45%;
 }
 
 .post {
@@ -249,7 +253,7 @@ ul {
 }
 
 .post:hover>.post-content {
-  background-color: var(--color-5);
+  background-color: var(--bg-color-light-0);
 }
 
 .post-thumbnail {
@@ -264,7 +268,7 @@ ul {
 }
 
 .post-thumbnail::after {
-  background-color: var(--color-2);
+  background-color: var(--bg-color);
   content: "";
   height: 4rem;
   margin: -2rem;
@@ -275,11 +279,11 @@ ul {
 }
 
 .post-title {
-  color: var(--color-0);
+  color: var(--text-color-0);
   font-size: 2rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  text-align: left;
+  width: 100%;
+  margin: 0 1rem 0 1rem;
 }
 
 .post:hover>.post-thumbnail {
@@ -291,18 +295,18 @@ ul {
   margin-bottom: 32px;
 }
 
+.blog-header {
+  color: var(--text-color-1);
+  flex-direction: column;
+  font-size: 1.5rem;
+  gap: 32px;
+}
+
 @media (max-width: 72rem) {
   .header::after {
     display: block;
     height: 45vw;
     width: 45vw;
-  }
-
-  header,
-  .menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
   }
 
   input[type="checkbox"]:checked~.menu,
@@ -315,11 +319,11 @@ ul {
     display: block;
   }
 
-  .blog-h2,
   .header-content {
     width: 100%;
   }
 
+  .header,
   .column-container {
     flex-direction: column;
   }
@@ -329,8 +333,11 @@ ul {
   }
 
   .menu {
-    background-color: var(--color-4);
+    background-color: var(--bg-color-dark-1);
+    display: flex;
+    flex-direction: column;
     height: 100%;
+    justify-content: space-evenly;
     margin-right: 0;
     position: fixed;
     right: -20rem;
@@ -339,8 +346,8 @@ ul {
   }
 
   .navigation-button:hover {
-    background-color: var(--color-3);
-    color: var(--color-1);
+    background-color: var(--bg-color-dark-0);
+    color: var(--theme-color);
   }
 
   .project {
