@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital@0;1&display=swap");
+
+:root {
+  --background-color: rgb(16, 20, 24);
+  --duration: .25s;
+  --hover-color: var(--text-color);
+  --navigation-bar-color: rgb(8, 10, 12);
+  --navigation-bar-color-dark: rgb(4, 5, 6);
+  --percentage: 150%;
+  --text-color: rgb(232, 240, 248);
+  --text-color-dark: rgb(116, 120, 124);
+  --theme-color: rgb(64, 192, 255);
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: "Barlow Condensed", sans-serif;
+  margin: 0;
+}
+
+svg {
+  height: inherit;
+  width: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.navigation-bar {
+  align-items: center;
+  background-color: var(--navigation-bar-color);
+  display: flex;
+  height: 4rem;
+  justify-content: right;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navigation-icon {
+  background: center/cover no-repeat url("assets/favicon.ico");
+  height: 3rem;
+  left: 0;
+  margin-left: .5rem;
+  position: fixed;
+  width: 3rem;
+}
+
+.navigation-bar-menu {
+  display: flex;
+  font-size: 1.25rem;
+  margin-right: .75rem;
+}
+
+.navigation-bar-menu-button {
+  border-radius: 1rem;
+  color: var(--text-color);
+  padding: .5rem 3rem .5rem 3rem;
+  position: relative;
+  transition: background-color var(--duration), color var(--duration);
+}
+
+.navigation-bar-menu-button::after {
+  background-color: var(--theme-color);
+  border-radius: .125rem;
+  bottom: -.75rem;
+  content: "";
+  height: .25rem;
+  left: 0;
+  position: absolute;
+  transition: width var(--duration);
+  width: 0;
+}
+
+.navigation-bar-menu-button:hover {
+  background-color: var(--navigation-bar-color-dark);
+  color: var(--theme-color);
+}
+
+.navigation-bar-menu-button:hover::after {
+  width: 100%;
+}
+
+#menu-button {
+  appearance: none;
+  margin: auto;
+}
+
+.menu-button {
+  border-radius: .25rem;
+  cursor: pointer;
+  display: none;
+  fill: var(--text-color);
+  height: 2.5rem;
+  margin-right: .75rem;
+  position: fixed;
+  transition: fill var(--duration);
+  width: 2.5rem;
+}
+
+.menu-button:hover {
+  fill: var(--theme-color);
+}
+
+.portrait {
+  aspect-ratio: 1/1;
+  background: center/cover no-repeat url("assets/portrait.png");
+  border: .5rem var(--text-color) solid;
+  border-radius: 50%;
+  width: 50%;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 8rem auto 0 auto;
+  width: 75%;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  text-align: center;
+  width: 50%;
+}
+
+.introduction {
+  color: var(--text-color);
+  font-size: 8vw;
+  margin: inherit;
+}
+
+.about {
+  color: var(--text-color-dark);
+  font-size: 1.5rem;
+  margin: inherit;
+}
+
+.socials {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  padding-left: 0;
+}
+
+.social {
+  align-items: center;
+  display: flex;
+  background-color: var(--navigation-bar-color);
+  border-radius: 50%;
+  fill: var(--text-color);
+  height: 4rem;
+  padding: 25%;
+  position: relative;
+  transition: background-color var(--duration), fill var(--duration);
+  width: 4rem;
+}
+
+.social:hover {
+  background-color: var(--navigation-bar-color-dark);
+}
+
+.social-twitter:hover {
+  fill: #1DA1F2;
+}
+
+.social-soundcloud:hover {
+  fill: #FF5500;
+}
+
+.social-discord:hover {
+  fill: #5865F2;
+}
+
+.footer {
+  background-color: var(--navigation-bar-color-dark);
+  margin: 8rem auto 0 auto;
+  padding: 4rem 0 4rem 0;
+}
+
+.footer-text {
+  color: var(--text-color-dark);
+  margin: 0;
+  text-align: center;
+}
+
+@media screen and (max-width: 72rem) {
+  .header {
+    flex-direction: column;
+    gap: 1vw;
+  }
+
+  .header-content {
+    width: 100%;
+  }
+
+  .navigation-bar-menu {
+    align-items: center;
+    background-color: var(--navigation-bar-color-dark);
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-around;
+    margin: 0 -24rem auto 0;
+    padding-left: 0;
+    position: relative;
+    width: 24rem;
+  }
+
+  .navigation-bar-menu-button:hover {
+    background-color: var(--navigation-bar-color);
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .menu-button-close {
+    margin-right: -23.25rem;
+  }
+
+  #menu-button:checked~.navigation-bar-menu {
+    margin-right: 0;
+    transition: margin-right var(--duration);
+  }
+
+  #menu-button:checked~.menu-button-close {
+    margin-right: .75rem;
+    transition: fill var(--duration), margin-right var(--duration);
+  }
+}
+
+@media screen and (max-width: 36rem) {
+  .navigation-bar-menu {
+    margin-right: -100%;
+    width: 100%;
+  }
+}
