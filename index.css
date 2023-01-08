@@ -155,7 +155,8 @@ ul {
 
 .socials {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   margin: auto;
   padding-left: 0;
 }
@@ -185,6 +186,10 @@ ul {
   fill: #FF5500;
 }
 
+.social-youtube:hover {
+  fill: #FF0000;
+}
+
 .social-discord:hover {
   fill: #5865F2;
 }
@@ -195,10 +200,18 @@ ul {
   padding: 4rem 0 4rem 0;
 }
 
-.footer-text {
+.footer p {
   color: var(--text-color-dark);
   margin: 0;
   text-align: center;
+}
+
+.footer p a {
+  color: var(--text-color);
+}
+
+.footer p a:hover {
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 72rem) {
