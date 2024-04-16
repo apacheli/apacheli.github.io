@@ -34,13 +34,9 @@ svg:hover {
   --duration: .25s;
   --header: #000000df;
   --key: #ffffff1a;
-  --subtext: #708090;
+  --sub: #708090;
   --text: #ffffff;
   --theme: #00c0ff;
-}
-
-.icon-dark {
-  display: none;
 }
 
 .header-icon:hover img {
@@ -56,12 +52,8 @@ svg:hover {
     --theme: #0090c0;
   }
 
-  .icon-dark {
-    display: unset;
-  }
-
-  .icon {
-    display: none;
+  .header-icon img {
+    filter: invert(1);
   }
 }
 
@@ -87,7 +79,7 @@ svg:hover {
   padding: 0;
 }
 
-.main-header {
+.main-hdr {
   align-items: center;
   background-color: var(--header);
   display: flex;
@@ -101,15 +93,14 @@ svg:hover {
 
 .header-icon {
   align-items: center;
-  color: var(--subtext);
+  color: var(--sub);
   display: flex;
   font-size: 1.5rem;
   gap: 1rem;
-  height: 3rem;
   text-decoration: none;
 }
 
-.main-header nav ul li a {
+.main-hdr nav ul li a {
   border-radius: .5rem;
   color: var(--text);
   display: block;
@@ -119,12 +110,12 @@ svg:hover {
   transition: background-color var(--duration), color var(--duration);
 }
 
-.main-header nav ul li a:hover {
+.main-hdr nav ul li a:hover {
   background-color: var(--key);
   color: var(--theme);
 }
 
-.main-header nav ul li a::after {
+.main-hdr nav ul li a::after {
   background-color: var(--theme);
   border-radius: .125rem;
   bottom: -.5rem;
@@ -136,15 +127,15 @@ svg:hover {
   width: 0;
 }
 
-.main-header nav ul li a:hover::after {
+.main-hdr nav ul li a:hover::after {
   width: 100%;
 }
 
-#nav-button {
+#nav-btn {
   display: none;
 }
 
-.nav-button {
+.nav-btn {
   --f: var(--theme);
   cursor: pointer;
   display: none;
@@ -154,7 +145,7 @@ svg:hover {
 }
 
 @media (max-width: 72rem) {
-  .main-header nav ul {
+  .main-hdr nav ul {
     background-color: var(--header);
     display: none;
     flex-direction: column;
@@ -167,7 +158,7 @@ svg:hover {
     width: 24rem;
   }
 
-  #nav-button:checked~ul {
+  #nav-btn:checked~ul {
     display: flex;
   }
 
@@ -175,39 +166,39 @@ svg:hover {
     display: block;
   }
 
-  #nav-button:checked~.nav-o {
+  #nav-btn:checked~.nav-o {
     display: none;
   }
 
-  #nav-button:checked~.nav-x {
+  #nav-btn:checked~.nav-x {
     display: block;
   }
 }
 
 @media (max-width: 36rem) {
-  .main-header nav ul {
+  .main-hdr nav ul {
     height: min-content;
     padding-bottom: 1.75rem;
     width: 100%;
   }
 }
 
-.main-footer {
+.main-ftr {
   align-items: center;
   background-color: var(--header);
-  color: var(--subtext);
+  color: var(--sub);
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 4rem;
 }
 
-.main-footer nav ul {
+.main-ftr nav ul {
   gap: 1.25rem;
   margin-bottom: 1rem;
 }
 
-.main-footer nav ul li a {
+.main-ftr nav ul li a {
   display: block;
   height: 2.5rem;
   width: 2.5rem;

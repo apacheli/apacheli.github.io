@@ -26,9 +26,9 @@ export default function Page({ title, description }, children) {
         </head>
         <body>
           <Header title={title} />
-          <main class="content">
+          <div class="content">
             {children}
-          </main>
+          </div>
           <Footer />
         </body>
       </html>
