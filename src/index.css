@@ -5,7 +5,7 @@ html {
 body {
   background-color: var(--bg);
   color: var(--text);
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Noto Sans", sans-serif;
   margin: 0;
 }
 
@@ -58,8 +58,8 @@ svg:hover {
 }
 
 @font-face {
-  font-family: "Noto Sans JP";
-  src: url("/assets/NotoSansJP-Regular.ttf");
+  font-family: "Noto Sans";
+  src: url("/assets/font.woff2");
 }
 
 @keyframes rotation {

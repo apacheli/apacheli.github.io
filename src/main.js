@@ -24,7 +24,7 @@ await (Bun.argv.includes("--serve") ? serve : build)({
   },
   copies: [
     "assets/icon.png",
-    "assets/NotoSansJP-Regular.ttf",
+    "assets/font.woff2",
     "assets/portrait.png",
     "index.css",
   ],
