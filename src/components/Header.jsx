@@ -9,14 +9,11 @@ const links = {
   "Contact": "/contact",
 };
 
-const linksList = [];
-for (const link in links) {
-  linksList.push(
-    <li>
-      <a href={links[link]}>{link}</a>
-    </li>,
-  );
-}
+const linksList = Object.keys(links).map((link) => (
+  <li>
+    <a href={links[link]}>{link}</a>
+  </li>
+));
 
 export default function Header({ title }) {
   return (
@@ -27,10 +24,8 @@ export default function Header({ title }) {
       </a>
       <nav>
         <input type="checkbox" id="nav-btn" />
-        <label for="nav-btn" class="nav-btn nav-o">
+        <label for="nav-btn" class="nav-btn">
           <Icon icon="bars-solid" />
-        </label>
-        <label for="nav-btn" class="nav-btn nav-x">
           <Icon icon="xmark-solid" />
         </label>
         <ul class="list">

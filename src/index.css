@@ -12,10 +12,10 @@ body {
 svg {
   border-radius: .5rem;
   fill: var(--text);
-  height: inherit;
+  height: 2.5rem;
   padding: .25rem;
   transition: background-color var(--duration), fill var(--duration);
-  width: inherit;
+  width: 2.5rem;
 }
 
 svg:hover {
@@ -30,12 +30,12 @@ svg:hover {
 }
 
 :root {
-  --bg: #102030;
+  --bg: #121a2b;
   --duration: .25s;
-  --header: #000000df;
-  --key: #ffffff1a;
-  --sub: #708090;
-  --text: #ffffff;
+  --header: #000000bf;
+  --key: #ffffff0d;
+  --sub: #566574;
+  --text: #fff;
   --theme: #00c0ff;
 }
 
@@ -45,11 +45,11 @@ svg:hover {
 
 @media (prefers-color-scheme: light) {
   :root {
-    --bg: #ffffff;
-    --header: #d0d8e0df;
+    --bg: #fff;
+    --header: #b3c4cfbf;
     --key: #0000000d;
-    --text: #000000;
-    --theme: #0090c0;
+    --text: #000;
+    --theme: #0083af;
   }
 
   .header-icon img {
@@ -81,6 +81,7 @@ svg:hover {
 
 .main-hdr {
   align-items: center;
+  backdrop-filter: blur(.25rem);
   background-color: var(--header);
   display: flex;
   height: 4rem;
@@ -89,6 +90,10 @@ svg:hover {
   position: sticky;
   top: 0;
   width: 100%;
+}
+
+.main-hdr ul {
+  backdrop-filter: blur(.25rem);
 }
 
 .header-icon {
@@ -100,7 +105,7 @@ svg:hover {
   text-decoration: none;
 }
 
-.main-hdr nav ul li a {
+.main-hdr li a {
   border-radius: .5rem;
   color: var(--text);
   display: block;
@@ -110,12 +115,12 @@ svg:hover {
   transition: background-color var(--duration), color var(--duration);
 }
 
-.main-hdr nav ul li a:hover {
+.main-hdr li a:hover {
   background-color: var(--key);
   color: var(--theme);
 }
 
-.main-hdr nav ul li a::after {
+.main-hdr li a::after {
   background-color: var(--theme);
   border-radius: .125rem;
   bottom: -.5rem;
@@ -127,7 +132,7 @@ svg:hover {
   width: 0;
 }
 
-.main-hdr nav ul li a:hover::after {
+.main-hdr li a:hover::after {
   width: 100%;
 }
 
@@ -140,12 +145,11 @@ svg:hover {
   cursor: pointer;
   display: none;
   height: 2.5rem;
-  width: 2.5rem;
   z-index: 1;
 }
 
 @media (max-width: 72rem) {
-  .main-hdr nav ul {
+  .main-hdr ul {
     background-color: var(--header);
     display: none;
     flex-direction: column;
@@ -162,21 +166,25 @@ svg:hover {
     display: flex;
   }
 
-  .nav-o {
+  .nav-btn {
     display: block;
   }
 
-  #nav-btn:checked~.nav-o {
+  .nav-x {
     display: none;
   }
 
-  #nav-btn:checked~.nav-x {
-    display: block;
+  #nav-btn:checked~label .nav-o {
+    display: none;
+  }
+
+  #nav-btn:checked~label .nav-x {
+    display: unset;
   }
 }
 
 @media (max-width: 36rem) {
-  .main-hdr nav ul {
+  .main-hdr ul {
     height: min-content;
     padding-bottom: 1.75rem;
     width: 100%;
@@ -193,15 +201,14 @@ svg:hover {
   padding: 4rem;
 }
 
-.main-ftr nav ul {
+.main-ftr ul {
   gap: 1.25rem;
   margin-bottom: 1rem;
 }
 
-.main-ftr nav ul li a {
+.main-ftr li a {
   display: block;
   height: 2.5rem;
-  width: 2.5rem;
 }
 
 .content {
