@@ -12,10 +12,10 @@ body {
 svg {
   border-radius: .5rem;
   fill: var(--text);
-  height: 2.5rem;
+  height: inherit;
   padding: .25rem;
   transition: background-color var(--duration), fill var(--duration);
-  width: 2.5rem;
+  width: inherit;
 }
 
 svg:hover {
@@ -30,31 +30,17 @@ svg:hover {
 }
 
 :root {
-  --bg: #121a2b;
+  --bg: #153e75;
   --duration: .25s;
-  --header: #000000bf;
-  --key: #ffffff0d;
-  --sub: #566574;
-  --text: #fff;
+  --header: #000000;
+  --key: #ffffff1a;
+  --sub: #7e8fa0;
+  --text: #ffffff;
   --theme: #00c0ff;
 }
 
 .header-icon:hover img {
   animation: rotation 2.5s linear infinite;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg: #fff;
-    --header: #b3c4cfbf;
-    --key: #0000000d;
-    --text: #000;
-    --theme: #0083af;
-  }
-
-  .header-icon img {
-    filter: invert(1);
-  }
 }
 
 @font-face {
@@ -81,7 +67,6 @@ svg:hover {
 
 .main-hdr {
   align-items: center;
-  backdrop-filter: blur(.25rem);
   background-color: var(--header);
   display: flex;
   height: 4rem;
@@ -90,10 +75,6 @@ svg:hover {
   position: sticky;
   top: 0;
   width: 100%;
-}
-
-.main-hdr ul {
-  backdrop-filter: blur(.25rem);
 }
 
 .header-icon {
@@ -105,7 +86,7 @@ svg:hover {
   text-decoration: none;
 }
 
-.main-hdr li a {
+.main-hdr nav ul li a {
   border-radius: .5rem;
   color: var(--text);
   display: block;
@@ -115,12 +96,12 @@ svg:hover {
   transition: background-color var(--duration), color var(--duration);
 }
 
-.main-hdr li a:hover {
+.main-hdr nav ul li a:hover {
   background-color: var(--key);
   color: var(--theme);
 }
 
-.main-hdr li a::after {
+.main-hdr nav ul li a::after {
   background-color: var(--theme);
   border-radius: .125rem;
   bottom: -.5rem;
@@ -132,7 +113,7 @@ svg:hover {
   width: 0;
 }
 
-.main-hdr li a:hover::after {
+.main-hdr nav ul li a:hover::after {
   width: 100%;
 }
 
@@ -145,11 +126,12 @@ svg:hover {
   cursor: pointer;
   display: none;
   height: 2.5rem;
+  width: 2.5rem;
   z-index: 1;
 }
 
 @media (max-width: 72rem) {
-  .main-hdr ul {
+  .main-hdr nav ul {
     background-color: var(--header);
     display: none;
     flex-direction: column;
@@ -166,25 +148,21 @@ svg:hover {
     display: flex;
   }
 
-  .nav-btn {
+  .nav-o {
     display: block;
   }
 
-  .nav-x {
+  #nav-btn:checked~.nav-o {
     display: none;
   }
 
-  #nav-btn:checked~label .nav-o {
-    display: none;
-  }
-
-  #nav-btn:checked~label .nav-x {
-    display: unset;
+  #nav-btn:checked~.nav-x {
+    display: block;
   }
 }
 
 @media (max-width: 36rem) {
-  .main-hdr ul {
+  .main-hdr nav ul {
     height: min-content;
     padding-bottom: 1.75rem;
     width: 100%;
@@ -194,21 +172,25 @@ svg:hover {
 .main-ftr {
   align-items: center;
   background-color: var(--header);
-  color: var(--sub);
   display: flex;
+  color: var(--sub);
+  text-align: center;
   flex-direction: column;
   justify-content: center;
   padding: 4rem;
 }
 
-.main-ftr ul {
+.main-ftr nav ul {
+  flex-wrap: wrap;
   gap: 1.25rem;
+  justify-content: center;
   margin-bottom: 1rem;
 }
 
-.main-ftr li a {
+.main-ftr nav ul li a {
   display: block;
   height: 2.5rem;
+  width: 2.5rem;
 }
 
 .content {

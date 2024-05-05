@@ -14,6 +14,11 @@ const socials = [
     hoverFill: "#808080",
   },
   {
+    icon: "steam",
+    href: "https://steamcommunity.com/id/apacheli/",
+    hoverFill: "#00adef",
+  },
+  {
     icon: "twitch",
     href: "https://www.twitch.tv/apachelitv",
     hoverFill: "#8d44f7",

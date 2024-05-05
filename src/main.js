@@ -1,7 +1,5 @@
 import { build, serve } from "./build.js";
 
-import { readdir, readFile } from "node:fs/promises";
-
 import About from "./pages/About.jsx";
 import Blog from "./pages/Blog.jsx";
 import Contact from "./pages/Contact.jsx";
