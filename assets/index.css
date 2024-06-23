@@ -241,7 +241,7 @@ pre {
   background-color: var(--header);
   border-radius: .25rem;
   padding: 1rem;
-  line-height: .875rem;
+  line-height: 1.25rem;
 }
 
 .contains-task-list {
