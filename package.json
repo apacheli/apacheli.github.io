@@ -1,0 +1,13 @@
+{
+  "name": "apache.li",
+  "scripts": {
+    "serve": "bun run server/serve.js"
+  },
+  "dependencies": {
+    "@mdx-js/esbuild": "^3.0.1",
+    "remark-gfm": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.1.5"
+  }
+}

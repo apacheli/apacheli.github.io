@@ -1,50 +1,50 @@
-import jsx from "jsx";
+import __JSX__ from "../server/render.js";
 
-import { SocialIcon } from "./Icon.jsx";
+import { SocialIcon } from "./Icon.js";
 
 const socials = [
   {
     icon: "discord",
     href: "https://discord.com/users/460612586061430806",
-    hoverFill: "#5865F2",
+    h: "#5865F2",
   },
   {
     icon: "github",
     href: "https://github.com/apacheli",
-    hoverFill: "#808080",
+    h: "#808080",
   },
   {
     icon: "steam",
     href: "https://steamcommunity.com/id/apacheli/",
-    hoverFill: "#00adef",
+    h: "#00adef",
   },
   {
     icon: "twitch",
     href: "https://www.twitch.tv/apachelitv",
-    hoverFill: "#8d44f7",
+    h: "#8d44f7",
   },
   {
     icon: "twitter",
     href: "https://twitter.com/apacheopteryx",
-    hoverFill: "#24a3f1",
+    h: "#24a3f1",
   },
   {
     icon: "youtube",
     href: "https://www.youtube.com/@apacheopteryx",
-    hoverFill: "#ff0000",
+    h: "#ff0000",
   },
 ]
   .map((social) => (
     <li>
       <SocialIcon
         icon={social.icon}
+        h={social.h}
         href={social.href}
-        hoverFill={social.hoverFill}
       />
     </li>
   ));
 
-export default function Footer() {
+export default () => {
   return (
     <footer class="main-ftr">
       <nav>
@@ -55,4 +55,4 @@ export default function Footer() {
       <span>© 2024-present apacheli</span>
     </footer>
   );
-}
+};

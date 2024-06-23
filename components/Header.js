@@ -1,22 +1,31 @@
-import jsx from "jsx";
+import __JSX__, { render } from "../server/render.js";
 
-import Icon from "./Icon.jsx";
+import { Icon } from "./Icon.js";
 
-const links = {
-  "Home": "/",
-  "About": "/about",
-  "Blog": "/blog",
-  "Contact": "/contact",
-};
-
-const linksList = [];
-for (const link in links) {
-  linksList.push(
+const links = [
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "About",
+    href: "/about",
+  },
+  {
+    name: "Blog",
+    href: "/blog",
+  },
+  {
+    name: "Contact",
+    href: "/contact",
+  },
+].map((link) =>
+  render(
     <li>
-      <a href={links[link]}>{link}</a>
+      <a href={link.href}>{link.name}</a>
     </li>,
-  );
-}
+  )
+);
 
 export default function Header({ title }) {
   return (
@@ -34,7 +43,7 @@ export default function Header({ title }) {
           <Icon icon="xmark-solid" />
         </label>
         <ul class="list">
-          {linksList}
+          {links}
         </ul>
       </nav>
     </header>

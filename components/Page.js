@@ -1,9 +1,9 @@
-import jsx from "jsx";
+import __JSX__ from "../server/render.js";
 
-import Header from "./Header.jsx";
-import Footer from "./Footer.jsx";
+import Header from "./Header.js";
+import Footer from "./Footer.js";
 
-export default function Page({ title, description }, children) {
+export default ({ title, description }, children) => {
   return (
     <>
       {"<!DOCTYPE html>"}
@@ -11,7 +11,7 @@ export default function Page({ title, description }, children) {
         <head>
           <title>{`${title} - apacheli`}</title>
           <link rel="icon" href="/assets/icon.png" />
-          <link rel="stylesheet" href="/index.css" />
+          <link rel="stylesheet" href="/assets/index.css" />
           <meta charset="utf-8" />
           <meta name="description" content={description} />
           <meta name="viewport" content="width=device-width" />
@@ -26,12 +26,12 @@ export default function Page({ title, description }, children) {
         </head>
         <body>
           <Header title={title} />
-          <div class="content">
+          <main class="content">
             {children}
-          </div>
+          </main>
           <Footer />
         </body>
       </html>
     </>
   );
-}
+};

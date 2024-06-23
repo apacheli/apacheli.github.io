@@ -1,9 +1,0 @@
-{
-  "compilerOptions": {
-    "paths": {
-      "jsx": [
-        "./src/build.js"
-      ]
-    }
-  }
-}

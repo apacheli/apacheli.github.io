@@ -5,7 +5,9 @@ html {
 body {
   background-color: var(--bg);
   color: var(--text);
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 1rem;
+  line-height: 2;
   margin: 0;
 }
 
@@ -20,7 +22,7 @@ svg {
 
 svg:hover {
   background-color: var(--key);
-  fill: var(--f);
+  fill: var(--h);
 }
 
 *,
@@ -30,22 +32,17 @@ svg:hover {
 }
 
 :root {
-  --bg: #153e75;
+  --bg: #2b5566;
   --duration: .25s;
-  --header: #000000;
+  --header: #101820;
   --key: #ffffff1a;
-  --sub: #7e8fa0;
+  --sub: #9098a0;
   --text: #ffffff;
   --theme: #00c0ff;
 }
 
 .header-icon:hover img {
   animation: rotation 2.5s linear infinite;
-}
-
-@font-face {
-  font-family: "Noto Sans";
-  src: url("/assets/font.woff2");
 }
 
 @keyframes rotation {
@@ -90,7 +87,7 @@ svg:hover {
   border-radius: .5rem;
   color: var(--text);
   display: block;
-  padding: .5rem 1rem;
+  padding: .25rem 1rem;
   position: relative;
   text-decoration: none;
   transition: background-color var(--duration), color var(--duration);
@@ -122,7 +119,7 @@ svg:hover {
 }
 
 .nav-btn {
-  --f: var(--theme);
+  --h: var(--theme);
   cursor: pointer;
   display: none;
   height: 2.5rem;
@@ -197,5 +194,72 @@ svg:hover {
   margin: 4rem auto;
   min-height: calc(100vh - 12rem);
   padding: 0 1rem;
-  width: clamp(0%, 50% + 18rem, 100%);
+  width: clamp(0%, 25% + 18rem, 100%);
+}
+
+.content ol p,
+.content ul p {
+  padding: 0;
+  margin: 0;
+}
+
+.content a {
+  color: var(--theme);
+  text-decoration: none;
+}
+
+.content a:hover {
+  text-decoration: underline;
+}
+
+.content h1,
+.content h2 {
+  border-bottom: .0625rem solid var(--sub);
+}
+
+.content h6 {
+  color: var(--sub);
+  font-size: small;
+}
+
+blockquote {
+  background-color: #0000001a;
+  margin: 0;
+  padding-left: 1rem;
+  color: var(--sub);
+  border-left: .25rem solid var(--sub);
+}
+
+.content p code {
+  background-color: var(--header);
+  border-radius: .25rem;
+  padding: .25rem .5rem;
+}
+
+pre {
+  width: 100%;
+  background-color: var(--header);
+  border-radius: .25rem;
+  padding: 1rem;
+  line-height: .875rem;
+}
+
+.contains-task-list {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 1px solid var(--sub);
+  padding: .25rem .5rem;
+}
+
+tr:nth-child(even) {
+  background-color: #0000001a;
 }
