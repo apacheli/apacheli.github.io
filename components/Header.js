@@ -19,12 +19,25 @@ const links = [
     name: "Contact",
     href: "/contact",
   },
-].map((link) =>
-  render(
-    <li>
-      <a href={link.href}>{link.name}</a>
-    </li>,
-  )
+].map((link) => (
+  <li>
+    <a href={link.href}>{link.name}</a>
+  </li>
+));
+
+const _nav = render(
+  <nav>
+    <input type="checkbox" id="nav-btn" />
+    <label for="nav-btn" class="nav-btn nav-o">
+      <Icon icon="bars-solid" />
+    </label>
+    <label for="nav-btn" class="nav-btn nav-x">
+      <Icon icon="xmark-solid" />
+    </label>
+    <ul class="list">
+      {links}
+    </ul>
+  </nav>,
 );
 
 export default function Header({ title }) {
@@ -34,18 +47,7 @@ export default function Header({ title }) {
         <img src="/assets/icon.png" />
         <span>{title}</span>
       </a>
-      <nav>
-        <input type="checkbox" id="nav-btn" />
-        <label for="nav-btn" class="nav-btn nav-o">
-          <Icon icon="bars-solid" />
-        </label>
-        <label for="nav-btn" class="nav-btn nav-x">
-          <Icon icon="xmark-solid" />
-        </label>
-        <ul class="list">
-          {links}
-        </ul>
-      </nav>
+      {_nav}
     </header>
   );
 }

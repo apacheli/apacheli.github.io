@@ -29,7 +29,7 @@ export default ({ title, description }, children) => {
           <main class="content">
             {children}
           </main>
-          <Footer />
+          {Footer}
         </body>
       </html>
     </>

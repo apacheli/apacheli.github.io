@@ -1,7 +1,8 @@
 {
   "name": "apache.li",
   "scripts": {
-    "serve": "bun run server/serve.js"
+    "build": "bun run server/build.js --build",
+    "serve": "bun run server/build.js --serve"
   },
   "dependencies": {
     "@mdx-js/esbuild": "^3.0.1",

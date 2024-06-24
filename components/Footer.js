@@ -1,4 +1,4 @@
-import __JSX__ from "../server/render.js";
+import __JSX__, { render } from "../server/render.js";
 
 import { SocialIcon } from "./Icon.js";
 
@@ -30,7 +30,7 @@ const socials = [
   },
   {
     icon: "youtube",
-    href: "https://www.youtube.com/@apacheopteryx",
+    href: "https://www.youtube.com/@apacheli",
     h: "#ff0000",
   },
 ]
@@ -44,15 +44,20 @@ const socials = [
     </li>
   ));
 
-export default () => {
-  return (
-    <footer class="main-ftr">
-      <nav>
-        <ul class="list">
-          {socials}
-        </ul>
-      </nav>
-      <span>© 2024-present apacheli</span>
-    </footer>
-  );
-};
+const date = new Date();
+
+export default render(
+  <footer class="main-ftr">
+    <nav>
+      <ul class="list">
+        {socials}
+      </ul>
+    </nav>
+    <span>
+      Last updated on
+      {` ${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} `}
+      <a href="https://github.com/apacheli/apacheli.github.io">(Source)</a>
+    </span>
+    <span>© 2024-present apacheli</span>
+  </footer>,
+);

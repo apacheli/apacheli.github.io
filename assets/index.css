@@ -72,6 +72,7 @@ svg:hover {
   position: sticky;
   top: 0;
   width: 100%;
+  z-index: 1;
 }
 
 .header-icon {
@@ -190,6 +191,15 @@ svg:hover {
   width: 2.5rem;
 }
 
+.main-ftr span a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.main-ftr span a:hover {
+  text-decoration: underline;
+}
+
 .content {
   margin: 4rem auto;
   min-height: calc(100vh - 12rem);
@@ -199,8 +209,8 @@ svg:hover {
 
 .content ol p,
 .content ul p {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 .content a {
@@ -224,12 +234,15 @@ svg:hover {
 
 blockquote {
   background-color: #0000001a;
+  border-bottom-right-radius: .25rem;
+  border-left: .25rem solid var(--sub);
+  border-top-right-radius: .25rem;
   margin: 0;
   padding-left: 1rem;
   color: var(--sub);
-  border-left: .25rem solid var(--sub);
 }
 
+.content li code,
 .content p code {
   background-color: var(--header);
   border-radius: .25rem;
@@ -237,11 +250,11 @@ blockquote {
 }
 
 pre {
-  width: 100%;
   background-color: var(--header);
   border-radius: .25rem;
-  padding: 1rem;
   line-height: 1.25rem;
+  padding: 1rem;
+  width: 100%;
 }
 
 .contains-task-list {
@@ -262,4 +275,15 @@ td {
 
 tr:nth-child(even) {
   background-color: #0000001a;
+}
+
+hr {
+  border: none;
+  border-bottom: .0625rem solid var(--sub);
+}
+
+h1 {
+  top: 4rem;
+  background-color: var(--bg);
+  position: sticky;
 }

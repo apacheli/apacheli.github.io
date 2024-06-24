@@ -6,19 +6,23 @@ const __JSX__ = (type, attributes, ...children) => ({
 
 export default __JSX__;
 
-const e = /[A-Z]/g;
-const f = (x) => `-${x.toLowerCase()}`;
+const styleNames = {
+  textAlign: "text-align",
+};
 
 const _attr = (attribute) => {
+  if (typeof attribute === "boolean") {
+    return "";
+  }
   if (typeof attribute !== "object") {
-    return `${attribute}`;
+    return `="${attribute}"`;
   }
   let str = "";
   for (const key in attribute) {
-    str += `;${key.replace(e, f)}:${attribute[key]}`;
+    str += `;${styleNames[key] ?? key}:${attribute[key]}`;
   }
   return str.slice(1);
-}
+};
 
 const attributeNames = {
   "className": "class",
@@ -27,6 +31,9 @@ const attributeNames = {
 export const render = (element) => {
   if (typeof element === "function") {
     return render(element());
+  }
+  if (element === "\n") {
+    return "";
   }
   if (typeof element !== "object") {
     return `${element}`;
@@ -43,8 +50,8 @@ export const render = (element) => {
   }
   let attributes = "";
   for (const attribute in element.attributes) {
-    const a = attributeNames[attribute] ?? attribute;
-    attributes += ` ${a}="${_attr(element.attributes[attribute])}"`;
+    const b = _attr(element.attributes[attribute]);
+    attributes += ` ${attributeNames[attribute] ?? attribute}${b}`;
   }
   return `<${element.type}${attributes}>${c && `${c}</${element.type}>`}`;
 };
