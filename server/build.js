@@ -106,7 +106,11 @@ async function serve() {
   }
   await Promise.all(_files);
 
-  console.log("http://localhost:1337/");
+  for (const k in paths) {
+    console.log(`    ${k}`);
+  }
+  console.log("\n=> http://localhost:1337/");
+
   return Bun.serve({
     fetch: (request) => handleRequest(request, paths),
     port: 1337,
