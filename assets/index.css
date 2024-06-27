@@ -33,10 +33,11 @@ svg:hover {
 
 :root {
   --bg: #2b5566;
+  --dark: #0000001a;
   --duration: .25s;
   --header: #101820;
   --key: #ffffff1a;
-  --sub: #9098a0;
+  --sub: #b0b0b0;
   --text: #ffffff;
   --theme: #00c0ff;
 }
@@ -221,28 +222,27 @@ svg:hover {
   text-decoration: underline;
 }
 
-.content h1,
-.content h2 {
+h1,
+h2 {
   border-bottom: .0625rem solid var(--sub);
 }
 
-.content h6 {
+h6 {
   color: var(--sub);
   font-size: small;
 }
 
 blockquote {
-  background-color: #0000001a;
-  border-bottom-right-radius: .25rem;
+  background-color: var(--dark);
+  border-radius: 0 .25rem .25rem 0;
   border-left: .25rem solid var(--sub);
-  border-top-right-radius: .25rem;
   margin: 0;
   padding-left: 1rem;
   color: var(--sub);
 }
 
-.content li code,
-.content p code {
+li code,
+p code {
   background-color: var(--header);
   border-radius: .25rem;
   padding: .25rem .5rem;
@@ -266,14 +266,14 @@ table {
 }
 
 table,
-th,
-td {
-  border: 1px solid var(--sub);
+td,
+th {
+  border: .0625rem solid var(--sub);
   padding: .25rem .5rem;
 }
 
 tr:nth-child(even) {
-  background-color: #0000001a;
+  background-color: var(--dark);
 }
 
 hr {
@@ -281,14 +281,10 @@ hr {
   border-bottom: .0625rem solid var(--sub);
 }
 
-h1 {
-  background-color: var(--bg);
-}
-
 p:has(> img) {
-  background-color: #0000001a;
+  background-color: var(--dark);
   border-radius: .25rem;
-  height: min-content;
+  height: 100%;
   margin: auto;
   max-width: 100%;
   padding: 1rem;
@@ -297,6 +293,5 @@ p:has(> img) {
 
 p img {
   display: block;
-  margin: auto;
   width: 100%;
 }

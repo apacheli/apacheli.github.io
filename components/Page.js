@@ -9,7 +9,7 @@ export default ({ title, description }, children) => {
       {"<!DOCTYPE html>"}
       <html lang="en">
         <head>
-          <title>{`${title} - apacheli`}</title>
+          <title>{`${title} | apacheli`}</title>
           <link rel="icon" href="/assets/icon.png" />
           <link rel="stylesheet" href="/assets/index.css" />
           <meta charset="utf-8" />

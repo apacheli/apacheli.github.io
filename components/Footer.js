@@ -55,8 +55,13 @@ export default render(
     </nav>
     <span>
       Last updated on
-      {` ${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} `}
+      {` <strong>${date.getFullYear()}-${
+        date.getMonth() + 1
+      }-${date.getDate()}</strong> `}
       <a href="https://github.com/apacheli/apacheli.github.io">(Source)</a>
+    </span>
+    <span>
+      Bun <strong>v{process.versions.bun}</strong>
     </span>
     <span>© 2024-present apacheli</span>
   </footer>,

@@ -109,7 +109,7 @@ async function serve() {
   for (const k in paths) {
     console.log(`    ${k}`);
   }
-  console.log("\n=> http://localhost:1337/");
+  console.log("\n=> http://localhost:1337/\n");
 
   return Bun.serve({
     fetch: (request) => handleRequest(request, paths),
@@ -125,9 +125,11 @@ const handleRequest = (request, p) => {
     ? p["/index.html"]
     : p[pathname] ?? p[`${pathname}.html`];
   if (r !== undefined) {
+    console.log(`    \x1b[36m200 ${pathname}\x1b[39m`);
     return new Response(r.data, { headers: { "Content-Type": r.type } });
   }
   r = p["/404.html"];
+  console.log(`    \x1b[31m404 ${pathname}\x1b[39m`);
   return r !== undefined
     ? new Response(r.data, { status: 404, headers: { "Content-Type": r.type } })
     : _notFound;
