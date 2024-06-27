@@ -252,7 +252,10 @@ pre {
   background-color: var(--header);
   border-radius: .25rem;
   line-height: 1.25rem;
+  overflow: auto;
   padding: 1rem;
+  position: relative;
+  scrollbar-color: var(--sub) transparent;
   width: 100%;
 }
 
@@ -294,12 +297,6 @@ p:has(> img) {
 p img {
   display: block;
   width: 100%;
-}
-
-.lang {
-  color: var(--sub);
-  float: right;
-  user-select: none;
 }
 
 /** https://github.com/highlightjs/highlight.js/blob/main/src/styles/atom-one-dark.css */

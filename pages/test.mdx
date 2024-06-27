@@ -101,8 +101,8 @@ is a second line.
 ```js
 const hello = "world";
 
-export default async function deez() {
-  const amogus = "nuts";
+export default async function deez(amogusText) {
+  const amogus = `Hello, ${amogusText}!`;
   console.log(amogus);
   return amogus;
 }
@@ -110,15 +110,17 @@ export default async function deez() {
 
 ```py
 class Test:
-    def __init__(self):
+    def __init__(self, text):
         self.hello = 5
+        self.text = f"Hello, {text}. How are you?"
 
 
 if True:
     if not not True:
         if not False:
-            test = Test()
+            test = Test("Joe")
             print(test.hello)
+            print(test.text)
 ```
 
 ```lua
@@ -129,5 +131,10 @@ assert(getmetatable(t) == t1)
 
 function add(a, b)
   return a + b
+end
+
+function main()
+  local x = 5 + 10
+  local y = "hello " .. "world"
 end
 ```

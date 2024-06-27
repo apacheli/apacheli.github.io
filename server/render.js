@@ -48,10 +48,9 @@ export const render = (element) => {
   }
   if (element.type === "code") {
     const lang = element.attributes.className?.slice(9);
-    const code = element.children[0];
     return lang === undefined
-      ? code
-      : `<span class="lang">${lang}</span>${hljs.highlight(lang, code).value}`;
+      ? `<code>${element.children[0]}</code>`
+      : hljs.highlight(lang, element.children[0]).value;
   }
   const c = element.children.reduce((a, b) => a + render(b), "");
   if (element.type === null) {
