@@ -45,6 +45,7 @@ const socials = [
   ));
 
 const date = new Date();
+const d = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 
 export default render(
   <footer class="main-ftr">
@@ -54,10 +55,7 @@ export default render(
       </ul>
     </nav>
     <span>
-      Last updated on
-      {` <strong>${date.getFullYear()}-${
-        date.getMonth() + 1
-      }-${date.getDate()}</strong> `}
+      Last updated on {` <strong>${d}</strong> `}
       <a href="https://github.com/apacheli/apacheli.github.io">(Source)</a>
     </span>
     <span>

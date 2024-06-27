@@ -1,3 +1,5 @@
+import hljs from "highlight.js";
+
 const __JSX__ = (type, attributes, ...children) => ({
   type,
   attributes: attributes ?? {},
@@ -43,6 +45,13 @@ export const render = (element) => {
   }
   if (typeof element.type === "function") {
     return render(element.type(element.attributes, element.children));
+  }
+  if (element.type === "code") {
+    const lang = element.attributes.className?.slice(9);
+    const code = element.children[0];
+    return lang === undefined
+      ? code
+      : `<span class="lang">${lang}</span>${hljs.highlight(lang, code).value}`;
   }
   const c = element.children.reduce((a, b) => a + render(b), "");
   if (element.type === null) {

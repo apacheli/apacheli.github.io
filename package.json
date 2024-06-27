@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "@mdx-js/esbuild": "^3.0.1",
+    "highlight.js": "^11.9.0",
     "remark-gfm": "^4.0.0"
   },
   "devDependencies": {
