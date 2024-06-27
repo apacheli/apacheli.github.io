@@ -55,7 +55,7 @@ export default render(
       </ul>
     </nav>
     <span>
-      Last updated on {` <strong>${d}</strong> `}
+      Last updated on {`<strong>${d}</strong> `}
       <a href="https://github.com/apacheli/apacheli.github.io">(Source)</a>
     </span>
     <span>

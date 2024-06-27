@@ -125,7 +125,6 @@ svg:hover {
   display: none;
   height: 2.5rem;
   width: 2.5rem;
-  z-index: 1;
 }
 
 @media (max-width: 72rem) {
@@ -236,9 +235,9 @@ blockquote {
   background-color: var(--dark);
   border-radius: 0 .25rem .25rem 0;
   border-left: .25rem solid var(--sub);
+  color: var(--sub);
   margin: 0;
   padding-left: 1rem;
-  color: var(--sub);
 }
 
 li code,
@@ -254,12 +253,12 @@ pre {
   line-height: 1.25rem;
   overflow: auto;
   padding: 1rem;
-  position: relative;
   scrollbar-color: var(--sub) transparent;
+  scrollbar-width: thin;
   width: 100%;
 }
 
-.contains-task-list {
+ul:has(> li input) {
   list-style: none;
   padding-left: 1rem;
 }

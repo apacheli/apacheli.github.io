@@ -8,27 +8,11 @@ const __JSX__ = (type, attributes, ...children) => ({
 
 export default __JSX__;
 
-const styleNames = {
-  textAlign: "text-align",
-};
-
-const _attr = (attribute) => {
-  if (typeof attribute === "boolean") {
-    return "";
-  }
-  if (typeof attribute !== "object") {
-    return `="${attribute}"`;
-  }
-  let str = "";
-  for (const key in attribute) {
-    str += `;${styleNames[key] ?? key}:${attribute[key]}`;
-  }
-  return str.slice(1);
-};
-
-const attributeNames = {
-  "className": "class",
-};
+const attributeNames = [
+  "aria-",
+  "className",
+  "data-",
+];
 
 export const render = (element) => {
   if (typeof element === "function") {
@@ -38,7 +22,7 @@ export const render = (element) => {
     return "";
   }
   if (typeof element !== "object") {
-    return `${element}`;
+    return `${element}`.replace(/\n/g, " ");
   }
   if (Array.isArray(element)) {
     return element.reduce((a, b) => a + render(b), "");
@@ -50,7 +34,7 @@ export const render = (element) => {
     const lang = element.attributes.className?.slice(9);
     return lang === undefined
       ? `<code>${element.children[0]}</code>`
-      : hljs.highlight(lang, element.children[0]).value;
+      : hljs.highlight(lang, element.children[0].slice(0, -1)).value;
   }
   const c = element.children.reduce((a, b) => a + render(b), "");
   if (element.type === null) {
@@ -58,8 +42,11 @@ export const render = (element) => {
   }
   let attributes = "";
   for (const attribute in element.attributes) {
-    const b = _attr(element.attributes[attribute]);
-    attributes += ` ${attributeNames[attribute] ?? attribute}${b}`;
+    if (attributeNames.some((a) => attribute.startsWith(a))) {
+      continue;
+    }
+    const a = element.attributes[attribute];
+    attributes += ` ${attribute}${typeof a === "boolean" ? "" : `="${a}"`}`;
   }
   return `<${element.type}${attributes}>${c && `${c}</${element.type}>`}`;
 };
