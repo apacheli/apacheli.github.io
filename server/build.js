@@ -47,6 +47,7 @@ const _buildHtml = async (file) => {
 };
 
 const build = async ({ directories }) => {
+  const p = performance.now();
   await Promise.all(directories.map((dir) => mkdir(`dist/${dir}`, _fs)));
   await cp("assets", "dist/assets", _fs);
   const promises = [];
@@ -57,8 +58,7 @@ const build = async ({ directories }) => {
     promises.push(_buildHtml(file));
   }
   await Promise.all(promises);
-
-  console.log("Done.");
+  console.log(`\x1b[36mDone. Took ${performance.now() - p} ms.\x1b[39m`);
 };
 
 const normalize = (file) => file.replace(/\\/g, "/");
