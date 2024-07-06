@@ -36,6 +36,9 @@ export const render = (element) => {
       ? `<code>${element.children[0]}</code>`
       : hljs.highlight(lang, element.children[0].slice(0, -1)).value;
   }
+  if (element.type === "img") {
+    element.attributes.loading = "lazy";
+  }
   const c = element.children.reduce((a, b) => a + render(b), "");
   if (element.type === null) {
     return c;

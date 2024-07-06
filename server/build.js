@@ -47,7 +47,7 @@ const _buildHtml = async (file) => {
 };
 
 const build = async ({ directories }) => {
-  const p = performance.now();
+  console.time("_build_");
   await Promise.all(directories.map((dir) => mkdir(`dist/${dir}`, _fs)));
   await cp("assets", "dist/assets", _fs);
   const promises = [];
@@ -58,7 +58,7 @@ const build = async ({ directories }) => {
     promises.push(_buildHtml(file));
   }
   await Promise.all(promises);
-  console.log(`\x1b[36mDone. Took ${performance.now() - p} ms.\x1b[39m`);
+  console.timeEnd("_build_");
 };
 
 const normalize = (file) => file.replace(/\\/g, "/");
@@ -92,6 +92,7 @@ const _serveHtml = async (file, paths) => {
 };
 
 async function serve() {
+  console.time("_serve_");
   const paths = {};
 
   const _files = [];
@@ -110,6 +111,7 @@ async function serve() {
     console.log(`    ${k}`);
   }
   console.log("\n=> http://localhost:1337/\n");
+  console.timeEnd("_serve_");
 
   return Bun.serve({
     fetch: (request) => handleRequest(request, paths),

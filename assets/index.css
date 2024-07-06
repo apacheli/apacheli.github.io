@@ -32,10 +32,10 @@ svg:hover {
 }
 
 :root {
-  --bg: rgb(48, 96, 120);
+  --bg: #206080;
   --dark: #0000000d;
   --duration: .25s;
-  --header: rgb(16, 24, 32);
+  --header: #0c141c;
   --key: #ffffff0d;
   --sub: #c0c0c0;
   --text: #ffffff;

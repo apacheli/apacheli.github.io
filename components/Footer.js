@@ -2,50 +2,39 @@ import __JSX__, { render } from "../server/render.js";
 
 import { SocialIcon } from "./Icon.js";
 
-const socials = [
-  {
-    icon: "discord",
-    href: "https://discord.com/users/460612586061430806",
-    h: "#5865F2",
-  },
-  {
-    icon: "github",
-    href: "https://github.com/apacheli",
-    h: "#808080",
-  },
-  {
-    icon: "steam",
-    href: "https://steamcommunity.com/id/apacheli/",
-    h: "#00adef",
-  },
-  {
-    icon: "twitch",
-    href: "https://www.twitch.tv/apachelitv",
-    h: "#8d44f7",
-  },
-  {
-    icon: "twitter",
-    href: "https://twitter.com/apacheopteryx",
-    h: "#24a3f1",
-  },
-  {
-    icon: "youtube",
-    href: "https://www.youtube.com/@apacheli",
-    h: "#ff0000",
-  },
-]
+const socials = [{
+  name: "discord",
+  h: "#5865F2",
+}, {
+  name: "github",
+  h: "#808080",
+}, {
+  name: "steam",
+  h: "#00adef",
+}, {
+  name: "twitch",
+  h: "#8d44f7",
+}, {
+  name: "twitter",
+  h: "#24a3f1",
+}, {
+  name: "youtube",
+  h: "#ff0000",
+}]
   .map((social) => (
     <li>
       <SocialIcon
-        icon={social.icon}
+        icon={social.name}
         h={social.h}
-        href={social.href}
+        href={`/${social.name}`}
       />
     </li>
   ));
 
 const date = new Date();
-const d = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+const year = date.getFullYear();
+const month = `${date.getMonth() + 1}`.padStart(2, "0");
+const day = `${date.getDate()}`.padStart(2, "0");
 
 export default render(
   <footer class="main-ftr">
@@ -55,7 +44,7 @@ export default render(
       </ul>
     </nav>
     <span>
-      Last updated on {`<strong>${d}</strong> `}
+      Last deployed at {`<strong>${year}-${month}-${day}</strong> `}
       <a href="https://github.com/apacheli/apacheli.github.io">(Source)</a>
     </span>
     <span>
