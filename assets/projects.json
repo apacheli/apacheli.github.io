@@ -1,0 +1,32 @@
+[
+    {
+        "title": "bluejay",
+        "description": "Create a book with MDX, JSX components, and Bun. Fun fact: My personal website was built using bluejay.",
+        "url": "https://github.com/apacheli/bluejay",
+        "date": "2024-present"
+    },
+    {
+        "title": "discord-api-libs",
+        "description": "A curated list of open-source libraries for interacting with Discord's API.",
+        "url": "https://github.com/apacheli/discord-api-libs",
+        "date": "2020-present"
+    },
+    {
+        "title": "whirlybird",
+        "description": "A JavaScript library for making Discord bots.",
+        "url": "https://github.com/apacheli/whirlybird",
+        "date": "2020-present"
+    },
+    {
+        "title": "yttv",
+        "description": "Makes YouTube TV work in your web browser. It's the same interface when using YouTube on a gaming console.",
+        "url": "https://github.com/apacheli/yttv",
+        "date": "2022"
+    },
+    {
+        "title": "watch_only",
+        "description": "A Firefox add-on that redirects you from YouTube Shorts to the original YouTube video player.",
+        "url": "https://github.com/apacheli/watch_only",
+        "date": "2022"
+    }
+]

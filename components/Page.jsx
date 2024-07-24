@@ -23,7 +23,9 @@ export default ({ title, description, children }) => {
                 <body>
                     <Header title={title} />
                     <main class="content">{children}</main>
-                    <a href="#" class="scroll-to-top">{AngleUp.default}</a>
+                    <a href="#" class="scroll-to-top">
+                        {AngleUp.default}
+                    </a>
                     <Footer />
                 </body>
             </html>

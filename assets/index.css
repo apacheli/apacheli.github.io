@@ -71,14 +71,15 @@ svg:hover {
 .main-hdr {
   align-items: center;
   background-color: var(--header);
-  box-shadow: 0 0 1rem 0 rgb(0, 0, 0, .25);
   display: flex;
+  filter: drop-shadow(0 0 0.5rem #00000040);
   height: 4rem;
   justify-content: space-between;
   padding: 0 .5rem;
   position: sticky;
   top: 0;
   width: 100%;
+  z-index: 1;
 }
 
 .header-icon {
@@ -178,10 +179,11 @@ svg:hover {
   background-color: var(--header);
   display: flex;
   color: var(--sub);
-  text-align: center;
+  filter: drop-shadow(0 0 0.5rem #00000040);
   flex-direction: column;
   justify-content: center;
   padding: 4rem;
+  text-align: center;
 }
 
 .main-ftr nav ul {
@@ -302,16 +304,19 @@ p img {
 
 .scroll-to-top {
   --h: var(--theme);
-  position: fixed;
-  left: 1rem;
   bottom: 1rem;
   height: 3rem;
+  left: 1rem;
+  position: fixed;
   width: 3rem;
+  z-index: 1;
 }
 
 article {
+  background-color: var(--dark);
   border-radius: .5rem;
-  padding: .25rem 1rem;
+  padding: .125rem 1.5rem;
+  margin: 1rem 0;
 }
 
 article:hover {

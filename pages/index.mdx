@@ -1,4 +1,6 @@
 import Clickable from "../components/Clickable.jsx"
+import contributions from "../assets/contributions.json"
+import projects from "../assets/projects.json"
 
 export const title = "home"
 export const description = "Web and Software Developer"
@@ -7,10 +9,13 @@ export const description = "Web and Software Developer"
 
 # Hello, I'm apacheli.
 
-Hello, I'm apacheli, a web and software developer.
+Hello, I'm apacheli, a web and software developer. I primarily work with backend
+software such as [Node.js](https://nodejs.org/en) and [Bun](https://bun.sh/).
 
 ## Projects
 
-<Clickable title="bluejay" description="Create a book with MDX, JSX components, and Bun" url="https://github.com/apacheli/bluejay" date="2024" />
-<Clickable title="discord-api-libs" description="List of open-source Discord API Libraries" url="https://github.com/apacheli/discord-api-libs" date="2020" />
-<Clickable title="whirlybird" description="A JavaScript library for making Discord bots." url="https://github.com/apacheli/whirlybird" date="2020" />
+{projects.map((project) => <Clickable {...project} />)}
+
+## Open-Source Contributions
+
+{contributions.map((project) => <Clickable {...project} />)}
