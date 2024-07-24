@@ -1,15 +1,20 @@
 {
-  "name": "apache.li",
-  "scripts": {
-    "build": "bun run server/build.js --build",
-    "serve": "bun run server/build.js --serve"
-  },
-  "dependencies": {
-    "@mdx-js/esbuild": "^3.0.1",
-    "highlight.js": "^11.9.0",
-    "remark-gfm": "^4.0.0"
-  },
-  "devDependencies": {
-    "@types/bun": "^1.1.5"
-  }
+    "type": "module",
+    "scripts": {
+        "lint": "bunx @biomejs/biome lint --write",
+        "check": "bunx @biomejs/biome check --write",
+        "format": "bunx @biomejs/biome format --write",
+        "build": "START_NODE=build bun run main.tsx",
+        "serve": "START_MODE=serve bun run --watch main.tsx"
+    },
+    "dependencies": {
+        "bluejay": "https://github.com/apacheli/bluejay"
+    },
+    "devDependencies": {
+        "@types/bun": "latest",
+        "@biomejs/biome": "^1.8.3"
+    },
+    "peerDependencies": {
+        "typescript": "^5.0.0"
+    }
 }
