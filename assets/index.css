@@ -235,11 +235,6 @@ h2 {
   border-bottom: .0625rem solid var(--key);
 }
 
-h6 {
-  color: var(--sub);
-  font-size: small;
-}
-
 blockquote {
   background-color: var(--dark);
   border-radius: 0 .25rem .25rem 0;
@@ -262,8 +257,6 @@ pre {
   line-height: 1.25rem;
   overflow: auto;
   padding: 1rem;
-  scrollbar-color: var(--sub) transparent;
-  scrollbar-width: thin;
   width: 100%;
 }
 
@@ -417,7 +410,7 @@ article footer {
 @media (prefers-color-scheme: light) {
   :root {
     --bg: #f3f6f8;
-    --dark: #ffffff55;
+    --dark: #ffffff70;
     --header: #ffffff;
     --key: #0000000d;
     --sub: #52565c;
