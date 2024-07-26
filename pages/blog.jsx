@@ -10,7 +10,7 @@ export default ({ pages }) => {
             <p>I write about stuff.</p>
             <div>
                 {pages
-                    .filter((page) => page.module.type === "blog")
+                    .filter((page) => page.module.type === "blog" && !page.module.hidden)
                     .map((page) => (
                         <Clickable {...page.module} url={`/${page.path.slice(0, -5)}`} />
                     ))}
