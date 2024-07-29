@@ -8,7 +8,7 @@ export default ({ title, description, date, url }) => (
                 <p>{description}</p>
             </div>
             <footer>
-                <span>{date.endsWith("present") ? <strong class="present">{date}</strong> : date}</span>
+                <span>{date.endsWith("-present") ? <strong class="present">{date}</strong> : date}</span>
             </footer>
         </article>
     </a>

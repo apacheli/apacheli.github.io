@@ -1,5 +1,6 @@
 const Discord = await import("../icons/discord.svg");
 const GitHub = await import("../icons/github.svg");
+const LinkedIn = await import("../icons/linkedin.svg");
 const Steam = await import("../icons/steam.svg");
 const Twitch = await import("../icons/twitch.svg");
 const Twitter = await import("../icons/twitter.svg");
@@ -15,6 +16,11 @@ const socials = [
         h: "#808080",
         href: "/github",
         icon: GitHub,
+    },
+    {
+        h: "#0266c3",
+        href: "/linkedin",
+        icon: LinkedIn,
     },
     {
         h: "#00adef",
