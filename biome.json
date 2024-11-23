@@ -1,16 +1,23 @@
 {
     "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+    "formatter": {
+        "indentStyle": "space",
+        "indentWidth": 4,
+        "lineWidth": 320
+    },
     "linter": {
         "enabled": true,
         "rules": {
+            "a11y": {
+                "useValidAnchor": "off"
+            },
             "correctness": {
                 "useJsxKeyInIterable": "off"
             }
         }
     },
-    "formatter": {
-        "indentStyle": "space",
-        "indentWidth": 4,
-        "lineWidth": 160
+    "files": {
+        "ignore": [".bluejay", "dist"],
+        "ignoreUnknown": true
     }
 }

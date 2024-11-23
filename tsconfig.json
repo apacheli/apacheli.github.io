@@ -1,28 +1,19 @@
 {
     "compilerOptions": {
-        // Enable latest features
-        "lib": ["ESNext", "DOM"],
-        "target": "ESNext",
-        "module": "ESNext",
-        "moduleDetection": "force",
+        "allowImportingTsExtensions": true,
         "jsx": "react-jsx",
         "jsxImportSource": "preact",
-        "allowJs": true,
-
-        // Bundler mode
-        "moduleResolution": "bundler",
-        "allowImportingTsExtensions": true,
-        "verbatimModuleSyntax": true,
+        "module": "ESNext",
+        "moduleResolution": "node",
         "noEmit": true,
-
-        // Best practices
-        "strict": true,
         "skipLibCheck": true,
-        "noFallthroughCasesInSwitch": true,
-
-        // Some stricter flags (disabled by default)
-        "noUnusedLocals": false,
-        "noUnusedParameters": false,
-        "noPropertyAccessFromIndexSignature": false
+        "strict": true,
+        "target": "ESNext",
+        "paths": {
+            "~/*": ["./*"],
+            "@components/*": ["./src/components/*.tsx"],
+            "@icons/*": ["./src/icons/*"],
+            "bluejay": ["../src/main.ts"]
+        }
     }
 }

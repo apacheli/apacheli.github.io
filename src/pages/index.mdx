@@ -1,11 +1,11 @@
-import Clickable from "../components/Clickable.jsx"
+import Article from "@components/Article"
 import contributions from "../assets/contributions.json"
 import projects from "../assets/projects.json"
 
 export const title = "home"
 export const description = "Web and Software Developer"
 
-![](/assets/portrait.png)
+![](/portrait.png)
 
 # Hello, I'm apacheli.
 
@@ -14,8 +14,8 @@ software such as [Node.js](https://nodejs.org/en) and [Bun](https://bun.sh/).
 
 ## Projects
 
-{projects.map((project) => <Clickable {...project} />)}
+{projects.map((project) => <Article {...project} />)}
 
 ## Open-Source Contributions
 
-{contributions.map((project) => <Clickable {...project} />)}
+{contributions.map((project) => <Article {...project} />)}

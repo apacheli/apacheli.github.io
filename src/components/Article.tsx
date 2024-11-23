@@ -1,6 +1,6 @@
 export default ({ title, description, date, url }) => (
     <a href={url}>
-        <article>
+        <article class="blog">
             <header>
                 <h2>{title}</h2>
             </header>
@@ -8,7 +8,7 @@ export default ({ title, description, date, url }) => (
                 <p>{description}</p>
             </div>
             <footer>
-                <span>{date.endsWith("-present") ? <strong class="present">{date}</strong> : date}</span>
+                <span>{date}</span>
             </footer>
         </article>
     </a>

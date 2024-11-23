@@ -1,4 +1,4 @@
-import Clickable from "../components/Clickable.jsx";
+import Article from "@components/Article";
 
 export const title = "blog";
 export const description = "Web and Software Developer";
@@ -10,9 +10,10 @@ export default ({ pages }) => {
             <p>I write about stuff.</p>
             <div>
                 {pages
-                    .filter((page) => page.module.type === "blog" && !page.module.hidden)
+                    .filter((page) => page.mod.type === "blog")
+                    .sort((a, b) => b.mod.date.localeCompare(a.mod.date))
                     .map((page) => (
-                        <Clickable {...page.module} url={`/${page.path.slice(0, -5)}`} />
+                        <Article {...page.mod} url={page.path.slice(0, -5)} />
                     ))}
             </div>
         </>

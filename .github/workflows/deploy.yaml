@@ -32,7 +32,7 @@ jobs:
       - name: Build
         run: |
           bun install
-          bun run build
+          bun dle
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
