@@ -1,0 +1,111 @@
+import Comments from "@components/Comments"
+
+export const title = "What Have I learned in 2024?"
+export const description = "A somewhat interesting insight into what I've learned in 2024. Will this new profound knowledge carry with me into 2025? We'll have to just wait and see."
+export const date = "2025-01-08"
+export const type = "blog"
+
+# Things I've Learned in 2024
+
+2024 was a pretty lackluster year for me all things considered. However, it may
+have also been the year where I was the most excited to try and experiment with
+new things. Ranting aside, let's dive into all the cool new gadgets I've played
+with in 2024.
+
+> This is about a 5 minute read.
+
+## Databases and Caching
+
+Working with and managing databases was a new experience for me in 2024. When I
+was writing a custom application for a client, we needed to reliably manage data
+without the risk of data corruption. Normally, JSON was my go-to choice because
+it was familiar to me, but it was far, far too unreliable for the situation at
+hand.
+
+I've settled with [PostgreSQL](https://www.postgresql.org/) as my go-to choice
+when working with databases. It's probably overkill for small applications, but
+it definitely gets the job done. It even comes with a cool dashboard called
+_pgAdmin_ to help visualize your data.
+
+However, making requests to your database can be computationally expensive.
+That's where caching comes in. If data is frequently requested, it may be worth
+looking into caching solutions. I use [Redis](https://redis.io/) for this.
+Unlike a traditional database, Redis stores your data in-memory which makes it
+much faster and less expensive on your hardware.
+
+My biggest complaint about SQL is _it's just not fun to write_. Please use an
+[ORM](https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping). It'll
+make you and your colleagues' lives so much easier. However, it's still
+important to be weary of what SQL is capable of, so don't drop it off your mind
+entirely.
+
+## Managing Websites with Cloudflare
+
+I purchased _this domain_ about a year ago and linked it to my GitHub account.
+Managing a website has showed me both the beauty and ugly of this world, but it
+was all worth it just to get these cool letters to appear in your searchbar. I
+personally recommend you get a grasp of HTML and CSS instead of using an
+off-the-shelf website builder like Wix and Wordpress. It'll take time, but
+having full creative control over your website is worth the hardship.
+
+[Cloudflare](https://www.cloudflare.com/) is probably the safest and most secure
+way to manage your website. It's especially vital if you host your website on
+your own hardware. It also provides a bunch of useful tools such as analytics,
+storage, and workers. If you want a fancy business email, they'll handle that
+for you too.
+
+## Building My First PC
+
+Learning how to build your first PC is certainly an experience to have. You
+start off clueless, and then you know everything. It involves so much research
+even before you start assembling anything. For example, what are you looking for
+in a computer? Video editing? Music production? Gaming? Programming? Digital
+art? All of these should be considered when looking for PC components. You can
+also just order a prebuilt one, but that's no fun.
+
+For me, I wanted something for programming, and of course, _gaming_. A lot of my
+work involves performance testing, so I needed a CPU that could handle millions
+of operations per second without stuttering. I don't play very graphically
+demanding games, so I just went with a solid midrange GPU. However, some games
+are memory hogs like modded Minecraft, so I got ahold of some fat 32 GB RAM
+sticks, but most people could settle with 16 GB. If you have several downloaded
+games or video recordings, you might also want to peek at big storage options.
+
+I've also made a few mistakes too. I ordered _a TN monitor_ instead of an OLED
+monitor. Honestly, it's not worth getting anything TN or LCD these days. Color
+accuracy simply outweighs anything they could ever offer. My current build also
+doesn't support Bluetooth. Like I said earlier, _please_ do the research. These
+mistakes could've been avoided if I just read the fine print. Use something like
+[PCPartPicker](https://pcpartpicker.com/) to compile your parts.
+
+## Computer Servers
+
+When I upgraded my PC, it left me with some cold metal, i.e., my old computer.
+Not sure what to do with it, it just sat in a corner for a few months collecting
+dust overtime. Then all of sudden, _eureka_! Its new purpose was to now host a
+Minecraft server. I wiped out everything and installed a fresh copy of Ubuntu
+(I'm a normie, I know) onto it. Normally, the spare HDMI cable lying around was
+used for accessing it, but then I discovered how much more convenient SSH was.
+
+Today, it's still being used for a Minecraft server, but I also run other things
+on it such as a Jellyfin, a media server for watching your _totally legally
+obtained media_ on it. My Discord bots are also running on it which alleviates
+some of the stress from my main computer. I also run a Nextcloud server for
+better privacy when managing sensitive files.
+[Check out the
+Awesome-Selfhosted repository](https://github.com/awesome-selfhosted/awesome-selfhosted).
+It might be fun setting up a homelab of your own.
+
+## Conducting My Own Business
+
+The knowledge I have for managing my own "brand" is quite bleak and the learning
+experience will have to carry into 2025. Working with _actual_ clients by
+yourself is fun, exciting, depressing, and stressful all at the same time. Just
+pace yourself in a way that doesn't burn you out. Anyway, whatever I write here
+next year will probably be more interesting.
+
+## Conclusion
+
+Overall, it was certainly a year. Anyway, that's enough yapping.
+
+<Comments />

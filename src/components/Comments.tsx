@@ -1,6 +1,10 @@
 export default () => (
     <>
-        <h2>Comments</h2>
+        <h2>
+            <a href="#comments" id="comments">
+                Comments
+            </a>
+        </h2>
         <script
             src="https://giscus.app/client.js"
             data-repo="apacheli/apacheli.github.io"

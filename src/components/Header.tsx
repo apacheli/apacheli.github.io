@@ -11,7 +11,7 @@ const nav = [
 export default () => (
     <div class="main-header">
         <a href="/" class="main-header-title">
-            <img src="/icon.png" alt="bluejay icon" height="48" width="48" />
+            <img src="/icon.png" alt="apache.li icon" height="48" width="48" />
             <span>Apacheli</span>
         </a>
         <nav>

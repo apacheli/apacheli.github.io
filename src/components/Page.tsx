@@ -19,7 +19,7 @@ export interface PageProps {
 export default ({ title, description, children }: PageProps) => (
     <html lang="en">
         <head>
-            <title>{`Bluejay - ${title}`}</title>
+            <title>{`apache.li - ${title}`}</title>
             <link rel="icon" href={`${Bun.env.BLUEJAY_PATH}/icon.png`} />
             <link rel="stylesheet" href={`${Bun.env.BLUEJAY_PATH}/index.css`} />
             <meta charset="utf8" />

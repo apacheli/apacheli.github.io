@@ -7,7 +7,7 @@ export default ({ pages }) => {
     return (
         <>
             <h1>Blog</h1>
-            <p>I write about stuff.</p>
+            <p>I yap about stuff that may or may not interest you.</p>
             <div>
                 {pages
                     .filter((page) => page.mod.type === "blog")

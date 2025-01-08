@@ -1,6 +1,5 @@
 import Discord from "@icons/Discord.svg";
 import GitHub from "@icons/GitHub.svg";
-import LinkedIn from "@icons/LinkedIn.svg";
 import Steam from "@icons/Steam.svg";
 import Twitch from "@icons/Twitch.svg";
 import Twitter from "@icons/Twitter.svg";
@@ -9,7 +8,6 @@ import YouTube from "@icons/YouTube.svg";
 const nav = [
     { href: "/discord", icon: Discord, h: "#5865F2" },
     { href: "/github", icon: GitHub, h: "#808080" },
-    { href: "/linkedin", icon: LinkedIn, h: "#0266c3" },
     { href: "/steam", icon: Steam, h: "#00adef" },
     { href: "/twitch", icon: Twitch, h: "#8d44f7" },
     { href: "/twitter", icon: Twitter, h: "#24a3f1" },
@@ -27,6 +25,11 @@ export default () => (
                 ))}
             </ul>
         </nav>
-        <span>&copy; 2024-present apacheli</span>
+        <span>
+            &copy; 2024-present apacheli <a href="https://github.com/apacheli/apacheli.github.io">(source)</a>
+        </span>
+        <span>
+            Designed with &#10084;&#65039; and <a href="https://apache.li/bluejay">Bluejay</a>
+        </span>
     </div>
 );
