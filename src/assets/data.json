@@ -45,15 +45,15 @@
             "date": "2020-present"
         },
         {
+            "title": "No YouTube Shorts",
+            "description": "A Firefox add-on that redirects you from YouTube Shorts to the original YouTube video player.",
+            "url": "https://github.com/apacheli/noytshorts",
+            "date": "2022-present"
+        },
+        {
             "title": "yttv",
             "description": "Makes YouTube TV work in your web browser. It's the same interface when using YouTube on a gaming console.",
             "url": "https://github.com/apacheli/yttv",
-            "date": "2022"
-        },
-        {
-            "title": "watch_only",
-            "description": "A Firefox add-on that redirects you from YouTube Shorts to the original YouTube video player.",
-            "url": "https://github.com/apacheli/watch_only",
             "date": "2022"
         }
     ]
