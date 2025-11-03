@@ -7,4 +7,4 @@ date: "2025-10-15"
 tag: "Development"
 ---
 
-WIP 2
+This article is being worked on.

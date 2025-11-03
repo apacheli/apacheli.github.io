@@ -1,9 +1,9 @@
-import type { BluejayConfiguration } from "../lib/main.ts";
+import type { BluejayConfiguration } from "bluejay";
 import templates from "./components/templates.tsx";
 import Feed from "./misc/feed.jsx";
 
 export default {
-	cwd: import.meta.dir,
+	root: import.meta.dir,
 	dist: "dist",
 	assets: {
 		"assets": "/assets",

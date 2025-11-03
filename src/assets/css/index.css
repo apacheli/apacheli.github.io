@@ -87,6 +87,7 @@ ul {
 	height: 4rem;
 	padding: 0 1rem;
 	background-color: var(--color-header);
+	backdrop-filter: blur(0.125rem);
 }
 
 .main-header-title {
@@ -345,8 +346,12 @@ ul {
 		right: 0;
 		margin-top: 4rem;
 		background-color: var(--color-header);
+		opacity: 0%;
+		backdrop-filter: blur(0.125rem);
 		transform: translateX(100%);
-		transition: transform var(--duration);
+		transition:
+			transform var(--duration),
+			opacity var(--duration);
 	}
 
 	.main-header-nav ul {
@@ -355,6 +360,7 @@ ul {
 	}
 
 	#nav-checkbox:checked ~ .main-header-nav {
+		opacity: 100%;
 		transform: translateX(0);
 	}
 
