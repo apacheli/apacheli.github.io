@@ -4,7 +4,7 @@ import Feed from "./misc/feed.jsx";
 
 export default {
 	root: import.meta.dir,
-	dist: "dist",
+	dist: "../dist",
 	assets: {
 		"assets": "/assets",
 		"static": "",
