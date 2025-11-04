@@ -1,4 +1,4 @@
-import type { BluejayContext } from "../../lib/lib.ts";
+import type { BluejayContext } from "bluejay";
 import { Article } from "../components/common.tsx";
 
 export const metadata = {

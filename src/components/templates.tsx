@@ -1,4 +1,4 @@
-import type { BluejayContext } from "../../lib/lib.ts";
+import type { BluejayContext } from "bluejay";
 import { Article, CommonBody, CommonHead, dtf } from "./common.tsx";
 import { FacebookIcon, LinkedInIcon, TwitterIcon } from "./icons.tsx";
 
@@ -58,7 +58,7 @@ const BlogTemplate = (ctx: BluejayContext) => {
 					<h1 class="post-title">{ctx.page.metadata.title}</h1>
 					<span class="blog-tag">{ctx.page.metadata.tag}</span>
 					<time class="blog-date">{dtf.format(new Date(ctx.page.metadata.date))}</time>
-					<img class="post-image" src={ctx.page.metadata.image ?? "/assets/images/placeholder.png"} alt={ctx.page.metadata.title} />
+					<img class="post-image" src={ctx.page.metadata.image ?? "/assets/images/blog/placeholder.avif"} alt={ctx.page.metadata.title} />
 				</header>
 				<main class="markdown">{ctx.page.element(ctx)}</main>
 				<footer class="post-footer">

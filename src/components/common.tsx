@@ -1,4 +1,4 @@
-import type { BluejayPage } from "../../lib/lib.ts";
+import type { BluejayPage } from "bluejay";
 import Footer from "./footer.tsx";
 import Header from "./header.tsx";
 
@@ -16,7 +16,7 @@ const Article = (page: BluejayPage) => {
 			<a href={page.url} class="blog-anchor" title={title}>
 				<div class="blog-entry">
 					<div class="blog-image-container">
-						<img src={image ?? "/assets/images/placeholder.png"} class="blog-image" alt={title} />
+						<img src={image ?? "/assets/images/blog/placeholder.avif"} class="blog-image" alt={title} />
 						{page.data.index === 0 ? <span class="blog-new">NEW!</span> : undefined}
 					</div>
 					<div class="blog-metadata">
@@ -42,8 +42,10 @@ const CommonHead = ({ ctx, children }: any) => (
 		<link rel="stylesheet" href="/assets/css/index.css" />
 		<title>{ctx.page.metadata.title ?? "No Title"} - apacheli</title>
 
+		<meta name="description" content={ctx.page.metadata.description} />
+		<meta name="theme-color" content="#43afaf" />
 		<meta property="og:description" content={ctx.page.metadata.description} />
-		<meta property="og:image" content={`${Bun.env.BLUEJAY_URL}${ctx.page.metadata.image ?? "/favicon.png"}`} />
+		<meta property="og:image" content={`${Bun.env.BLUEJAY_URL}${ctx.page.metadata.image ?? "/assets/images/portrait.png"}`} />
 		<meta property="og:title" content={ctx.page.metadata.title} />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={Bun.env.BLUEJAY_URL} />

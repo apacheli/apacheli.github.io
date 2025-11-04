@@ -1,7 +1,7 @@
 ---
 title: "2024 - The Year of Experimentation"
 description: "A somewhat interesting insight into what I've learned in 2024."
-image: "/assets/images/2024-the-year-of-experimentation.png"
+image: "/assets/images/blog/2024-the-year-of-experimentation.avif"
 type: "blog"
 date: "2025-01-08"
 tag: "Career"

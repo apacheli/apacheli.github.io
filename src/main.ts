@@ -2,8 +2,6 @@ import type { BluejayConfiguration } from "bluejay";
 import templates from "./components/templates.tsx";
 import Feed from "./misc/feed.jsx";
 
-console.log("Hello!");
-
 export default {
 	root: import.meta.dir,
 	dist: "../dist",
