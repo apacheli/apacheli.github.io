@@ -11,7 +11,7 @@ html {
 
 :root {
 	--color-background: #ffffff;
-	--color-font-secondary: #787e87;
+	--color-font-secondary: hsl(215, 6%, 40%);
 	--color-font: #10181a;
 	--color-header-font: #ffffff;
 	--color-header: #080c0df0;
@@ -27,6 +27,7 @@ html {
 @media (prefers-color-scheme: dark) {
 	:root {
 		--color-background: #10181a;
+		--color-font-secondary: hsl(215, 6%, 60%);
 		--color-font: #ffffff;
 		--color-dark-1: #ffffff10;
 		--color-dark-2: #ffffff20;
@@ -323,6 +324,10 @@ ul {
 
 .icon-link.linked-in {
 	fill: #0077b5;
+}
+
+.icon-link.pinterest {
+	fill: #e7001e;
 }
 
 .main-footer {

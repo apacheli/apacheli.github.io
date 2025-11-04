@@ -16,7 +16,7 @@ const Article = (page: BluejayPage) => {
 			<a href={page.url} class="blog-anchor" title={title}>
 				<div class="blog-entry">
 					<div class="blog-image-container">
-						<img src={image ?? "/assets/images/blog/placeholder.avif"} class="blog-image" alt={title} />
+						<img src={image ?? "/assets/images/placeholder.avif"} class="blog-image" alt={title} />
 						{page.data.index === 0 ? <span class="blog-new">NEW!</span> : undefined}
 					</div>
 					<div class="blog-metadata">

@@ -1,6 +1,6 @@
 import type { BluejayContext } from "bluejay";
 import { Article, CommonBody, CommonHead, dtf } from "./common.tsx";
-import { FacebookIcon, LinkedInIcon, TwitterIcon } from "./icons.tsx";
+import { FacebookIcon, LinkedInIcon, PinterestIcon, TwitterIcon } from "./icons.tsx";
 
 const _url = (ctx: BluejayContext) => encodeURIComponent(Bun.env.BLUEJAY_URL + ctx.page.url);
 
@@ -22,6 +22,12 @@ const shareLinks = [
 		title: "Share on LinkedIn",
 		createHref: (ctx: BluejayContext) => `https://www.linkedin.com/sharing/share-offsite?url=${_url(ctx)}`,
 		icon: LinkedInIcon,
+	},
+	{
+		id: "pinterest",
+		title: "Pin on Pinterest",
+		createHref: (ctx: BluejayContext) => `https://pinterest.com/pin/create/button/?url=${_url(ctx)}`,
+		icon: PinterestIcon,
 	},
 ];
 
@@ -58,7 +64,7 @@ const BlogTemplate = (ctx: BluejayContext) => {
 					<h1 class="post-title">{ctx.page.metadata.title}</h1>
 					<span class="blog-tag">{ctx.page.metadata.tag}</span>
 					<time class="blog-date">{dtf.format(new Date(ctx.page.metadata.date))}</time>
-					<img class="post-image" src={ctx.page.metadata.image ?? "/assets/images/blog/placeholder.avif"} alt={ctx.page.metadata.title} />
+					<img class="post-image" src={ctx.page.metadata.image ?? "/assets/images/placeholder.avif"} alt={ctx.page.metadata.title} />
 				</header>
 				<main class="markdown">{ctx.page.element(ctx)}</main>
 				<footer class="post-footer">
