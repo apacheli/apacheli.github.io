@@ -65,7 +65,7 @@
 
     "bail": ["bail@2.0.2", "", {}, "sha512-0xO6mYd7JB2YesxDKplafRpsiOzPt9V02ddPCLbY1xYGPOX24NTyN50qnUxgCPcSoYMhKpAuBTjQoRZCAkUDRw=="],
 
-    "bluejay": ["bluejay@github:apacheli/bluejay#79059df", { "dependencies": { "@mdx-js/mdx": "^3.1.1", "highlight.js": "^11.11.1", "preact-render-to-string": "^6.6.1", "remark-frontmatter": "^5.0.0", "remark-gemoji": "^8.0.0", "remark-gfm": "^4.0.1", "remark-mdx-frontmatter": "^5.2.0" }, "bin": "lib/cli.js" }, "apacheli-bluejay-79059df"],
+    "bluejay": ["bluejay@github:apacheli/bluejay#107b112", { "dependencies": { "@mdx-js/mdx": "^3.1.1", "highlight.js": "^11.11.1", "preact-render-to-string": "^6.6.1", "remark-frontmatter": "^5.0.0", "remark-gemoji": "^8.0.0", "remark-gfm": "^4.0.1", "remark-mdx-frontmatter": "^5.2.0" }, "bin": "lib/cli.js" }, "apacheli-bluejay-107b112"],
 
     "bun-types": ["bun-types@1.3.1", "", { "dependencies": { "@types/node": "*" }, "peerDependencies": { "@types/react": "^19" } }, "sha512-NMrcy7smratanWJ2mMXdpatalovtxVggkj11bScuWuiOoXTiKIu2eVS1/7qbyI/4yHedtsn175n4Sm4JcdHLXw=="],
 

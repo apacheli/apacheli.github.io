@@ -10,8 +10,8 @@
 		"check": "bunx @biomejs/biome check",
 		"format": "bunx @biomejs/biome format",
 		"lint": "bunx @biomejs/biome lint",
-		"build": "bluejay build src/main.ts",
-		"serve": "bluejay serve src/main.ts"
+		"build": "bunx bluejay build src/main.ts",
+		"serve": "bunx bluejay serve src/main.ts"
 	},
 	"dependencies": {
 		"bluejay": "https://github.com/apacheli/bluejay"
