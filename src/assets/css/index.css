@@ -340,6 +340,28 @@ ul {
 	background-color: var(--color-header);
 }
 
+.post-header {
+	margin-bottom: 4rem;
+}
+
+.post-title {
+	font-size: clamp(2rem, 4vw, 3rem);
+	overflow-wrap: break-word;
+	border-bottom: 0.0625rem var(--color-dark-2) solid;
+}
+
+.post-image {
+	display: block;
+	max-width: 100%;
+	margin: auto;
+	margin-top: 4rem;
+	user-select: none;
+}
+
+.post-footer {
+	margin-top: 4rem;
+}
+
 @media (max-width: 80rem) {
 	.main-header {
 		justify-content: space-between;

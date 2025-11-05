@@ -1,25 +1,3 @@
-.post-header {
-	margin-bottom: 4rem;
-}
-
-.post-title {
-	font-size: clamp(2rem, 4vw, 3rem);
-	overflow-wrap: break-word;
-	border-bottom: 0.0625rem var(--color-dark-2) solid;
-}
-
-.post-image {
-	display: block;
-	max-width: 100%;
-	margin: auto;
-	margin-top: 4rem;
-	user-select: none;
-}
-
-.post-footer {
-	margin-top: 4rem;
-}
-
 /* .markdown {} */
 
 .markdown h1,
@@ -63,6 +41,29 @@
 	background-color: var(--color-dark-1);
 }
 
+.markdown blockquote {
+	--color-a: var(--color-font-secondary);
+	--color-b: var(--color-dark-1);
+	padding: 0 1rem;
+	margin: 1rem 0;
+	background-color: var(--color-b);
+	border-left: var(--color-a) solid 0.25rem;
+}
+
+.markdown table {
+	border-collapse: collapse;
+}
+
+.markdown th,
+.markdown td {
+	padding: 0 0.25rem;
+	border: 0.0625rem solid var(--color-dark-2);
+}
+
+.markdown tr:nth-child(even) {
+	background-color: var(--color-dark-1);
+}
+
 .codeblock {
 	margin: 1rem 0;
 	font-family: "Fira Code", monospace;
@@ -92,15 +93,6 @@
 	flex-grow: 1;
 	padding: 1rem 0;
 	margin: 0;
-}
-
-blockquote {
-	--color-a: var(--color-font-secondary);
-	--color-b: var(--color-dark-1);
-	padding: 0 1rem;
-	margin: 1rem 0;
-	background-color: var(--color-b);
-	border-left: var(--color-a) solid 0.25rem;
 }
 
 .alert {
@@ -144,18 +136,4 @@ blockquote {
 .alert.alert-caution {
 	--color-a: #e65147;
 	--color-b: #e6514720;
-}
-
-table {
-	border-collapse: collapse;
-}
-
-th,
-td {
-	padding: 0 0.25rem;
-	border: 0.0625rem solid var(--color-dark-2);
-}
-
-tr:nth-child(even) {
-	background-color: var(--color-dark-1);
 }
