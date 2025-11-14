@@ -61,6 +61,10 @@ h3 {
 	margin: 1rem 0;
 }
 
+h3 {
+	font-size: 1.25rem;
+}
+
 svg {
 	width: 2rem;
 	height: 2rem;
@@ -73,7 +77,11 @@ ul {
 	list-style: none;
 }
 
-.flex-list {
+img {
+	display: block;
+}
+
+.flex {
 	display: flex;
 }
 
@@ -171,12 +179,16 @@ ul {
 	--hover-color: #5865f2;
 }
 
-.nav-button.rss {
-	--hover-color: #ffa500;
+.nav-button.github {
+	--hover-color: #5fed83;
 }
 
-.nav-button.email {
-	--hover-color: var(--color-secondary);
+.nav-button.twitter {
+	--hover-color: #1d9bf0;
+}
+
+.nav-button.rss {
+	--hover-color: #ffa500;
 }
 
 .hover-tooltip {
@@ -214,26 +226,25 @@ ul {
 }
 
 .main {
-	width: min(32% + 32rem, 100%);
+	width: min(36% + 36rem, 100%);
 	min-height: calc(100vh - 24rem);
 	padding: 0 1rem;
 	margin: 4rem auto;
 }
 
 .blog-anchor {
+	color: var(--color-font);
 	text-decoration: none;
 }
 
 .blog-entry {
-	display: flex;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
 	margin: 1rem 0;
-	color: var(--color-font);
 }
 
 .blog-image-container {
 	position: relative;
-	flex: 2;
-	min-height: 9rem;
 	aspect-ratio: 16 / 9;
 }
 
@@ -255,7 +266,6 @@ ul {
 
 .blog-metadata {
 	position: relative;
-	flex: 4;
 	padding: 1rem;
 }
 
@@ -277,7 +287,10 @@ ul {
 }
 
 .blog-title {
+	display: block;
 	margin: 0;
+	font-size: 1.25rem;
+	font-weight: bold;
 }
 
 .blog-description {
@@ -299,35 +312,9 @@ ul {
 }
 
 .icon-link {
-	display: flex;
-	font-weight: bold;
-	color: var(--color-font);
-	text-decoration: none;
-}
-
-.icon-link svg {
 	display: block;
-}
-
-.icon-link.share-url {
-	color: var(--color-font-secondary);
-	user-select: all;
-}
-
-.icon-link.facebook {
-	fill: #3c5898;
-}
-
-.icon-link.twitter {
-	fill: #1da1f2;
-}
-
-.icon-link.linked-in {
-	fill: #0077b5;
-}
-
-.icon-link.pinterest {
-	fill: #e7001e;
+	width: 2rem;
+	height: 2rem;
 }
 
 .main-footer {
@@ -362,7 +349,76 @@ ul {
 	margin-top: 4rem;
 }
 
-@media (max-width: 80rem) {
+.home {
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	gap: 1rem;
+}
+
+@keyframes rotation {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.home-panel {
+	position: sticky;
+	top: 8rem;
+	height: fit-content;
+	text-align: center;
+}
+
+.home-portrait {
+	width: 100%;
+	border: 0.0625rem var(--color-dark-3) solid;
+	border-radius: 100%;
+}
+
+.home-section {
+	padding-bottom: 2rem;
+	border-bottom: 0.0625rem var(--color-dark-2) solid;
+}
+
+.home-projects {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.home-project {
+	padding: 1rem;
+	border: 0.0625rem var(--color-dark-3) solid;
+	border-radius: 1rem;
+}
+
+.home-project:hover {
+	border-color: var(--color-font);
+}
+
+.home-icons {
+	display: grid;
+	grid-template-columns: repeat(4, auto);
+	row-gap: 1rem;
+	justify-content: space-evenly;
+}
+
+.home-icons img {
+	display: block;
+	width: clamp(2rem, 10vw, 4rem);
+	height: clamp(2rem, 10vw, 4rem);
+	transition: transform var(--duration);
+}
+
+.home-icons img:hover {
+	transform: scale(125%);
+}
+
+@media (max-width: 72rem) {
 	.main-header {
 		justify-content: space-between;
 	}
@@ -426,9 +482,23 @@ ul {
 		align-items: center;
 		padding: 1rem 0;
 	}
+
+	.home {
+		grid-template-columns: 1fr;
+	}
+
+	.home-panel {
+		position: unset;
+		top: unset;
+		margin: auto;
+	}
+
+	.home-portrait {
+		max-width: 12rem;
+	}
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 36rem) {
 	.main-header-nav {
 		width: 100%;
 	}
@@ -454,12 +524,57 @@ ul {
 	}
 }
 
-@keyframes rotation {
-	from {
-		transform: rotate(0deg);
+@media (max-width: 18rem) {
+	.main-header-title span {
+		display: none;
 	}
 
-	to {
-		transform: rotate(360deg);
+	.column {
+		flex-direction: column;
 	}
+}
+
+@font-face {
+	font-family: "Cantarell";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("/assets/fonts/cantarell/B50NF7ZDq37KMUvlO015jKJr.woff2") format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+	font-family: "Cantarell";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url("/assets/fonts/cantarell/B50IF7ZDq37KMUvlO01xN4d-E46f.woff2") format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+	font-family: "Cantarell";
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url("/assets/fonts/cantarell/B50LF7ZDq37KMUvlO015iZJpNKs.woff2") format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+	font-family: "Cantarell";
+	font-style: italic;
+	font-weight: 700;
+	font-display: swap;
+	src: url("/assets/fonts/cantarell/B50WF7ZDq37KMUvlO015iZrSEb6dDYs.woff2") format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+	font-family: "Fira Code";
+	font-style: normal;
+	font-weight: 300 700;
+	font-display: swap;
+	src: url("/assets/fonts/fira_code/uU9NCBsR6Z2vfE9aq3bh3dSDqFeedTMX.woff2") format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }

@@ -1,33 +1,28 @@
 import type { BluejayContext } from "bluejay";
 import { Article, CommonBody, CommonHead, dtf } from "./common.tsx";
-import { FacebookIcon, LinkedInIcon, PinterestIcon, TwitterIcon } from "./icons.tsx";
 
 const _url = (ctx: BluejayContext) => encodeURIComponent(Bun.env.BLUEJAY_URL + ctx.page.url);
 
 const shareLinks = [
 	{
-		id: "facebook",
 		title: "Post on Facebook",
-		createHref: (ctx: BluejayContext) => `https://www.facebook.com/sharer.php?u=${_url(ctx)}`,
-		icon: FacebookIcon,
+		href: (ctx: BluejayContext) => `https://www.facebook.com/sharer.php?u=${_url(ctx)}`,
+		icon: "/assets/icons/Facebook.svg",
 	},
 	{
-		id: "twitter",
 		title: "Tweet on Twitter",
-		createHref: (ctx: BluejayContext) => `https://twitter.com/intent/tweet?url=${_url(ctx)}&text=${encodeURIComponent(ctx.page.metadata.title)}`,
-		icon: TwitterIcon,
+		href: (ctx: BluejayContext) => `https://twitter.com/intent/tweet?url=${_url(ctx)}`,
+		icon: "/assets/icons/Twitter.svg",
 	},
 	{
-		id: "linked-in",
 		title: "Share on LinkedIn",
-		createHref: (ctx: BluejayContext) => `https://www.linkedin.com/sharing/share-offsite?url=${_url(ctx)}`,
-		icon: LinkedInIcon,
+		href: (ctx: BluejayContext) => `https://www.linkedin.com/sharing/share-offsite?url=${_url(ctx)}`,
+		icon: "/assets/icons/LinkedIn.svg",
 	},
 	{
-		id: "pinterest",
 		title: "Pin on Pinterest",
-		createHref: (ctx: BluejayContext) => `https://pinterest.com/pin/create/button/?url=${_url(ctx)}`,
-		icon: PinterestIcon,
+		href: (ctx: BluejayContext) => `https://pinterest.com/pin/create/button/?url=${_url(ctx)}`,
+		icon: "/assets/icons/Pinterest.svg",
 	},
 ];
 
@@ -41,7 +36,6 @@ const PageTemplate = (ctx: BluejayContext) => (
 const MarkdownTemplate = (ctx: BluejayContext) => (
 	<html lang="en">
 		<CommonHead ctx={ctx}>
-			<link rel="stylesheet" href="/assets/css/github.css" />
 			<link rel="stylesheet" href="/assets/css/markdown.css" />
 		</CommonHead>
 		<CommonBody ctx={ctx}>
@@ -57,7 +51,6 @@ const BlogTemplate = (ctx: BluejayContext) => {
 	return (
 		<html lang="en">
 			<CommonHead ctx={ctx}>
-				<link rel="stylesheet" href="/assets/css/github.css" />
 				<link rel="stylesheet" href="/assets/css/markdown.css" />
 			</CommonHead>
 			<CommonBody ctx={ctx}>
@@ -75,8 +68,8 @@ const BlogTemplate = (ctx: BluejayContext) => {
 					<span class="share-url">{Bun.env.BLUEJAY_URL + ctx.page.url}</span>
 					<div class="icon-links">
 						{shareLinks.map((b) => (
-							<a href={b.createHref(ctx)} class={`icon-link ${b.id}`} title={b.title}>
-								<b.icon />
+							<a href={b.href(ctx)} title={b.title}>
+								<img src={b.icon} alt={b.title} class="icon-link" />
 							</a>
 						))}
 					</div>
@@ -94,7 +87,7 @@ const BlogTemplate = (ctx: BluejayContext) => {
 						data-theme="preferred_color_scheme"
 						data-lang="en"
 						crossorigin="anonymous"
-						async={true}
+						async
 					/>
 					<h2>Continue Reading</h2>
 					{next && <Article {...next} />}

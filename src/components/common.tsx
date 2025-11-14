@@ -24,7 +24,7 @@ const Article = (page: BluejayPage) => {
 						<time class="blog-date" datetime={date}>
 							{dtf.format(new Date(date))}
 						</time>
-						<h2 class="blog-title">{title}</h2>
+						<span class="blog-title">{title}</span>
 						<p class="blog-description">{description}</p>
 					</div>
 				</div>
@@ -38,7 +38,6 @@ const CommonHead = ({ ctx, children }: any) => (
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" href="/favicon.png" />
-		<link rel="stylesheet" href="/assets/css/font.css" />
 		<link rel="stylesheet" href="/assets/css/index.css" />
 		<title>{ctx.page.metadata.title ?? "No Title"} - apacheli</title>
 
@@ -58,6 +57,7 @@ const CommonHead = ({ ctx, children }: any) => (
 const CommonBody = ({ children }: any) => (
 	<body>
 		<Header />
+		<div class="main-header-banner" />
 		<div class="main">{children}</div>
 		<Footer />
 	</body>

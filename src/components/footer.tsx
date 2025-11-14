@@ -1,8 +1,8 @@
 import { CodeIcon, EmailIcon, RssIcon } from "./icons.tsx";
 
 const list = [
-	{ class: "nav-button rss", href: "/feed.xml", icon: RssIcon, title: "RSS Feed" },
-	{ class: "nav-button email", href: "mailto:contact@apache.li", icon: EmailIcon, title: "Contact Me" },
+	{ href: "/feed.xml", icon: RssIcon, title: "RSS Feed", class: "nav-button rss" },
+	{ href: "mailto:contact@apache.li", icon: EmailIcon, title: "Contact Me" },
 	{ href: "https://github.com/apacheli/apacheli.github.io", icon: CodeIcon, title: "Source" },
 ];
 
@@ -10,7 +10,7 @@ const date = new Date().toISOString();
 
 export default () => (
 	<footer class="main-footer">
-		<div class="flex-list">
+		<div class="flex column">
 			{list.map((item) => (
 				<a class={item.class ?? "nav-button"} href={item.href}>
 					<item.icon />
