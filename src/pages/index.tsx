@@ -68,13 +68,6 @@ const projects = [
 
 const contributions = [
 	{
-		title: "Amtrak Planner",
-		description: "Track trains' destinations and their estimated times of arrival.",
-		url: "https://github.com/SinisterRectus/amtrak-planner",
-		date: "2025",
-		language: "Lua",
-	},
-	{
 		title: "Wave",
 		description: "A Rainmeter-like widget platform powered by Tauri.",
 		url: "https://github.com/apacheli/wave",
