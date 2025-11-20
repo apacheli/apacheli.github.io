@@ -8,10 +8,12 @@ type: "markdown"
 
 For business inquiries, contact me at contact@apache.li. I don't respond on other platforms.
 
+For everything else, you can join [my Discord](/discord).
+
 ## Support Me
 
 [Sponsor me on GitHub :heart:.](https://github.com/sponsors/apacheli)
 
 ## Security
 
-For vulnerabilities, contact me at security@apache.li.
+For security vulnerabilities, contact me at security@apache.li.

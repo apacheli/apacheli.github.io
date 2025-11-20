@@ -137,6 +137,11 @@
 	--color-b: #e6514720;
 }
 
+.markdown ul {
+	margin: 1rem;
+	list-style: inside;
+}
+
 /* https://github.com/highlightjs/highlight.js/blob/main/src/styles/github.css */
 /* https://github.com/highlightjs/highlight.js/blob/main/src/styles/github-dark.css */
 

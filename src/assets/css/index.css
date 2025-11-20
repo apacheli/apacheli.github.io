@@ -10,13 +10,14 @@ html {
 }
 
 :root {
+	--color-primary: #255c79;
+	--color-secondary: #e8433b;
 	--color-background: #ffffff;
-	--color-font-secondary: hsl(215, 6%, 40%);
+	--color-font-secondary: #60656c;
 	--color-font: #10181a;
 	--color-header-font: #ffffff;
+	--color-header-font-hover: #43b2b2;
 	--color-header: #080c0df0;
-	--color-primary: #43afaf;
-	--color-secondary: #ec5146;
 	--color-dark-1: #00000010;
 	--color-dark-2: #00000020;
 	--color-dark-3: #00000040;
@@ -26,8 +27,9 @@ html {
 
 @media (prefers-color-scheme: dark) {
 	:root {
+		--color-primary: #43b2b2;
 		--color-background: #10181a;
-		--color-font-secondary: hsl(215, 6%, 60%);
+		--color-font-secondary: #93989f;
 		--color-font: #ffffff;
 		--color-dark-1: #ffffff10;
 		--color-dark-2: #ffffff20;
@@ -118,7 +120,7 @@ img {
 }
 
 .nav-button {
-	--hover-color: var(--color-primary);
+	--hover-color: var(--color-header-font-hover);
 	position: relative;
 	display: flex;
 	gap: 1rem;

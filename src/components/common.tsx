@@ -42,13 +42,17 @@ const CommonHead = ({ ctx, children }: any) => (
 		<title>{ctx.page.metadata.title ?? "No Title"} - apacheli</title>
 
 		<meta name="description" content={ctx.page.metadata.description} />
-		<meta name="theme-color" content="#43afaf" />
+		<meta name="theme-color" content="#43b2b2" />
+
 		<meta property="og:description" content={ctx.page.metadata.description} />
 		<meta property="og:image" content={`${Bun.env.BLUEJAY_URL}${ctx.page.metadata.image ?? "/assets/images/portrait.png"}`} />
 		<meta property="og:title" content={ctx.page.metadata.title} />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={Bun.env.BLUEJAY_URL} />
 		<meta name="twitter:card" content="summary_large_image" />
+
+		<link rel="preload" as="font" href="/assets/fonts/cantarell/B50NF7ZDq37KMUvlO015jKJr.woff2" type="font/woff2" crossorigin="anonymous" fetchpriority="high" />
+		<link rel="preload" as="image" href="/assets/images/blossom.avif" fetchpriority="high" />
 
 		{children}
 	</head>

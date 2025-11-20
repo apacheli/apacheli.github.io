@@ -1,5 +1,5 @@
 import type { BluejayContext } from "bluejay";
-import { Article } from "../components/common";
+import { Article } from "../components/common.tsx";
 
 export const metadata = {
 	id: "index",
@@ -68,18 +68,11 @@ const projects = [
 
 const contributions = [
 	{
-		title: "Amtrak Planner",
-		description: "Track trains' destinations and their estimated times of arrival.",
-		url: "https://github.com/SinisterRectus/amtrak-planner",
-		date: "2025",
-		language: "Lua",
-	},
-	{
 		title: "Wave",
 		description: "A Rainmeter-like widget platform powered by Tauri.",
 		url: "https://github.com/apacheli/wave",
 		date: "2022",
-		language: "TypeScript",
+		language: "Rust",
 	},
 	{
 		title: "Discord Developer Documentation",
@@ -118,8 +111,8 @@ const technology = [
 	<img src="/assets/icons/Lua.svg" alt="Lua" />,
 	<img src="/assets/icons/React.svg" alt="React" />,
 	<img src="/assets/icons/Bun.svg" alt="Bun" />,
-	<img src="/assets/icons/TailwindCSS.svg" alt="TailwindCSS" />,
-	<img src="/assets/icons/VSCodium.svg" alt="VSCodium" />,
+	<img src="/assets/icons/VSCode.svg" alt="VSCode" />,
+	<img src="/assets/icons/Git.svg" alt="Git" />,
 	<img src="/assets/icons/PostgreSQL.svg" alt="PostgreSQL" />,
 	<img src="/assets/icons/Redis.svg" alt="Redis" />,
 	<img src="/assets/icons/Ubuntu.svg" alt="Ubuntu" />,
@@ -133,7 +126,7 @@ export default (context: BluejayContext) => (
 			<img src="/assets/images/portrait.png" alt="Portrait" class="home-portrait" />
 			<p>Hello, I'm apacheli.</p>
 		</div>
-		<div>
+		<main>
 			<h1 class="post-title">apacheli</h1>
 			<p>Full-Stack Web Developer & Graphic Designer</p>
 			<section class="home-section">
@@ -155,6 +148,6 @@ export default (context: BluejayContext) => (
 				<p>See what's new.</p>
 				<div>{context.app.data.blogs.slice(0, 2).map(Article)}</div>
 			</section>
-		</div>
+		</main>
 	</div>
 );
