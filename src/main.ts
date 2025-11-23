@@ -30,7 +30,12 @@ export default {
 		},
 	},
 	onLoad: (app) => {
-		app.data.blogs = app.pages.filter((p) => p.metadata.type === "blog").sort((a, b) => Date.parse(b.metadata.date) - Date.parse(a.metadata.date) || a.url.localeCompare(b.url));
+		for (let i = 0, j = app.pages.length; i < j; i++) {
+			const page = app.pages[i];
+			page.data.date = new Date(page.metadata.date);
+		}
+
+		app.data.blogs = app.pages.filter((p) => p.metadata.type === "blog").sort((a, b) => b.data.date.getTime() - a.data.date.getTime() || a.url.localeCompare(b.url));
 
 		for (let i = 0, j = app.data.blogs.length; i < j; i++) {
 			app.data.blogs[i].data.index = i;

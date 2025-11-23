@@ -47,12 +47,12 @@ const MarkdownTemplate = (ctx: BluejayContext) => (
 const BlogTemplate = (ctx: BluejayContext) => {
 	const next = ctx.app.data.blogs[ctx.page.data.index - 1];
 	const previous = ctx.app.data.blogs[ctx.page.data.index + 1];
-	const { title, image, date, tag } = ctx.page.metadata;
-	const d = new Date(date);
+	const { title, image, tag } = ctx.page.metadata;
+	const date = ctx.page.data.date.toISOString();
 	return (
 		<html lang="en">
 			<CommonHead ctx={ctx}>
-				<meta property="article:published_time" content={d.toUTCString()} />
+				<meta property="article:published_time" content={date} />
 				<link rel="stylesheet" href="/assets/css/markdown.css" />
 			</CommonHead>
 			<CommonBody ctx={ctx}>
@@ -60,7 +60,7 @@ const BlogTemplate = (ctx: BluejayContext) => {
 					<h1 class="post-title">{title}</h1>
 					<span class="blog-tag">{tag}</span>
 					<time class="blog-date" datetime={date}>
-						{dtf.format(d)}
+						{dtf.format(ctx.page.data.date)}
 					</time>
 					<img class="post-image" src={image ?? "/assets/images/placeholder.avif"} alt={title} />
 				</header>

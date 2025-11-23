@@ -10,7 +10,8 @@ const dtf = new Intl.DateTimeFormat("en-US", {
 });
 
 const Article = (page: BluejayPage) => {
-	const { title, description, image, date, tag } = page.metadata;
+	const { title, description, image, tag } = page.metadata;
+	const date = page.data.date.toISOString();
 	return (
 		<article>
 			<a href={page.url} class="blog-anchor" title={title}>
@@ -22,7 +23,7 @@ const Article = (page: BluejayPage) => {
 					<div class="blog-metadata">
 						<span class="blog-tag">{tag}</span>
 						<time class="blog-date" datetime={date}>
-							{dtf.format(new Date(date))}
+							{dtf.format(page.data.date)}
 						</time>
 						<span class="blog-title">{title}</span>
 						<p class="blog-description">{description}</p>
