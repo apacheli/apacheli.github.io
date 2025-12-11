@@ -9,8 +9,15 @@ export const metadata = {
 
 const projects = [
 	{
+		title: "SoConns",
+		description: "An easy to list your social connections with Bluejay.",
+		url: "https://github.com/apacheli/soconns",
+		date: "2025",
+		language: "TypeScript",
+	},
+	{
 		title: "PlusCraft",
-		description: "A simple Fabric mod for adding vanilla-like features to Minecraft. ",
+		description: "A simple Fabric mod for adding vanilla-like features to Minecraft.",
 		url: "https://github.com/apacheli/pluscraft",
 		date: "2025",
 		language: "Java",

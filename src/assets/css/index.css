@@ -13,7 +13,7 @@ html {
 	--color-primary: #255c79;
 	--color-secondary: #e8433b;
 	--color-background: #ffffff;
-	--color-font-secondary: #60656c;
+	--color-font-secondary: #484c51;
 	--color-font: #10181a;
 	--color-header-font: #ffffff;
 	--color-header-font-hover: #43b2b2;
@@ -29,7 +29,7 @@ html {
 	:root {
 		--color-primary: #43b2b2;
 		--color-background: #10181a;
-		--color-font-secondary: #93989f;
+		--color-font-secondary: #aeb2b7;
 		--color-font: #ffffff;
 		--color-dark-1: #ffffff10;
 		--color-dark-2: #ffffff20;
@@ -368,8 +368,11 @@ img {
 	position: sticky;
 	top: 8rem;
 	flex: 1 1 25%;
+	width: fit-content;
 	min-width: 0;
 	height: fit-content;
+	margin: 0 auto;
+	text-align: center;
 }
 
 .home main {
