@@ -1,3 +1,3 @@
-My personal webiste.
+My personal website.
 
 https://apache.li/
