@@ -91,7 +91,7 @@ const contributions = [
 	{
 		title: "Eris",
 		description: "A popular Node.js library with 1.5k+ stars on GitHub.",
-		url: "https://github.com/discord/discord-api-docs",
+		url: "https://github.com/abalabahaha/eris",
 		date: "2019",
 		language: "JavaScript",
 	},
