@@ -139,7 +139,7 @@
 
 .markdown ul {
 	margin: 1rem;
-	list-style: inside;
+	list-style: unset;
 }
 
 /* https://github.com/highlightjs/highlight.js/blob/main/src/styles/github.css */
