@@ -7,7 +7,7 @@ date: "2025-12-25"
 tag: "Career"
 ---
 
-I made it an effort this year to adopt more free and open-source software because I want more control over what I use, and I like privacy.
+I made it an effort this year to adopt more free and open-source software because I like privacy and control over what I use.
 Hopefully, this post will help you if you're also looking to do that.
 
 ## Using a Password Manager
@@ -19,25 +19,26 @@ To be fair, I didn't care too much either until someone I knew personally was ha
 Before a password manager, I used an online password generator to generate my passwords and then stored them in an encrypted `.7z` file on an external drive.
 This approach is already 99% more secure than most people, but it's really inconvenient to manage because I have to extract it every time I need it.
 A smart hacker could also find an unextracted version of the archive because 7-Zip temporarily stores them to disk.
-We're going to need something more reliable and secure than that.
 
 That's when I settled with **KeePassXC** for managing my passwords.
 It solves pretty much every issue listed above, on top of supporting more advanced features like automatic password filling and passkeys for passwordless logins.
-I'm also currently backing up my `.kdbx` database file to an offline computer running Nextcloud and to Dropbox in case I lose access to it.
+KeePassXC also supports TOTP for two-factor authentication, which replaces Authy or Microsoft Authenticator.
+I'm currently backing up my passphrase-protected `.kdbx` database file to an offline computer running Nextcloud and to Dropbox in case I lose access to it.
+If my database were to leak, KeePassXC uses the Argon2d algorithm, rendering pretty much all brute-force attacks useless.
 
-If you don't like KeyPassXC for whatever reason, Bitwarden and Vaultwarden are pretty decent alternatives.
-There's also the original KeePass, but I prefer the more integrated feel of KeePassXC.
+If you don't like KeyPassXC, Bitwarden and Vaultwarden are pretty decent alternatives.
+There's also the original KeePass, but I personally prefer the more integrated feel of KeePassXC.
 
 ## Managing Emails with Thunderbird
 
 I use **Thunderbird** to manage my emails because it makes them all easily accessible in one place, I can read my messages offline, and it has much better privacy features.
-It's also just faster and more lightweight than Gmail's UI.
+It's also just much faster and more lightweight than Gmail's UI.
 Thunderbird also supports RSS feeds, which I really like, even though it's super old school.
 Native system notifications are also pretty nice even though modern browsers already support that.
 There's also great user-created extensions out there for Thunderbird such as Send Later and Web Translate.
 
-Ironically, I still rely on Google's servers for my emails, which kind of defeats the whole purpose of Thunderbird.
-I might adopt ProtonMail and DuckDuckGo at some point to better maximize privacy, but Google is just too reliable for me.
+Ironically, I still rely on Google's servers for my emails.
+I may adopt ProtonMail and DuckDuckGo at some point to better maximize privacy, but Google is just too reliable for me.
 That could be a new goal for 2026 now that I'm thinking about it.
 
 ## Other Cool Stuff
