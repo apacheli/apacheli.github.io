@@ -7,25 +7,55 @@ date: "2025-12-25"
 tag: "Career"
 ---
 
-## Managing Passwords with KeyPassXC
+I made it an effort this year to adopt more free and open-source software because I want more control over what I use, and I like privacy and not spending money.
+Hopefully, this post will help you if you're also looking to do that.
 
-- used the same passwords for 10+ years (somehow didnt get hacked)
-- used an encrypted 7zip with a txt file before keypassxc
-- it's lightweight
-- might set up vaultwarden in the future
+## Using a Password Manager
+
+If the headlines are true, roughly 70% of *Americans* use the same password for more than one account.
+Of course this is just a bias sample, but it does put into perspective how little people value security.
+To be fair, I didn't care too much either until someone I knew personally was hacked.
+
+Before a password manager, I used an online password generator to generate my passwords and then stored them in an encrypted `.7z` file on an external drive.
+This approach is already 99% more secure than most people, but it's really inconvenient to manage because I have to extract it every time I need it.
+A  hacker could also find an unextracted version of the archive because 7-Zip temporarily stores them to disk.
+We're going to need something more reliable and secure than that.
+
+That's when I settled with **KeePassXC** for managing my passwords.
+It solves pretty much every issue listed above, on top of supporting more advanced features like automatic password filling and passkeys for passwordless logins.
+I'm also currently backing up my `.kdbx` database file to an offline computer running Nextcloud and to Dropbox in case I lose access to it.
+If you don't like KeyPassXC for whatever reason, Bitwarden and Vaultwarden are pretty decent alternatives.
+There's also the original KeePass, but I prefer the more integrated feel of KeePassXC.
 
 ## Managing Emails with Thunderbird
 
-- it's ugly but much more lightweight and convenient than gmail's UI
-- might adopt proton mail in the future
+I use **Thunderbird** to manage my emails because it makes them all easily accessible in one place, I can read my messages offline, and it has much better privacy features.
+It's also just faster and more lightweight than Gmail's UI. Native system notifications are also pretty nice even though modern browsers already support that.
+There's also great user-created extensions out there for Thunderbird such as Send Later and Web Translate.
 
-## Other Useful but Niche Tools
+Ironically, I still rely on Google's servers for my emails, which kind of defeats the whole purpose of Thunderbird.
+I might adopt ProtonMail and DuckDuckGo at some point to better maximize privacy, but Google is just too reliable for me.
+That could be a new goal for 2026 now that I'm thinking about it.
 
-mullvadvpn, smoothcsv, blockbench
+## Other Cool Stuff
 
-## Plans for the Future
+### Mullvad VPN
 
-- build a dedicated server room that "powers" the whole house
-- build a home theater (would be powered by jellyfin)
-- set up pihole
-- might build a chat app for the funsies
+https://mullvad.net/en
+
+My preferred choice for a VPN because it actually values privacy. No email is required to sign up; a UID is generated for you instead.
+Unfortunately, it's not free, and it's a bit pricier than other VPN options.
+They also removed port forwarding in 2023 which makes me a little sad. It's still pretty good for torrenting, though.
+
+### SmoothCSV
+
+https://smoothcsv.com/
+
+A free and open-source CSV editor that's pretty good if you just need something simple and lightweight.
+There's other alternatives out there, but I found them to be too visually destaining.
+
+## Future Plans
+
+My home server is mostly for tinkering around, but I want to make it more integrated into my home.
+I'm looking to set up **Home Assistant** around my home because I do like not SaaS and cloud services.
+I also want to design a home theater that would be powered by Jellyfin. Unfortunately, there's no good open-source TV clients out there.
