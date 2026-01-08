@@ -7,38 +7,37 @@ date: "2025-12-25"
 tag: "Career"
 ---
 
-I made it an effort this year to adopt more free and open-source software because I like privacy and control over what I use.
+This year, I made an effort to adopt more free and open-source software because I like privacy and control over what I use.
 Hopefully, this post will help you if you're also looking to do that.
 
 ## Using a Password Manager
 
 If the headlines are true, roughly 70% of *Americans* use the same password for more than one account.
-Of course this is just a bias sample, but it does put into perspective how little people value security.
+Of course that's just a biased sample, but it does put into perspective how little people value security.
 To be fair, I didn't care too much either until someone I knew personally was hacked.
 
 Before a password manager, I used an online password generator to generate my passwords and then stored them in an encrypted `.7z` file on an external drive.
-This approach is already 99% more secure than most people, but it's really inconvenient to manage because I have to extract it every time I need it.
-A smart hacker could also find an unextracted version of the archive because 7-Zip temporarily stores them to disk.
+This approach is already 99% more secure than the average Joe, but it's really inconvenient to manage because I have to extract it every time I need it.
+Additionally, a smart hacker could find an unextracted version of the archive because 7-Zip temporarily stores them to disk.
 
-That's when I settled with **KeePassXC** for managing my passwords.
+That's when I settled on **KeePassXC** for managing my passwords.
 It solves pretty much every issue listed above, on top of supporting more advanced features like automatic password filling and passkeys for passwordless logins.
-KeePassXC also supports TOTP for two-factor authentication, which replaces Authy or Microsoft Authenticator.
-I'm also backing up my passphrase-protected `.kdbx` database file to an offline computer running Nextcloud and to Dropbox in case I lose access to it.
+It even supports TOTP for two-factor authentication, effectively replacing Microsoft Authenticator and Authy from my app collection.
+I also have backups of my passphrase-protected `.kdbx` database file on an offline computer running Nextcloud and on Dropbox in case I lose access to it.
+That ensures I'll never be locked out of my accounts.
 
-
-If you don't like KeyPassXC, Bitwarden and Vaultwarden are pretty decent alternatives.
-There's also the original KeePass, but I personally prefer the more integrated feel of KeePassXC.
+If you don't like KeePassXC, Bitwarden/Vaultwarden and the original KeePass are pretty decent alternatives.
+I personally prefer the more integrated feel of KeePassXC over the original, though.
 
 ## Managing Emails with Thunderbird
 
 I use **Thunderbird** to manage my emails because it makes them all easily accessible in one place, I can read my messages offline, and it has much better privacy features.
-It's also just much faster and more lightweight than Gmail's UI.
-Thunderbird also supports RSS feeds, which I really like, even though it's super old school.
-Native system notifications are also pretty nice even though modern browsers already support that.
+On top of that, it's just generally much faster and more lightweight than Gmail's UI.
+Thunderbird even supports super old school stuff like RSS feeds, which is pretty awesome for avoiding ads and algorithm slop.
 There's also great user-created extensions out there for Thunderbird such as Send Later and Web Translate.
 
 Ironically, I still rely on Google's servers for my emails.
-I may adopt ProtonMail and DuckDuckGo at some point to better maximize privacy, but Google is just too reliable for me.
+I'm considering adopting ProtonMail and DuckDuckGo at some point to better maximize my privacy, but Google is just too reliable for me at the moment.
 
 ## Other Cool Stuff
 
@@ -46,9 +45,10 @@ I may adopt ProtonMail and DuckDuckGo at some point to better maximize privacy, 
 
 https://mullvad.net/en
 
-My preferred choice for a VPN because it actually values privacy. No email is required to sign up; a UID is generated for you instead.
+My preferred choice for a VPN because it actually values privacy.
+Mullvad uses a UID system instead of emails to sign up to avoid linking personal identifiers to your account.
 Unfortunately, it's not free, and it's a bit pricier than other VPN options.
-They also removed port forwarding in 2023 which makes me a little sad. It's still pretty good for torrenting, though.
+Furthermore, they removed port forwarding in 2023 which makes me a little sad. It's still pretty solid for torrenting, though.
 
 On another note, Mullvad is very based for standing against Chat Control.
 
@@ -57,10 +57,19 @@ On another note, Mullvad is very based for standing against Chat Control.
 https://smoothcsv.com/
 
 A free and open-source CSV editor that's pretty good if you just need something simple and lightweight.
-There's other alternatives out there, but I found them to be too visually destaining.
+There's other alternatives out there, but I found them to be incredibly visually displeasing.
 
 ## Smart Home Future Plans
 
 My home server is mostly for tinkering around, but I want to make it more integrated into my home with **Home Assistant**.
-I also want to design a home theater that would be powered by Jellyfin and Radarr.
-Sadly, there isn't a good working free and open-source TV client out there.
+Another goal I have in mind is to design a home theater powered by Jellyfin and Radarr.
+Sadly, there aren't any good working free and open-source TV clients out there.
+If I find something decent, I'll make sure to post an update here.
+
+## Wrapping It Up
+
+It's nice to have some privacy back again, but there's still more work to be done.
+For example, I still use use Google's ecosystem on a daily basis. That probably won't change realistically,
+but I can choose to be less reliant on them.
+
+Anyway, I hope everything FOSS gets even better in the coming years. Maybe 2026 will be the year of the Linux desktop? Who even knows, man...
