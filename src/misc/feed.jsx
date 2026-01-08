@@ -8,7 +8,7 @@ export default (app) => {
 		<item>
 			<title>{p.metadata.title}</title>
 			<link>{Bun.env.BLUEJAY_URL + p.url}</link>
-			<description>{renderToStaticMarkup(p.element())}</description>
+			<description>{p.metadata.description}</description>
 			<guid>{Bun.env.BLUEJAY_URL + p.url}</guid>
 			<pubDate>{new Date(p.metadata.date).toUTCString()}</pubDate>
 		</item>
