@@ -9,6 +9,13 @@ export const metadata = {
 
 const projects = [
 	{
+		title: "BCSV",
+		description: "It's like CSV but in binary.",
+		url: "https://github.com/apacheli/bcsv",
+		date: "2026",
+		language: "Binary",
+	},
+	{
 		title: "SoConns",
 		description: "An easy to list your social connections with Bluejay.",
 		url: "https://github.com/apacheli/soconns",
