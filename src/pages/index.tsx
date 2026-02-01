@@ -9,6 +9,13 @@ export const metadata = {
 
 const projects = [
 	{
+		title: "passgen.js",
+		description: "JavaScript library for generating passwords using the Web Crypto API. ",
+		url: "https://github.com/apacheli/passgen.js",
+		date: "2026",
+		language: "TypeScript",
+	},
+	{
 		title: "BCSV",
 		description: "It's like CSV but in binary.",
 		url: "https://github.com/apacheli/bcsv",
@@ -21,13 +28,6 @@ const projects = [
 		url: "https://github.com/apacheli/soconns",
 		date: "2025",
 		language: "TypeScript",
-	},
-	{
-		title: "PlusCraft",
-		description: "A simple Fabric mod for adding vanilla-like features to Minecraft.",
-		url: "https://github.com/apacheli/pluscraft",
-		date: "2025",
-		language: "Java",
 	},
 	{
 		title: "Bluejay",

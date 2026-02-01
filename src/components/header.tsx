@@ -1,4 +1,4 @@
-import { DiscordIcon, GitHubIcon, HouseIcon, MenuCloseIcon, MenuOpenIcon, TwitchIcon, TwitterIcon, YouTubeIcon } from "./icons.tsx";
+import { DiscordIcon, GitHubIcon, HouseIcon, MenuCloseIcon, MenuOpenIcon, TwitchIcon, YouTubeIcon } from "./icons.tsx";
 
 const nav = [
 	{ href: "/", name: "HOME", icon: HouseIcon },
@@ -6,7 +6,6 @@ const nav = [
 	{ href: "/blog", name: "BLOG" },
 	{ href: "/contact", name: "CONTACT" },
 	{ href: "/github", name: "@apacheli on GitHub", icon: GitHubIcon, class: "nav-button github" },
-	{ href: "/twitter", name: "@apacheopteryx on Twitter", icon: TwitterIcon, class: "nav-button twitter" },
 	{ href: "/youtube", name: "@apacheli on YouTube", icon: YouTubeIcon, class: "nav-button youtube" },
 	{ href: "/discord", name: "@apacheli on Discord", icon: DiscordIcon, class: "nav-button discord" },
 	{ href: "/twitch", name: "@apachelitv on Twitch", icon: TwitchIcon, class: "nav-button twitch" },
