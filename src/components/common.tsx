@@ -1,6 +1,7 @@
 import type { BluejayPage } from "bluejay";
 import Footer from "./footer.tsx";
 import Header from "./header.tsx";
+import { ClockIcon } from "./icons.tsx";
 
 const dtf = new Intl.DateTimeFormat("en-US", {
 	year: "numeric",
@@ -12,6 +13,7 @@ const dtf = new Intl.DateTimeFormat("en-US", {
 const Article = (page: BluejayPage) => {
 	const { title, description, image, tag } = page.metadata;
 	const date = page.data.date.toISOString();
+	const rt = Math.round(page.__bluejayMetadata__.estimatedWordCount / 200);
 	return (
 		<article>
 			<a href={page.url} class="blog-anchor" title={title}>
@@ -27,6 +29,11 @@ const Article = (page: BluejayPage) => {
 						</time>
 						<span class="blog-title">{title}</span>
 						<p class="blog-description">{description}</p>
+						{rt > 0 ? (
+							<span class="blog-rt">
+								⏱️ {rt} minute{rt > 1 ? "s" : ""}
+							</span>
+						) : undefined}
 					</div>
 				</div>
 			</a>
