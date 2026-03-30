@@ -9,8 +9,15 @@ export const metadata = {
 
 const projects = [
 	{
+		title: "@apacheli/jsx",
+		description: "Super fast server-side renderer for your JSX components.",
+		url: "https://github.com/apacheli/jsx",
+		date: "2026",
+		language: "JavaScript",
+	},
+	{
 		title: "passgen.js",
-		description: "JavaScript library for generating passwords using the Web Crypto API. ",
+		description: "JavaScript library for generating passwords using the Web Crypto API.",
 		url: "https://github.com/apacheli/passgen.js",
 		date: "2026",
 		language: "TypeScript",
@@ -32,7 +39,7 @@ const projects = [
 	{
 		title: "Bluejay",
 		description: "Minimalist framework for building static pages. Fun fact: my website was built with Bluejay.",
-		url: "https://github.com/apacheli/discord-api-libs",
+		url: "https://github.com/apacheli/bluejay",
 		date: "2024",
 		language: "TypeScript",
 	},

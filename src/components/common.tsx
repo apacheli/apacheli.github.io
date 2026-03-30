@@ -23,16 +23,19 @@ const Article = (page: BluejayPage) => {
 						{page.data.index === 0 ? <span class="blog-new">NEW!</span> : undefined}
 					</div>
 					<div class="blog-metadata">
-						<span class="blog-tag">{tag}</span>
-						<time class="blog-date" datetime={date}>
-							{dtf.format(page.data.date)}
-						</time>
+						<div>
+							<span class="blog-tag">{tag}</span>
+							<time class="blog-date" datetime={date}>
+								{dtf.format(page.data.date)}
+							</time>
+						</div>
 						<span class="blog-title">{title}</span>
 						<p class="blog-description">{description}</p>
 						{rt > 0 ? (
-							<span class="blog-rt">
-								⏱️ {rt} minute{rt > 1 ? "s" : ""}
-							</span>
+							<div class="blog-rt">
+								<ClockIcon />
+								<span>{rt} minute read</span>
+							</div>
 						) : undefined}
 					</div>
 				</div>

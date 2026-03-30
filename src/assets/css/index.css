@@ -262,6 +262,8 @@ img {
 
 .blog-metadata {
 	position: relative;
+	display: flex;
+	flex-direction: column;
 	padding: 1rem;
 }
 
@@ -292,6 +294,19 @@ img {
 .blog-description {
 	margin: 0;
 	color: var(--color-font-secondary);
+}
+
+.blog-rt {
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+	margin-top: auto;
+}
+
+.blog-rt svg {
+	width: 1rem;
+	height: 1rem;
+	fill: var(--color-font);
 }
 
 .share-url {
@@ -383,7 +398,7 @@ img {
 }
 
 .home-section {
-	padding-bottom: 2rem;
+	margin: 1rem 0;
 	border-bottom: 0.0625rem var(--color-dark-2) solid;
 }
 
@@ -408,6 +423,7 @@ img {
 	grid-template-columns: repeat(4, auto);
 	row-gap: 1rem;
 	justify-content: space-evenly;
+	margin: 1rem 0;
 }
 
 .home-icons img {
@@ -428,6 +444,7 @@ img {
 
 	.home-panel {
 		top: unset;
+		display: flex;
 	}
 
 	.home-portrait {
