@@ -223,7 +223,7 @@ img {
 }
 
 .main {
-	width: min(36% + 36rem, 100%);
+	width: min(32% + 32rem, 100%);
 	min-height: calc(100vh - 24rem);
 	padding: 0 1rem;
 	margin: 4rem auto;
