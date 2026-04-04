@@ -11,12 +11,12 @@ Bun v1.3.8 added a built-in API for parsing Markdown content. You can access it 
 
 This API introduces three ways of rendering Markdown:
 
-- `Bun.markdown.html()` &mdash; for rendering straight to HTML
-- `Bun.markdown.render()` &mdash; for custom rendering such as ANSI codes for terminals
-- `Bun.markdown.react()` &mdash; for transforming Markdown into React components
+- `Bun.markdown.html()` - for rendering straight to HTML
+- `Bun.markdown.render()` - for custom rendering such as ANSI codes for terminals
+- `Bun.markdown.react()` - for transforming Markdown into React components
 
 [You can read the official blog on how to use these functions.](https://bun.com/blog/bun-v1.3.8)
-For the purposes of this blog, I want to focus on `Bun.markdown.react()` and how you can build a simple website with it.
+For the purposes of this blog, I want to focus on `Bun.markdown.react()` and how you can build a simple blog with it.
 
 ## What is Markdown?
 
@@ -41,30 +41,83 @@ The example above yields the following when rendered in HTML:
 >
 > *This text is italic.*
 
-There's several flavors of Markdown out there mostly due to lack of standardization.
-To be fair, it was created by just one guy back in 2004.
-One of the most popular flavors is GFM (GitHub Flavored Markdown), which Bun conveniently supports by default.
+Here are some nice Markdown tools I recommend you check out:
+
+- [Markdown Guide](https://www.markdownguide.org/) - Exactly what the name implies
+- [StackEdit](https://stackedit.io/) - An editor for Markdown with live preview
+- [CommonMark](https://commonmark.org/) - A specification of Markdown because the original was inconsistent
+- [GitHub Flavored Markdown (GFM)](https://github.github.com/gfm/) - A variation of Markdown based on CommonMark
 
 ## Getting Started
 
 > [!IMPORTANT]
-> This tutorial assumes you have general coding knowledge.
+> This tutorial assumes you have general programming knowledge.
 
-A few things we need to lay out:
+### Templating with JSX
 
-- How we want to structure our codebase.
+### Using GitHub Pages
 
+## Adding Highlighting
 
-## Reading Files
+## Adding Front Matter
 
-## Basic Templating
+**Front Matter** (sometimes **Frontmatter**) is a simple way of adding metadata to a Markdown document.
+It was popularized by Jekyll, a static site generator written in Ruby.
 
-## Adding highlighting
+There's no formal specification for Front Matter, but most parsers will usually define it as `---` at the top of the document.
 
-## Adding Frontmatter (YAML Metadata)
+```md
+---
+title: Hello!
+---
 
-*Frontmatter* is a popular way of adding metadata to Markdown. It's basically just putting some YAML at the top of your document.
+# My Document
+```
 
-## Using GitHub Pages
+We can write a simple parser that extracts and returns this data as a JavaScript object.
+We should also take advantage of Bun's built-in YAML parser for even more performance.
 
-## What I Would Like to See
+```js
+const parseFrontmatter = (text) => {
+    if (text.startsWith("---")) {
+        const end = text.indexOf("\n---", 3);
+        if (end > -1) {
+            return [
+                text.substring(end + 4),
+                Bun.YAML.parse(text.substring(3, end)),
+            ];
+        }
+        // Optionally, throw an error here
+    }
+    return [text, {}];
+};
+```
+
+> [!TIP]
+> Try steering away fron using regular expressions (regex).
+> They're pretty slow and difficult to understand even for experienced developers.
+
+If you want to get super fancy, you can make it dynamic and add TOML support:
+
+```js
+const parsers = {
+    "---": Bun.YAML.parse,
+    "+++": Bun.TOML.parse,
+};
+
+const parseFrontmatter = (text) => {
+    for (const delimiter in parsers) {
+        if (text.startsWith(delimiter)) {
+            const end = text.indexOf(`\n${delimiter}`, delimiter.length);
+            if (end > -1) {
+                return [
+                    text.substring(end + delimiter.length + 1),
+                    parsers[delimiter](text.substring(delimiter.length, end)),
+                ];
+            }
+            // Optionally, throw an error here
+        }
+    }
+    return [text, {}];
+};
+```
