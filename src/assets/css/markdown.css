@@ -28,6 +28,11 @@
 
 .markdown code {
 	font-family: "Fira Code", monospace;
+	font-size: 0.875rem;
+}
+
+.markdown pre {
+	line-height: 1.4;
 }
 
 .markdown > pre {
@@ -36,7 +41,7 @@
 }
 
 .markdown code:not(pre code) {
-	padding: 0.25rem;
+	padding: 0.125rem;
 	background-color: var(--color-dark-1);
 }
 
@@ -66,6 +71,7 @@
 .codeblock {
 	margin: 1rem 0;
 	font-family: "Fira Code", monospace;
+	line-height: 1.4;
 }
 
 .codeblock-head {

@@ -46,7 +46,7 @@ body {
 	margin: 0;
 	font-family: "Cantarell", sans-serif;
 	font-size: 1rem;
-	line-height: 2;
+	line-height: 1.8;
 	color: var(--color-font);
 	background-color: var(--color-background);
 }
@@ -223,7 +223,7 @@ img {
 }
 
 .main {
-	width: min(36% + 36rem, 100%);
+	width: min(32% + 32rem, 100%);
 	min-height: calc(100vh - 24rem);
 	padding: 0 1rem;
 	margin: 4rem auto;
@@ -310,7 +310,7 @@ img {
 }
 
 .share-url {
-	padding: 0.25rem;
+	padding: 0.125rem;
 	user-select: all;
 	background-color: var(--color-dark-1);
 }
