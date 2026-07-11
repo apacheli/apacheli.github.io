@@ -1,0 +1,216 @@
+code {
+  background-color: var(--background-dim-1);
+  font-family: "Fira Code", monospace;
+  border: 0.0625rem var(--background-dim-2) solid;
+  font-size: 87.5%;
+}
+
+pre {
+  background-color: var(--background-dim-1);
+  line-height: 1.5;
+  padding: 1rem;
+  margin: 0;
+  overflow: auto;
+}
+
+pre code {
+  background-color: unset;
+  border: unset;
+}
+
+.code {
+  margin: 1rem 0;
+  border: 0.0625rem var(--background-dim-2) solid;
+}
+
+.code[data-language]::before {
+  background-color: var(--background-dim-2);
+  content: attr(data-language);
+  display: block;
+  font-weight: bold;
+  text-align: center;
+}
+
+.content .markdown {
+  margin: 4rem auto 4rem;
+}
+
+.markdown h1,
+.markdown h2 {
+  border-bottom: var(--background-dim-1) solid 0.0625rem;
+}
+
+blockquote {
+  background-color: var(--background-dim-1);
+  border: var(--background-dim-2) 0.0625rem solid;
+  border-radius: 1rem;
+  display: flow-root;
+  margin: 1rem 0;
+  padding: 0 1rem;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 1rem 0;
+  text-align: left;
+}
+
+th,
+td {
+  border: 0.0625rem solid var(--background-dim-2);
+  padding: 0.25rem;
+}
+
+tr:nth-child(even) {
+  background-color: var(--background-dim-1);
+}
+
+.markdown a {
+  color: var(--theme-color);
+}
+
+.markdown h1 a,
+.markdown h2 a {
+  color: inherit;
+}
+
+.markdown a:hover {
+  text-decoration: underline;
+}
+
+.markdown ul {
+  list-style: inside;
+  margin: 1rem;
+}
+
+.alert {
+  background-color: rgb(from var(--color) r g b / 12.5%);
+  border: rgb(from var(--color) r g b / 25%) 0.0625rem solid;
+}
+
+.alert header {
+  align-items: center;
+  color: var(--color);
+  display: flex;
+  fill: var(--color);
+  font-weight: bolder;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.alert-note {
+  --color: #198ceb;
+}
+
+.alert-tip {
+  --color: #26ca34;
+}
+
+.alert-important {
+  --color: #8e54eb;
+}
+
+.alert-warning {
+  --color: #df9f16;
+}
+
+.alert-caution {
+  --color: #e73124;
+}
+
+.blog-title {
+  font-size: 3rem;
+}
+
+.share {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+  color: light-dark(#d73a49, #ff7b72);
+}
+
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+  color: light-dark(#6f42c1, #d2a8ff);
+}
+
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-variable,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id {
+  color: light-dark(#005cc5, #79c0ff);
+}
+
+.hljs-regexp,
+.hljs-string,
+.hljs-meta .hljs-string {
+  color: light-dark(#032f62, #a5d6ff);
+}
+
+.hljs-built_in,
+.hljs-symbol {
+  color: light-dark(#e36209, #ffa657);
+}
+
+.hljs-comment,
+.hljs-code,
+.hljs-formula {
+  color: light-dark(#6a737d, #8b949e);
+}
+
+.hljs-name,
+.hljs-quote,
+.hljs-selector-tag,
+.hljs-selector-pseudo {
+  color: light-dark(#22863a, #7ee787);
+}
+
+.hljs-subst {
+  color: light-dark(#24292e, #c9d1d9);
+}
+
+.hljs-section {
+  color: light-dark(#005cc5, #1f6feb);
+  font-weight: bold;
+}
+
+.hljs-bullet {
+  color: light-dark(#735c0f, #f2cc60);
+}
+
+.hljs-emphasis {
+  color: light-dark(#24292e, #c9d1d9);
+  font-style: italic;
+}
+
+.hljs-strong {
+  color: light-dark(#24292e, #c9d1d9);
+  font-weight: bold;
+}
+
+.hljs-addition {
+  color: light-dark(#22863a, #aff5b4);
+  background-color: light-dark(#f0fff4, #033a16);
+}
+
+.hljs-deletion {
+  color: light-dark(#b31d28, #ffdcd7);
+  background-color: light-dark(#ffeef0, #67060c);
+}
