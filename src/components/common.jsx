@@ -66,7 +66,6 @@ const CommonBody = ({ ctx, children }) => (
           </ul>
         </nav>
       </header>
-      <div class="banner" />
       {children}
       <footer class="common main-footer">
         <nav>

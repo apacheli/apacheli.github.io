@@ -13,6 +13,7 @@
   :root {
     --background-color: #fff;
     --font-color: #202020;
+    --font-color-secondary: #404040;
     --background-dim-1: #00004010;
     --background-dim-2: #00004020;
   }
@@ -95,12 +96,6 @@ ul {
 }
 
 /* body */
-
-.banner {
-  height: 8rem;
-  margin: 4rem 0;
-  background: url("/assets/banner.webp") center / cover no-repeat;
-}
 
 .common {
   align-items: center;
@@ -264,9 +259,9 @@ label[for="main-menu"]:hover svg {
 }
 
 .content {
-  margin: 4rem auto;
+  margin: 8rem auto 4rem;
   max-width: 62rem;
-  min-height: calc(100vh - 24rem);
+  min-height: calc(100vh - 16rem);
   padding: 0 1rem;
 }
 

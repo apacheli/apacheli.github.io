@@ -1,16 +1,30 @@
 code {
   background-color: var(--background-dim-1);
-  font-family: "Fira Code", monospace;
   border: 0.0625rem var(--background-dim-2) solid;
+  font-family: "Fira Code", monospace;
   font-size: 87.5%;
 }
 
 pre {
   background-color: var(--background-dim-1);
   line-height: 1.5;
-  padding: 1rem;
   margin: 0;
   overflow: auto;
+  padding: 1rem;
+}
+
+pre[data-lines] {
+  display: flex;
+  gap: 1rem;
+}
+
+pre[data-lines]::before {
+  color: var(--background-dim-2);
+  content: attr(data-lines);
+  font-family: "Fira Code", monospace;
+  font-size: 87.5%;
+  text-align: right;
+  width: 1rem;
 }
 
 pre code {
@@ -19,8 +33,8 @@ pre code {
 }
 
 .code {
-  margin: 1rem 0;
   border: 0.0625rem var(--background-dim-2) solid;
+  margin: 1rem 0;
 }
 
 .code[data-language]::before {

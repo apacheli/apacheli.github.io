@@ -1,8 +1,27 @@
 import hljs from "highlight.js";
 
+const count = (a, b) => {
+  let c = 0;
+  let i = a.indexOf(b);
+  while (i !== -1) {
+    c++;
+    i = a.indexOf(b, i + b.length);
+  }
+  return c;
+};
+
+const codeLines = (n) => {
+  let str = "";
+  for (let i = 1; i <= n; i++) {
+    str += i + "\n";
+  }
+  return str.slice(0, -1);
+};
+
 class Emitter {
   root = [];
   stack = [this.root];
+  lineCount = 0;
 
   get top() {
     return this.stack[this.stack.length - 1];
@@ -12,6 +31,7 @@ class Emitter {
     if (text === "") {
       return;
     }
+    this.lineCount += count(text, "\n");
     const top = this.top;
     if (typeof top[top.length - 1] === "string") {
       top[top.length - 1] += text;
@@ -38,6 +58,7 @@ class Emitter {
 
   __addSublanguage(emitter) {
     this.top.push(...emitter.root);
+    this.lineCount += emitter.lineCount;
   }
 
   finalize() {}
@@ -87,10 +108,17 @@ function Blockquote({ children }) {
 }
 
 function Code({ language, children }) {
-  const code = language ? hljs.highlight(children.join(""), { language })._emitter.root : children;
+  if (language === undefined) {
+    return (
+      <div class="code">
+        <pre><code>{children}</code></pre>
+      </div>
+    );
+  }
+  const e = hljs.highlight(children.join(""), { language })._emitter;
   return (
     <div class="code" data-language={language}>
-      <pre><code>{code}</code></pre>
+      <pre data-lines={codeLines(e.lineCount)}><code>{e.root}</code></pre>
     </div>
   );
 }
