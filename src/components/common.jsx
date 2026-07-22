@@ -13,7 +13,7 @@ const dtf = new Intl.DateTimeFormat("en-US", {
 const Post = ({ file }) => {
   const date = new Date(file.meta.date);
   return (
-    <a href={file.url}>
+    <a href={file.url.slice(0, -5)}>
       <h2>{file.meta.title}</h2>
       <em>{file.meta.description}</em>
       <time datetime={date.toISOString()}>{dtf.format(date)}</time>
@@ -24,11 +24,10 @@ const Post = ({ file }) => {
 const CommonHead = ({ ctx, children }) => (
   <head>
     <meta charset="utf-8" />
-    <title>{ctx.file.meta?.title ?? "No Title"} - apacheli</title>
+    <title>{ctx.file.meta?.title ?? "No Title"} | apacheli</title>
     <link rel="stylesheet" href="/assets/index.css" />
     <link rel="icon" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <meta name="description" content={ctx.file.meta?.description} />
     {children}
   </head>
@@ -81,7 +80,7 @@ const CommonBody = ({ ctx, children }) => (
               </a>
             </li>
             <li>
-              <a href="/github" data-tooltip="Source">
+              <a href="https://github.com/apacheli/apacheli.github.io" data-tooltip="Source">
                 <icons.code />
               </a>
             </li>

@@ -25,17 +25,19 @@ I like to produce music, play video games, and occasionally dabble in digital ar
 
 ## PC Build
 
-| Component   | Selection                         |
-| ----------- | --------------------------------- |
-| CPU         | AMD Ryzen&trade; 5 7600           |
-| CPU Cooler  | be quiet! Dark Rock Pro 5         |
-| Motherboard | ASUS PRIME B650-PLUS              |
-| RAM         | G.SKILL Flare X5 (32 GB)          |
-| Storage     | Samsung 970 EVO Plus (2 TB)       |
-| GPU         | XFX Swift AMD Radeon RX 9060 XT   |
-| Case        | NZXT H7 Flow (2022)               |
-| PSU         | Thermaltake Toughpower Gx2 600W   |
-| Keyboard    | Whirlwind FX Element V2           |
-| Mouse       | Logitech G203                     |
-| Headphones  | Audio-Technica ATH-M50x           |
-| Monitor     | Acer Nitro XV2 - XV272U W2bmiiprx |
+https://pcpartpicker.com/list/rTp9K7
+
+| Component       | Selection                         |
+| --------------- | --------------------------------- |
+| **CPU**         | AMD Ryzen&trade; 5 7600           |
+| **CPU Cooler**  | be quiet! Dark Rock Pro 5         |
+| **Motherboard** | ASUS PRIME B650-PLUS              |
+| **RAM**         | G.SKILL Flare X5 (32 GB)          |
+| **Storage**     | Samsung 970 EVO Plus (2 TB)       |
+| **GPU**         | XFX Swift AMD Radeon RX 9060 XT   |
+| **Case**        | NZXT H7 Flow (2022)               |
+| **PSU**         | Thermaltake Toughpower Gx2 600W   |
+| **Keyboard**    | Whirlwind FX Element V2           |
+| **Mouse**       | Logitech G203                     |
+| **Headphones**  | Audio-Technica ATH-M50x           |
+| **Monitor**     | Acer Nitro XV2 - XV272U W2bmiiprx |

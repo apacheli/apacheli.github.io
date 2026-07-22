@@ -1,7 +1,7 @@
 import { CommonBody, CommonHead, dtf, Post } from "../components/common.jsx";
 import { Link } from "../components/markdown.jsx";
 
-const Giscus = () => (
+const Comments = () => (
   <script
     src="https://giscus.app/client.js"
     data-repo="apacheli/apacheli.github.io"
@@ -56,7 +56,7 @@ const BlogLayout = (ctx) => {
                 <img src="/assets/pinterest.svg" />
               </Link>
             </div>
-            <Giscus />
+            <Comments />
             <h2>Continue Reading</h2>
             <div class="blog">
               {prev && <Post file={prev} />}
