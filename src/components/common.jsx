@@ -16,7 +16,9 @@ const Post = ({ file }) => {
     <a href={file.url.slice(0, -5)}>
       <h2>{file.meta.title}</h2>
       <em>{file.meta.description}</em>
-      <time datetime={date.toISOString()}>{dtf.format(date)}</time>
+      <p>
+        <span class="card-tag">{file.meta.tag}</span> &bull; {dtf.format(date)}
+      </p>
     </a>
   );
 };
@@ -75,14 +77,14 @@ const CommonBody = ({ ctx, children }) => (
               </a>
             </li>
             <li>
-              <a href="https://github.com/sponsors/apacheli" data-tooltip="Sponsor Me &#10084;&#65039;">
+              <Link href="https://github.com/sponsors/apacheli" data-tooltip="Sponsor Me &#10084;&#65039;">
                 <icons.donate />
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="https://github.com/apacheli/apacheli.github.io" data-tooltip="Source">
+              <Link href="https://github.com/apacheli/apacheli.github.io" data-tooltip="Source">
                 <icons.code />
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

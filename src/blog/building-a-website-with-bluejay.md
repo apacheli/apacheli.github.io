@@ -3,6 +3,7 @@ title: "Building a Website With Bluejay"
 description: "wip"
 type: "blog"
 date: "07-21-2026"
+tag: "Development"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt ex in magna lacinia, ut posuere lorem dictum.

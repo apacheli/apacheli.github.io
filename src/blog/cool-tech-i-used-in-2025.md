@@ -3,6 +3,7 @@ title: "Cool Tech I Used in 2025"
 description: "A bunch of cool stuff I adopted this year and my plans moving into 2026."
 type: "blog"
 date: "2025-12-25"
+tag: "Development"
 ---
 
 This year, I made an effort to adopt more free and open-source software because I like privacy and control of what I

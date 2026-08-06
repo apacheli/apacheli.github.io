@@ -3,6 +3,7 @@ title: "Bun's New Markdown API is Awesome"
 description: "My favorite recent addition to the Bun ecosystem."
 type: "blog"
 date: "2026-04-06"
+tag: "Development"
 ---
 
 Bun v1.3.8 added a built-in API for parsing Markdown content. You can access it with `Bun.markdown`.

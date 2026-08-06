@@ -3,17 +3,19 @@
   --background-color: #182030;
   --font-color: #fff;
   --selection-color: #00c0ff40;
-  --theme-color: #0080ff;
+  --theme-color: #00c0ff;
   --background-dim-1: #ffffff10;
   --background-dim-2: #ffffff20;
   --duration: 0.25s;
+  --border: 0.0625rem var(--background-dim-2) solid;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     --background-color: #fff;
     --font-color: #202020;
-    --font-color-secondary: #404040;
+    --selection-color: #0080ff40;
+    --theme-color: #0080ff;
     --background-dim-1: #00004010;
     --background-dim-2: #00004020;
   }
@@ -151,7 +153,7 @@ ul {
 
 .common nav a[data-tooltip]::before {
   background-color: #060810f0;
-  border: 0.0625rem solid var(--c);
+  border: 0.0625rem var(--c) solid;
   color: var(--c);
   content: attr(data-tooltip);
   left: 50%;
@@ -217,7 +219,38 @@ label[for="main-menu"]:hover svg {
   overflow: hidden;
 }
 
-@media (max-width: 60rem) {
+.content {
+  margin: 8rem auto 4rem;
+  max-width: 62rem;
+  min-height: calc(100vh - 16rem);
+  padding: 0 1rem;
+}
+
+.card-list {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(var(--grid), 1fr);
+}
+
+.card-list a {
+  border: var(--border);
+  display: block;
+  padding: 0 1rem;
+}
+
+.card-list a:hover {
+  background-color: var(--background-dim-1);
+}
+
+.card-tag {
+  color: var(--theme-color);
+}
+
+@media (width < 62rem) {
+  .card-list {
+    grid-template-columns: 1fr;
+  }
+
   .main-footer {
     flex-direction: column;
   }
@@ -258,30 +291,38 @@ label[for="main-menu"]:hover svg {
   }
 }
 
-.content {
-  margin: 8rem auto 4rem;
-  max-width: 62rem;
-  min-height: calc(100vh - 16rem);
-  padding: 0 1rem;
+.home-header {
+  text-align: center;
 }
 
-.blog {
+.banner {
+  border: var(--border);
+  height: 16rem;
+  object-fit: cover;
+  position: relative;
+  width: 100%;
+  z-index: -1;
+}
+
+.portrait {
+  background-color: var(--background-color);
+  border: var(--border);
+  border-radius: 50%;
+  margin: auto;
+  margin-top: -8rem;
+  width: 16rem;
+}
+
+.icon-cards {
+  display: grid;
   gap: 1rem;
-  display: flex;
-  flex-direction: column;
+  grid-template-columns: repeat(auto-fill, 6.625rem);
+  justify-content: center;
 }
 
-.blog a {
-  border: var(--background-dim-2) 0.0625rem solid;
-  display: block;
-  padding: 0 1rem;
-}
-
-.blog a:hover {
+.icon-cards img {
   background-color: var(--background-dim-1);
-}
-
-time {
-  display: block;
-  margin: 1rem 0;
+  border: var(--border);
+  border-radius: 1rem;
+  padding: 1rem;
 }

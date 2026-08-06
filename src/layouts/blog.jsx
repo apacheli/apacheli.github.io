@@ -34,7 +34,9 @@ const BlogLayout = (ctx) => {
         <div class="content">
           <header>
             <h1 class="blog-title">{ctx.file.meta.title}</h1>
-            <time datetime={date.toISOString()}>{dtf.format(date)}</time>
+            <p>
+              <span class="card-tag">{ctx.file.meta.tag}</span> &bull; {dtf.format(date)}
+            </p>
           </header>
           <main class="markdown">
             {ctx.file.render(ctx)}
@@ -52,13 +54,13 @@ const BlogLayout = (ctx) => {
               <Link href={`https://www.linkedin.com/sharing/share-offsite?url=${url}`} title="Share on LinkedIn">
                 <img src="/assets/linkedin.svg" />
               </Link>
-              <Link href={`https://pinterest.com/pin/create/button/?url=${url}`} title="Pin on Pinterest">
+              <Link href={`https://pinterest.com/pin/create/button?url=${url}`} title="Pin on Pinterest">
                 <img src="/assets/pinterest.svg" />
               </Link>
             </div>
             <Comments />
             <h2>Continue Reading</h2>
-            <div class="blog">
+            <div class="card-list">
               {prev && <Post file={prev} />}
               {next && <Post file={next} />}
             </div>

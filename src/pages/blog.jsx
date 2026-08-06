@@ -9,7 +9,7 @@ export default (ctx) => {
   return (
     <>
       <h1>Blog</h1>
-      <div class="blog">
+      <div class="card-list">
         {ctx.data.posts.map((file) => <Post file={file} />)}
       </div>
     </>

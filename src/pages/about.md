@@ -4,7 +4,7 @@ description: "Hi, I'm apacheli."
 type: "markdown"
 ---
 
-# Hi, I'm apacheli.
+# About Me
 
 I'm a full-stack web developer and graphic designer from Milwaukee. I build open-source software with Bun and
 TypeScript.

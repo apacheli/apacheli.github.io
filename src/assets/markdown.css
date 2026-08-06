@@ -56,7 +56,7 @@ pre code {
 
 blockquote {
   background-color: var(--background-dim-1);
-  border: var(--background-dim-2) 0.0625rem solid;
+  border: var(--border);
   border-radius: 1rem;
   display: flow-root;
   margin: 1rem 0;
@@ -71,7 +71,7 @@ table {
 
 th,
 td {
-  border: 0.0625rem solid var(--background-dim-2);
+  border: var(--border);
   padding: 0.25rem;
 }
 
@@ -99,7 +99,7 @@ tr:nth-child(even) {
 
 .alert {
   background-color: rgb(from var(--color) r g b / 12.5%);
-  border: rgb(from var(--color) r g b / 25%) 0.0625rem solid;
+  border: 0.0625rem rgb(from var(--color) r g b / 25%) solid;
 }
 
 .alert header {
