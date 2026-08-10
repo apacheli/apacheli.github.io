@@ -28,18 +28,18 @@ const projects = [
 ];
 
 const icons = [
-  { src: "/assets/icons/javascript.svg", alt: "JavaScript" },
-  { src: "/assets/icons/typescript.svg", alt: "TypeScript" },
-  { src: "/assets/icons/python.svg", alt: "Python" },
-  { src: "/assets/icons/java.svg", alt: "Java" },
-  { src: "/assets/icons/lua.svg", alt: "Lua" },
-  { src: "/assets/icons/nodejs.svg", alt: "Node.js" },
-  { src: "/assets/icons/git.svg", alt: "Git" },
-  { src: "/assets/icons/docker.svg", alt: "Docker" },
-  { src: "/assets/icons/redis.svg", alt: "Redis" },
-  { src: "/assets/icons/postgresql.svg", alt: "PostgreSQL" },
-  { src: "/assets/icons/figma.svg", alt: "Figma" },
-  { src: "/assets/icons/ubuntu.svg", alt: "Ubuntu" },
+  <img src="/assets/icons/javascript.svg" alt="JavaScript" />,
+  <img src="/assets/icons/typescript.svg" alt="TypeScript" />,
+  <img src="/assets/icons/python.svg" alt="Python" />,
+  <img src="/assets/icons/java.svg" alt="Java" />,
+  <img src="/assets/icons/lua.svg" alt="Lua" />,
+  <img src="/assets/icons/nodejs.svg" alt="Node.js" />,
+  <img src="/assets/icons/git.svg" alt="Git" />,
+  <img src="/assets/icons/docker.svg" alt="Docker" />,
+  <img src="/assets/icons/redis.svg" alt="Redis" />,
+  <img src="/assets/icons/postgresql.svg" alt="PostgreSQL" />,
+  <img src="/assets/icons/figma.svg" alt="Figma" />,
+  <img src="/assets/icons/ubuntu.svg" alt="Ubuntu" />,
 ];
 
 const Project = (project) => {
@@ -61,12 +61,12 @@ export default (ctx) => {
         <img class="banner" src="/assets/banner.webp" />
         <img class="portrait" src="/assets/portrait.png" />
         <h1>Hi, I'm apacheli.</h1>
-        <p>Full-Stack Web Developer & Graphic Designer</p>
+        <em>Full-Stack Web Developer & Graphic Designer</em>
       </div>
       <section>
         <h2>Tech Experience</h2>
         <div class="icon-cards">
-          {icons.map((img) => <img {...img} />)}
+          {icons}
         </div>
       </section>
       <section>

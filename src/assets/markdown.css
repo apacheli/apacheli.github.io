@@ -132,7 +132,11 @@ tr:nth-child(even) {
   --color: #e73124;
 }
 
-.blog-title {
+.blog-header {
+  border-bottom: 0.0625rem var(--background-dim-2) solid;
+}
+
+.blog-header h1 {
   font-size: 3rem;
 }
 

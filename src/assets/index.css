@@ -239,6 +239,10 @@ label[for="main-menu"]:hover svg {
 }
 
 .card-list a:hover {
+  border-color: var(--theme-color);
+}
+
+.card-list a:hover {
   background-color: var(--background-dim-1);
 }
 

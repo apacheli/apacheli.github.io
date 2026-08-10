@@ -32,8 +32,8 @@ const BlogLayout = (ctx) => {
       </CommonHead>
       <CommonBody ctx={ctx}>
         <div class="content">
-          <header>
-            <h1 class="blog-title">{ctx.file.meta.title}</h1>
+          <header class="blog-header">
+            <h1>{ctx.file.meta.title}</h1>
             <p>
               <span class="card-tag">{ctx.file.meta.tag}</span> &bull; {dtf.format(date)}
             </p>
