@@ -1,4 +1,4 @@
-import { dtf, Post } from "../components/common.jsx";
+import { Post } from "../components/common.jsx";
 
 export const meta = {
   title: "Blog",

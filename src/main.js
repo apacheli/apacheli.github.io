@@ -23,7 +23,7 @@ export default {
   port: 1337,
   dev: Bun.env.NODE_ENV === "development",
   map: {
-    "/": ["./static", "./pages"],
+    "/": ["./pages", "./static", "./system"],
     "/assets": ["./assets"],
     "/blog": ["./blog"],
   },
@@ -33,7 +33,7 @@ export default {
     jsx,
     markdown(Bun.YAML.parse, renderMarkdown),
     extension({
-      ".html": /\.(?:md|jsx)$/,
+      ".html": /\.(?:md|jsx|tsx)$/,
     }),
     (data) => {
       data.posts = data.files

@@ -118,7 +118,10 @@ const Code = ({ language, children }) => {
   );
 };
 
-const Link = ({ ...props }) => <a rel="noreferrer" target="_blank" {...props} />;
+const Link = (props) => {
+  const s = ["/", "mailto:"];
+  return s.some((c) => props.href.startsWith(c)) ? <a {...props} /> : <a rel="noreferrer" target="_blank" {...props} />;
+};
 
 const Heading = (level) => {
   return ({ id, children }) => {
