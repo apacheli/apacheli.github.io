@@ -86,6 +86,11 @@ const CommonBody = ({ ctx, children }) => (
                 <icons.code />
               </Link>
             </li>
+            <li>
+              <Link href="/license" data-tooltip="&copy; 2022-present apacheli">
+                <icons.copyright />
+              </Link>
+            </li>
           </ul>
         </nav>
         <nav>

@@ -1,5 +1,5 @@
-import { dtf, Post } from "../components/common";
-import { Link } from "../components/markdown";
+import { dtf, Post } from "../components/common.jsx";
+import { Link } from "../components/markdown.jsx";
 
 export const meta = {
   title: "Home",
@@ -14,16 +14,37 @@ const projects = [
     language: "JavaScript",
   },
   {
+    title: "bluejay",
+    description: "Building static pages made easy.",
+    url: "https://github.com/apacheli/bluejay",
+    language: "JavaScript",
+  },
+  {
     title: "whirlybird",
     description: "JavaScript library for building Discord bots.",
     url: "https://github.com/apacheli/whirlybird",
     language: "JavaScript",
   },
   {
-    title: "bluejay",
-    description: "Building static pages made easy.",
-    url: "https://github.com/apacheli/bluejay",
-    language: "JavaScript",
+    title: "SoConns",
+    description: "Share your social connections with bluejay.",
+    url: "https://github.com/apacheli/soconns",
+    language: "TypeScript",
+  },
+  {
+    title: "apachebot",
+    description: "Personal Discord Bot",
+    url: "https://github.com/apacheli/apachebot",
+    language: "Python",
+  },
+];
+
+const tools = [
+  {
+    title: "Password Generator",
+    description: "Generates passwords and passphrases.",
+    url: "/tools/password-generator",
+    language: "gay",
   },
 ];
 
@@ -34,12 +55,14 @@ const icons = [
   <img src="/assets/icons/java.svg" alt="Java" />,
   <img src="/assets/icons/lua.svg" alt="Lua" />,
   <img src="/assets/icons/nodejs.svg" alt="Node.js" />,
+  <img src="/assets/icons/react.svg" alt="React" />,
   <img src="/assets/icons/git.svg" alt="Git" />,
   <img src="/assets/icons/docker.svg" alt="Docker" />,
   <img src="/assets/icons/redis.svg" alt="Redis" />,
   <img src="/assets/icons/postgresql.svg" alt="PostgreSQL" />,
   <img src="/assets/icons/figma.svg" alt="Figma" />,
   <img src="/assets/icons/ubuntu.svg" alt="Ubuntu" />,
+  <img src="/assets/icons/visual-studio-code.svg" alt="Visual Studio Code" />,
 ];
 
 const Project = (project) => {
