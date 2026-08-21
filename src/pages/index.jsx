@@ -1,4 +1,5 @@
 import { dtf, Post } from "../components/common.jsx";
+import icons from "../components/icons.jsx";
 import { Link } from "../components/markdown.jsx";
 
 export const meta = {
@@ -39,16 +40,7 @@ const projects = [
   },
 ];
 
-const tools = [
-  {
-    title: "Password Generator",
-    description: "Generates passwords and passphrases.",
-    url: "/tools/password-generator",
-    language: "gay",
-  },
-];
-
-const icons = [
+const techCards = [
   <img src="/assets/icons/javascript.svg" alt="JavaScript" />,
   <img src="/assets/icons/typescript.svg" alt="TypeScript" />,
   <img src="/assets/icons/python.svg" alt="Python" />,
@@ -68,7 +60,9 @@ const icons = [
 const Project = (project) => {
   return (
     <Link href={project.url}>
-      <h2>{project.title}</h2>
+      <h2>
+        <icons.folder /> {project.title}
+      </h2>
       <em>{project.description}</em>
       <p>
         <span class="card-tag">{project.language}</span>
@@ -89,7 +83,7 @@ export default (ctx) => {
       <section>
         <h2>Tech Experience</h2>
         <div class="icon-cards">
-          {icons}
+          {techCards}
         </div>
       </section>
       <section>

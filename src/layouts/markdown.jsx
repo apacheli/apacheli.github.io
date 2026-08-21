@@ -7,7 +7,9 @@ const MarkdownLayout = (ctx) => {
         <link href="/assets/markdown.css" rel="stylesheet" />
       </CommonHead>
       <CommonBody ctx={ctx}>
-        <main class="content markdown">{ctx.file.render(ctx)}</main>
+        <main class="content markdown">
+          {ctx.file.render(ctx)}
+        </main>
       </CommonBody>
     </html>
   );

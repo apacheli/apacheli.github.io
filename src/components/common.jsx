@@ -10,16 +10,18 @@ const dtf = new Intl.DateTimeFormat("en-US", {
   timeZone: "UTC",
 });
 
-const Post = ({ file }) => {
+const Post = ({ file, type }) => {
   const date = new Date(file.meta.date);
   return (
-    <a href={file.url.slice(0, -5)}>
-      <h2>{file.meta.title}</h2>
+    <Link href={file.url.slice(0, -5)}>
+      <h2>
+        <icons.newspaper /> {file.meta.title}
+      </h2>
       <em>{file.meta.description}</em>
       <p>
         <span class="card-tag">{file.meta.tag}</span> &bull; {dtf.format(date)}
       </p>
-    </a>
+    </Link>
   );
 };
 
@@ -31,6 +33,7 @@ const CommonHead = ({ ctx, children }) => (
     <link rel="icon" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={ctx.file.meta?.description} />
+    <meta name="theme-color" content="#00c0ff" />
     {children}
   </head>
 );

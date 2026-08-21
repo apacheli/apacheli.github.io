@@ -246,6 +246,18 @@ label[for="main-menu"]:hover svg {
   color: var(--theme-color);
 }
 
+.card-list h2 {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.card-list svg {
+  fill: var(--font-color);
+  height: 2rem;
+  width: 2rem;
+}
+
 @media (width < 62rem) {
   .card-list {
     grid-template-columns: 1fr;
@@ -314,9 +326,9 @@ label[for="main-menu"]:hover svg {
 }
 
 .icon-cards {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fill, 6.625rem);
   justify-content: center;
 }
 
@@ -325,4 +337,6 @@ label[for="main-menu"]:hover svg {
   border: var(--border);
   border-radius: 1rem;
   padding: 1rem;
+  height: 6.625rem;
+  width: 6.625rem;
 }

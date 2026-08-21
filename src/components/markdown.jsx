@@ -81,19 +81,22 @@ const alerts = {
 };
 
 const Blockquote = ({ children }) => {
-  const text = children[0].props.children.join("");
+  const arr = children[0].props.children;
+  if (arr[0] !== "[") {
+    return <blockquote>{children}</blockquote>;
+  }
   for (const alert in alerts) {
-    if (text.slice(0, alert.length + 3).toLowerCase() !== `[!${alert}]`) {
+    if (arr[1].slice(0, alert.length + 2).toLowerCase() !== `!${alert}]`) {
       continue;
     }
-    children[0].props.children = text.substring(alert.length + 3);
+    children[0].props.children.splice(0, 2, arr[1].substring(alert.length + 2));
     return (
       <blockquote class={`alert alert-${alert}`}>
         <header>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" height="16" width="16">
             <path d={alerts[alert]} />
           </svg>
-          {alert[0].toUpperCase() + alert.slice(1)}
+          {alert[0].toUpperCase() + alert.substring(1)}
         </header>
         {children}
       </blockquote>
