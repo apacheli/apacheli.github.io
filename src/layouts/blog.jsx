@@ -43,7 +43,7 @@ const BlogLayout = (ctx) => {
           </main>
           <footer>
             <h2>Share</h2>
-            <code>{Bun.env.BLUEJAY_URL + ctx.file.url}</code>
+            <code>{Bun.env.BLUEJAY_URL + ctx.file.url.slice(0, -5)}</code>
             <div class="share">
               <Link href={`https://www.facebook.com/sharer.php?u=${url}`} title="Share on Facebook">
                 <img src="/assets/facebook.svg" />
