@@ -6,6 +6,6 @@
   },
   "dependencies": {
     "bluejay": "https://github.com/apacheli/bluejay",
-    "highlight.js": "^11.11.1"
+    "highlight.js": "^11.12.0"
   }
 }
