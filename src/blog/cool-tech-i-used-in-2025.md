@@ -1,6 +1,6 @@
 ---
 title: "Cool Tech I Used in 2025"
-description: "A bunch of cool stuff I adopted this year and my plans moving into 2026."
+description: "A bunch of cool stuff I adopted in 2025."
 type: "blog"
 date: "2025-12-25"
 tag: "Development"
