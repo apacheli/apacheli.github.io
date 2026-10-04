@@ -5,12 +5,12 @@ export const meta = {
   description: "Hi, I'm apacheli.",
 };
 
-export default (ctx) => {
+export default ({ app }) => {
   return (
     <>
       <h1>Blog</h1>
       <div class="card-list">
-        {ctx.data.posts.map((file) => <Post file={file} />)}
+        {app.posts.map((file) => <Post file={file} />)}
       </div>
     </>
   );

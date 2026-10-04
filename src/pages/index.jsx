@@ -1,6 +1,5 @@
-import { dtf, Post } from "../components/common.jsx";
 import icons from "../components/icons.jsx";
-import { Link } from "../components/markdown.jsx";
+import { ExternalLink } from "../components/markdown.jsx";
 
 export const meta = {
   title: "Home",
@@ -40,26 +39,26 @@ const projects = [
   },
 ];
 
-const techCards = [
-  <img src="/assets/icons/javascript.svg" alt="JavaScript" />,
-  <img src="/assets/icons/typescript.svg" alt="TypeScript" />,
-  <img src="/assets/icons/python.svg" alt="Python" />,
-  <img src="/assets/icons/java.svg" alt="Java" />,
-  <img src="/assets/icons/lua.svg" alt="Lua" />,
-  <img src="/assets/icons/nodejs.svg" alt="Node.js" />,
-  <img src="/assets/icons/react.svg" alt="React" />,
-  <img src="/assets/icons/git.svg" alt="Git" />,
-  <img src="/assets/icons/docker.svg" alt="Docker" />,
-  <img src="/assets/icons/redis.svg" alt="Redis" />,
-  <img src="/assets/icons/postgresql.svg" alt="PostgreSQL" />,
-  <img src="/assets/icons/figma.svg" alt="Figma" />,
-  <img src="/assets/icons/ubuntu.svg" alt="Ubuntu" />,
-  <img src="/assets/icons/visual-studio-code.svg" alt="Visual Studio Code" />,
+const tech = [
+  { src: "/assets/icons/javascript.svg", alt: "JavaScript" },
+  { src: "/assets/icons/typescript.svg", alt: "TypeScript" },
+  { src: "/assets/icons/python.svg", alt: "Python" },
+  { src: "/assets/icons/java.svg", alt: "Java" },
+  { src: "/assets/icons/lua.svg", alt: "Lua" },
+  { src: "/assets/icons/nodejs.svg", alt: "Node.js" },
+  { src: "/assets/icons/react.svg", alt: "React" },
+  { src: "/assets/icons/git.svg", alt: "Git" },
+  { src: "/assets/icons/docker.svg", alt: "Docker" },
+  { src: "/assets/icons/redis.svg", alt: "Redis" },
+  { src: "/assets/icons/postgresql.svg", alt: "PostgreSQL" },
+  { src: "/assets/icons/figma.svg", alt: "Figma" },
+  { src: "/assets/icons/ubuntu.svg", alt: "Ubuntu" },
+  { src: "/assets/icons/visual-studio-code.svg", alt: "Visual Studio Code" },
 ];
 
 const Project = (project) => {
   return (
-    <Link href={project.url}>
+    <ExternalLink href={project.url}>
       <h2>
         <icons.folder /> {project.title}
       </h2>
@@ -67,11 +66,11 @@ const Project = (project) => {
       <p>
         <span class="card-tag">{project.language}</span>
       </p>
-    </Link>
+    </ExternalLink>
   );
 };
 
-export default (ctx) => {
+export default () => {
   return (
     <>
       <div class="home-header">
@@ -83,7 +82,7 @@ export default (ctx) => {
       <section>
         <h2>Tech Experience</h2>
         <div class="icon-cards">
-          {techCards}
+          {tech.map((t) => <img {...t} />)}
         </div>
       </section>
       <section>

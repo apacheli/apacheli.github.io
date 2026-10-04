@@ -94,7 +94,7 @@ tr:nth-child(even) {
 
 .markdown ul {
   list-style: inside;
-  margin: 1rem;
+  margin: 0 2rem;
 }
 
 .alert {
