@@ -1,6 +1,6 @@
 import { CommonBody, CommonHead } from "../components/common.jsx";
 
-const MarkdownLayout = (ctx) => {
+const MarkdownLayout = ({ ctx }) => {
   return (
     <html lang="en">
       <CommonHead ctx={ctx}>
