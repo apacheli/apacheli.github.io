@@ -123,7 +123,11 @@ const Code = ({ language, children }) => {
 
 const Link = (props) => {
   const s = ["/", "mailto:"];
-  return s.some((c) => props.href.startsWith(c)) ? <a {...props} /> : <a rel="noreferrer" target="_blank" {...props} />;
+  return s.some((c) => props.href.startsWith(c)) ? <a {...props} /> : <ExternalLink {...props} />;
+};
+
+const ExternalLink = (props) => {
+  return <a rel="noreferrer" target="_blank" {...props} />;
 };
 
 const Heading = (level) => {
@@ -153,4 +157,4 @@ const renderMarkdown = (content) =>
     },
   );
 
-export { Blockquote, Code, Heading, Link, renderMarkdown };
+export { Blockquote, Code, ExternalLink, Heading, Link, renderMarkdown };

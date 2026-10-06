@@ -1,6 +1,6 @@
 import { CommonBody, CommonHead } from "../components/common.jsx";
 
-const PageLayout = (ctx) => {
+const PageLayout = ({ ctx }) => {
   return (
     <html lang="en">
       <CommonHead ctx={ctx} />

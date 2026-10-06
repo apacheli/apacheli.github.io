@@ -1,8 +1,9 @@
 {
   "name": "apacheli.github.io",
   "scripts": {
-    "build": "bunx bluejay build src/main.js",
-    "serve": "NODE_ENV=development bunx bluejay serve src/main.js"
+    "build": "BLUEJAY_MODE=build bunx bluejay src/main.js",
+    "serve": "BLUEJAY_MODE=serve NODE_ENV=development bunx bluejay src/main.js",
+    "serve:production": "BLUEJAY_MODE=serve NODE_ENV=development bunx bluejay src/main.js"
   },
   "dependencies": {
     "bluejay": "https://github.com/apacheli/bluejay",

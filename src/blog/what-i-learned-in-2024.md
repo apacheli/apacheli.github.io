@@ -3,7 +3,7 @@ title: "What I Learned in 2024"
 description: "A somewhat interesting insight into what I've learned in 2024."
 type: "blog"
 date: "2025-01-08"
-tag: "Development"
+tag: "General"
 ---
 
 2024 was a pretty lackluster year for me. However, it was also the year when I was the most experimental. Let's dive

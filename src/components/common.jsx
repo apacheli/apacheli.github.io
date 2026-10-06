@@ -1,4 +1,4 @@
-import { Link } from "../components/markdown.jsx";
+import { ExternalLink, Link } from "../components/markdown.jsx";
 import icons from "./icons.jsx";
 
 const isDevelopment = Bun.env.NODE_ENV === "development";
@@ -10,18 +10,17 @@ const dtf = new Intl.DateTimeFormat("en-US", {
   timeZone: "UTC",
 });
 
-const Post = ({ file, type }) => {
-  const date = new Date(file.meta.date);
+const Post = ({ file }) => {
   return (
-    <Link href={file.url.slice(0, -5)}>
+    <a href={file.url.slice(0, -5)}>
       <h2>
         <icons.newspaper /> {file.meta.title}
       </h2>
       <em>{file.meta.description}</em>
       <p>
-        <span class="card-tag">{file.meta.tag}</span> &bull; {dtf.format(date)}
+        <span class="card-tag">{file.meta.tag}</span> &bull; {dtf.format(file.meta.date)}
       </p>
-    </Link>
+    </a>
   );
 };
 
@@ -38,7 +37,7 @@ const CommonHead = ({ ctx, children }) => (
   </head>
 );
 
-const CommonBody = ({ ctx, children }) => (
+const CommonBody = ({ children }) => (
   <body>
     <div>
       <header class="common main-header">
@@ -75,9 +74,9 @@ const CommonBody = ({ ctx, children }) => (
         <nav>
           <ul>
             <li>
-              <a href="mailto:contact@apache.li" data-tooltip="Contact">
+              <Link href="mailto:contact@apache.li" data-tooltip="Contact">
                 <icons.email />
-              </a>
+              </Link>
             </li>
             <li>
               <Link href="https://github.com/sponsors/apacheli" data-tooltip="Sponsor Me &#10084;&#65039;">
@@ -99,29 +98,29 @@ const CommonBody = ({ ctx, children }) => (
         <nav>
           <ul>
             <li>
-              <Link href="/github" data-tooltip="@apacheli on GitHub" style="--c:#0fbf3e">
+              <ExternalLink href="/github" data-tooltip="@apacheli on GitHub" style="--c:#0fbf3e">
                 <icons.github />
-              </Link>
+              </ExternalLink>
             </li>
             <li>
-              <Link href="/discord" data-tooltip="@apacheli on Discord" style="--c:#5865f2">
+              <ExternalLink href="/discord" data-tooltip="@apacheli on Discord" style="--c:#5865f2">
                 <icons.discord />
-              </Link>
+              </ExternalLink>
             </li>
             <li>
-              <Link href="/steam" data-tooltip="@apacheli on Steam" style="--c:#1a9fff">
+              <ExternalLink href="/steam" data-tooltip="@apacheli on Steam" style="--c:#1a9fff">
                 <icons.steam />
-              </Link>
+              </ExternalLink>
             </li>
             <li>
-              <Link href="/twitch" data-tooltip="@apachelitv on Twitch" style="--c:#9146ff">
+              <ExternalLink href="/twitch" data-tooltip="@apachelitv on Twitch" style="--c:#9146ff">
                 <icons.twitch />
-              </Link>
+              </ExternalLink>
             </li>
             <li>
-              <Link href="/youtube" data-tooltip="@apacheli on YouTube" style="--c:#FF0033">
+              <ExternalLink href="/youtube" data-tooltip="@apacheli on YouTube" style="--c:#FF0033">
                 <icons.youtube />
-              </Link>
+              </ExternalLink>
             </li>
           </ul>
         </nav>
