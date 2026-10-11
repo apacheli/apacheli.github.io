@@ -10,12 +10,26 @@ import { renderMarkdown } from "./components/markdown.jsx";
 import BlogLayout from "./layouts/blog.jsx";
 import PageLayout from "./layouts/page.jsx";
 import MarkdownLayout from "./layouts/markdown.jsx";
+import ToolLayout from "./layouts/tool.jsx";
 
 const layouts = {
   "blog": BlogLayout,
   "markdown": MarkdownLayout,
   "page": PageLayout,
+  "tool": ToolLayout,
 };
+
+const transpiler = new Bun.Transpiler({
+  autoImportJSX: true,
+  loader: "tsx",
+  minifyWhitespace: true,
+  tsconfig: {
+    compilerOptions: {
+      jsx: "react-jsx",
+      jsxImportSource: "https://esm.sh/preact",
+    },
+  },
+});
 
 const dist = join(Bun.cwd, "./dist");
 const dev = Bun.env.NODE_ENV === "development";
@@ -42,15 +56,26 @@ export default {
     "/blog": [
       "./blog",
     ],
+    "/tools": [
+      "./tools",
+    ],
   },
   plugins: [
+    async (app) => {
+      for (const file of app.files) {
+        if (/\.[jt]s$/i.test(file.path)) {
+          file.content = await transpiler.transform(await Bun.file(file.path).text());
+        }
+      }
+    },
     lightningCss({
       minify: true,
     }),
     jsx(),
     markdown(Bun.YAML.parse, renderMarkdown),
     extension({
-      ".html": /\.(?:md|jsx|tsx)$/,
+      ".html": /\.(?:md|[jt]sx)$/i,
+      ".js": /\.[jt]s$/i,
     }),
     (app) => {
       app.files.sort((a, b) => a.url.localeCompare(b.url));

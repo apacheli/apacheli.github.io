@@ -16,7 +16,9 @@ const Post = ({ file }) => {
       <h2>
         <icons.newspaper /> {file.meta.title}
       </h2>
-      <em>{file.meta.description}</em>
+      <p>
+        <em>{file.meta.description}</em>
+      </p>
       <p>
         <span class="card-tag">{file.meta.tag}</span> &bull; {dtf.format(file.meta.date)}
       </p>
@@ -37,7 +39,7 @@ const CommonHead = ({ ctx, children }) => (
   </head>
 );
 
-const CommonBody = ({ children }) => (
+const CommonBody = ({ ctx, children }) => (
   <body>
     <div>
       <header class="common main-header">
@@ -126,7 +128,8 @@ const CommonBody = ({ children }) => (
         </nav>
       </footer>
     </div>
-    {isDevelopment ? <script src="/_bluejay/ws/client" /> : undefined}
+    {isDevelopment ? <script async src="/_bluejay/ws/client" /> : undefined}
+    {ctx.file.meta.scripts?.map((src) => <script src={src} type="module" />)}
   </body>
 );
 

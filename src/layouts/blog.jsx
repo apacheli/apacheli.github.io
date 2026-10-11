@@ -62,7 +62,7 @@ const BlogLayout = ({ ctx }) => {
             </div>
             <Comments />
             <h2>Continue Reading</h2>
-            <div class="card-list">
+            <div class="card-grid">
               {prev && <Post file={prev} />}
               {next && <Post file={next} />}
             </div>

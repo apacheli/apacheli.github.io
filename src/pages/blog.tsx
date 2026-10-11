@@ -9,7 +9,7 @@ export default ({ app }) => {
   return (
     <>
       <h1>Blog</h1>
-      <div class="card-list">
+      <div class="card-grid">
         {app.posts.map((file) => <Post file={file} />)}
       </div>
     </>

@@ -45,10 +45,6 @@ pre code {
   text-align: center;
 }
 
-.content .markdown {
-  margin: 4rem auto 4rem;
-}
-
 .markdown h1,
 .markdown h2 {
   border-bottom: var(--background-dim-1) solid 0.0625rem;
@@ -144,6 +140,11 @@ tr:nth-child(even) {
   display: flex;
   gap: 1rem;
   margin: 1rem 0;
+}
+
+.share a {
+  height: 2rem;
+  width: 2rem;
 }
 
 .hljs-doctag,

@@ -56,17 +56,44 @@ const tech = [
   { src: "/assets/icons/visual-studio-code.svg", alt: "Visual Studio Code" },
 ];
 
+const tools = [
+  {
+    title: "Password Generator",
+    description: "Generate cryptographically-secure passwords.",
+    url: "/tools/password-generator",
+    category: "Utility",
+  },
+];
+
 const Project = (project) => {
   return (
     <ExternalLink href={project.url}>
       <h2>
         <icons.folder /> {project.title}
       </h2>
-      <em>{project.description}</em>
+      <p>
+        <em>{project.description}</em>
+      </p>
       <p>
         <span class="card-tag">{project.language}</span>
       </p>
     </ExternalLink>
+  );
+};
+
+const Tool = (tool) => {
+  return (
+    <a href={tool.url}>
+      <h2>
+        <icons.wrench /> {tool.title}
+      </h2>
+      <p>
+        <em>{tool.description}</em>
+      </p>
+      <p>
+        <span class="card-tag">{tool.category}</span>
+      </p>
+    </a>
   );
 };
 
@@ -87,8 +114,14 @@ export default () => {
       </section>
       <section>
         <h2>Projects</h2>
-        <div class="card-list" style="--grid:2">
+        <div class="card-grid" style="--grid:2">
           {projects.map(Project)}
+        </div>
+      </section>
+      <section>
+        <h2>Tools</h2>
+        <div class="card-grid" style="--grid:1">
+          {tools.map(Tool)}
         </div>
       </section>
     </>

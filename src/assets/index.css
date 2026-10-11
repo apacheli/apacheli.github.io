@@ -222,23 +222,22 @@ label[for="main-menu"]:hover svg {
   padding: 0 1rem;
 }
 
-.card-list {
+.card-grid {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(var(--grid), 1fr);
 }
 
-.card-list a {
+.card-grid a {
   border: var(--border);
-  display: block;
   padding: 0 1rem;
 }
 
-.card-list a:hover {
+.card-grid a:hover {
   border-color: var(--theme-color);
 }
 
-.card-list a:hover {
+.card-grid a:hover {
   background-color: var(--background-dim-1);
 }
 
@@ -246,13 +245,13 @@ label[for="main-menu"]:hover svg {
   color: var(--theme-color);
 }
 
-.card-list h2 {
+.card-grid h2 {
   align-items: center;
   display: flex;
   gap: 0.5rem;
 }
 
-.card-list svg {
+.card-grid svg {
   fill: var(--font-color);
   flex-shrink: 0;
   height: 2rem;
@@ -260,7 +259,7 @@ label[for="main-menu"]:hover svg {
 }
 
 @media (width < 62rem) {
-  .card-list {
+  .card-grid {
     grid-template-columns: 1fr;
   }
 
