@@ -59,7 +59,7 @@ const tech = [
 const tools = [
   {
     title: "Password Generator",
-    description: "Generate cryptographically-secure passwords.",
+    description: "Need a good random password with high entropy? Use my password generator for the best results!",
     url: "/tools/password-generator",
     category: "Utility",
   },

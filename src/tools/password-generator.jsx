@@ -3,7 +3,7 @@ import { Checkbox, Container, Result, Row, Slider } from "../components/tool.jsx
 
 export const meta = {
   title: "Home",
-  description: "Hi, I'm apacheli.",
+  description: "Need a good random password with high entropy? Use my password generator for the best results!",
   type: "tool",
   scripts: [
     "/assets/scripts/password-generator.js",
