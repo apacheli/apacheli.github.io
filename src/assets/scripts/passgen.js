@@ -5,14 +5,10 @@ const CharacterSet = {
   Symbols: "!@#$%^&*",
 };
 
-const CHARACTERS_ALPHABET = CharacterSet.AlphabetLower + CharacterSet.AlphabetUpper;
-const CHARACTERS_ALL = CHARACTERS_ALPHABET + CharacterSet.Digits + CharacterSet.Symbols;
-const ASCII_ALL = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
-
 const MIN_LEN = 4;
-const MAX_LEN = 65536;
+const MAX_LEN = 256;
 
-const bytes = new Uint16Array(256);
+const bytes = new Uint8Array(256);
 let bytesIndex = bytes.length;
 
 function getRandomValue() {
@@ -44,39 +40,27 @@ function getRandomString(len, charset) {
   return str;
 }
 
-function generatePassword(len = 16) {
-  if (len < MIN_LEN || len > MAX_LEN) {
-    throw new Error("Don't do that.");
+function generatePassword(opts) {
+  if (opts.len < MIN_LEN || opts.len > MAX_LEN) {
+    throw new Error("Invalid password length.");
   }
-
-  const pw = [
-    getRandomIndex(CharacterSet.AlphabetLower),
-    getRandomIndex(CharacterSet.AlphabetUpper),
-    getRandomIndex(CharacterSet.Digits),
-    getRandomIndex(CharacterSet.Symbols),
-  ];
-  pw.length += len - MIN_LEN;
-
-  for (let i = MIN_LEN; i < len; i++) {
-    pw[i] = getRandomIndex(CHARACTERS_ALL);
+  let set = "";
+  if (opts.lower) {
+    set += CharacterSet.AlphabetLower;
   }
-
-  for (let i = 0; i < MIN_LEN; i++) {
-    const j = getRandomInt(pw.length - i) + i;
-    [pw[i], pw[j]] = [pw[j], pw[i]];
+  if (opts.upper) {
+    set += CharacterSet.AlphabetUpper;
   }
-
-  return pw.join("");
+  if (opts.digits) {
+    set += CharacterSet.Digits;
+  }
+  if (opts.symbols) {
+    set += CharacterSet.Symbols;
+  }
+  if (set.length === 0) {
+    throw new Error("Empty set.");
+  }
+  return getRandomString(opts.len, set);
 }
 
-export {
-  ASCII_ALL,
-  CHARACTERS_ALL,
-  CHARACTERS_ALPHABET,
-  CharacterSet,
-  generatePassword,
-  getRandomIndex,
-  getRandomInt,
-  getRandomString,
-  getRandomValue,
-};
+export { CharacterSet, generatePassword, getRandomIndex, getRandomInt, getRandomString, getRandomValue };

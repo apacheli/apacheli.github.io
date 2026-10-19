@@ -21,14 +21,8 @@ const layouts = {
 
 const transpiler = new Bun.Transpiler({
   autoImportJSX: true,
-  loader: "tsx",
+  loader: "js",
   minifyWhitespace: true,
-  tsconfig: {
-    compilerOptions: {
-      jsx: "react-jsx",
-      jsxImportSource: "https://esm.sh/preact",
-    },
-  },
 });
 
 const dist = join(Bun.cwd, "./dist");

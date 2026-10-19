@@ -1,35 +1,65 @@
-.tool-container {
+input {
+  accent-color: var(--theme-color);
+  margin: 0;
+}
+
+input[type="range"] {
+  display: block;
+  width: 100%;
+}
+
+.margin {
+  margin: 1rem 0;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+}
+
+.container {
   background-color: var(--background-dim-1);
   border: var(--border);
   border-radius: 1rem;
+  overflow: auto;
   padding: 0 1rem;
 }
 
-.tool-result {
+.result {
   width: 100%;
-  background-color: var(--background-dim-1);
-  border: var(--border);
-  border-radius: 1rem;
-  padding: 0.5rem;
-  font-family: "Fira Code", monospace;
+  font-family: var(--font-code);
   font-size: 175%;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.result-small {
+  width: 4rem;
+  font-family: var(--font-code);
+  font-size: 87.5%;
+  text-align: center;
+}
+
+.checkbox {
+  align-items: center;
+  width: max-content;
+  gap: 0.5rem;
 }
 
 button {
-  background: none;
-  border: none;
-  outline: none;
-
+  background-color: unset;
   border: var(--border);
-  font-size: 1rem;
-  padding: .5rem;
-  display: block;
-
   cursor: pointer;
-  margin: 1rem 0;
+  display: block;
+  font-size: 1rem;
+  padding: 0.5rem;
 }
 
 button:hover {
   background-color: var(--background-dim-1);
   border-color: var(--theme-color);
+}
+
+button:active {
+  background-color: var(--background-dim-2);
 }

@@ -8,6 +8,8 @@
   --background-dim-2: #ffffff20;
   --duration: 0.25s;
   --border: 0.0625rem var(--background-dim-2) solid;
+  --font: "Cantarell", sans-serif;
+  --font-code: "Fira Code", monospace;
 }
 
 @media (prefers-color-scheme: light) {
@@ -40,7 +42,7 @@ body {
   background-color: var(--background-color);
   color: var(--font-color);
   line-height: 1.75;
-  font-family: "Cantarell", sans-serif;
+  font-family: var(--font);
   margin: 0;
 }
 
@@ -54,7 +56,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   margin: 1rem 0;
 }
 
