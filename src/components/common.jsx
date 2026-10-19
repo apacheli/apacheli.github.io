@@ -32,9 +32,11 @@ const CommonHead = ({ ctx, children }) => (
     <title>{ctx.file.meta?.title ?? "No Title"} | apacheli</title>
     <link rel="stylesheet" href="/assets/index.css" />
     <link rel="icon" href="/favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={ctx.file.meta?.description} />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    {ctx.file.meta?.description ? <meta name="description" content={ctx.file.meta?.description} /> : undefined}
     <meta name="theme-color" content="#00c0ff" />
+    <meta property="og:image" content={`${Bun.env.BLUEJAY_URL}/favicon.png`} />
+    <meta property="og:type" content="rich" />
     {children}
   </head>
 );

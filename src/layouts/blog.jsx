@@ -27,6 +27,7 @@ const BlogLayout = ({ ctx }) => {
   return (
     <html lang="en">
       <CommonHead ctx={ctx}>
+        <meta property="og:pubdate" content={ctx.file.meta.date.toISOString()} />
         <link href="/assets/markdown.css" rel="stylesheet" />
       </CommonHead>
       <CommonBody ctx={ctx}>
