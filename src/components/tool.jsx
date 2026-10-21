@@ -17,7 +17,7 @@ const Slider = ({ id, value, ...props }) => {
   return (
     <div class="margin row">
       <input type="range" id={id} value={value} {...props} />
-      <span class="container result-small" id={`${id}-result`}>{value}</span>
+      <input type="text" class="container result-small" id={`${id}-result`} value={value} />
     </div>
   );
 };

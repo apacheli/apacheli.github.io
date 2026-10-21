@@ -131,7 +131,7 @@ const CommonBody = ({ ctx, children }) => (
       </footer>
     </div>
     {isDevelopment ? <script async src="/_bluejay/ws/client" /> : undefined}
-    {ctx.file.meta.scripts?.map((src) => <script src={src} type="module" />)}
+    {ctx.file.meta.scripts?.map((src) => <script async src={src} type="module" />)}
   </body>
 );
 

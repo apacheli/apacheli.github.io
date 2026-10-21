@@ -8,6 +8,12 @@ input[type="range"] {
   width: 100%;
 }
 
+input[type="text"]:focus {
+  background-color: var(--background-dim-2);
+  border-color: var(--theme-color);
+  outline: none;
+}
+
 .margin {
   margin: 1rem 0;
 }
@@ -26,24 +32,25 @@ input[type="range"] {
 }
 
 .result {
-  width: 100%;
   font-family: var(--font-code);
   font-size: 175%;
   overflow: auto;
+  width: 100%;
   white-space: nowrap;
 }
 
 .result-small {
-  width: 4rem;
+  line-height: inherit;
   font-family: var(--font-code);
   font-size: 87.5%;
   text-align: center;
+  width: 4rem;
 }
 
 .checkbox {
   align-items: center;
-  width: max-content;
   gap: 0.5rem;
+  width: max-content;
 }
 
 button {

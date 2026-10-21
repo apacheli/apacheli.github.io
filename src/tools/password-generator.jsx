@@ -14,7 +14,9 @@ export default () => (
   <>
     <Container>
       <h1>Password Generator</h1>
-      <id class="markdown">{renderMarkdown("> [!warning] This tool is experimental.")}</id>
+      <id class="markdown">
+        {renderMarkdown("> [!tip] We recommend your passwords are `16` or more characters long.")}
+      </id>
       <Result id="result" placeholder="placeholder" />
       <Checkbox id="lower" label="Lowercase Letters" checked />
       <Checkbox id="upper" label="Uppercase Letters" checked />
