@@ -1,4 +1,4 @@
-import { CommonBody, CommonHead, dtf, Post } from "../components/common.jsx";
+import { CommonBody, CommonHead, dtf, FileCard } from "../components/common.jsx";
 import { ExternalLink } from "../components/markdown.jsx";
 
 const Comments = () => (
@@ -66,8 +66,8 @@ const BlogLayout = ({ ctx }) => {
             <Comments />
             <h2>Continue Reading</h2>
             <div class="card-grid">
-              {prev && <Post file={prev} />}
-              {next && <Post file={next} />}
+              {prev && <FileCard file={prev} icon="newspaper" />}
+              {next && <FileCard file={next} icon="newspaper" />}
             </div>
           </footer>
         </div>

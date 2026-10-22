@@ -10,17 +10,19 @@ const dtf = new Intl.DateTimeFormat("en-US", {
   timeZone: "UTC",
 });
 
-const Post = ({ file }) => {
+const FileCard = ({ file, icon }) => {
+  const Icon = icons[icon];
   return (
     <a href={file.url.slice(0, -5)}>
       <h2>
-        <icons.newspaper /> {file.meta.title}
+        <Icon /> {file.meta.title}
       </h2>
       <p>
         <em>{file.meta.description}</em>
       </p>
       <p>
-        <span class="card-tag">{file.meta.tag}</span> &bull; {dtf.format(file.meta.date)}
+        <span class="card-tag">{file.meta.tag}</span>
+        {file.meta.date ? ` \u2022 ${dtf.format(file.meta.date)}` : undefined}
       </p>
     </a>
   );
@@ -131,8 +133,8 @@ const CommonBody = ({ ctx, children }) => (
       </footer>
     </div>
     {isDevelopment ? <script async src="/_bluejay/ws/client" /> : undefined}
-    {ctx.file.meta.scripts?.map((src) => <script async src={src} type="module" />)}
+    {ctx.file.meta.scripts?.map((src) => <script src={src} type="module" />)}
   </body>
 );
 
-export { CommonBody, CommonHead, dtf, isDevelopment, Post };
+export { CommonBody, CommonHead, dtf, FileCard, isDevelopment };

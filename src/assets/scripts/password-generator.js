@@ -20,12 +20,24 @@ const main = () => {
     });
   }
   sliderResult.value = slider.value;
-  result.textContent = generatePassword({
+  const password = generatePassword({
     len: slider.value,
     lower: lower.checked,
     upper: upper.checked,
     digits: digits.checked,
     symbols: symbols.checked,
+  });
+  result.innerHTML = highlightPassword(password);
+};
+
+const highlightPassword = (password) => {
+  return password.replace(/(\d+)|([!@#$%^&*]+)/g, (_, digits, symbols) => {
+    if (digits) {
+      return `<span class="digits">${digits}</span>`;
+    }
+    if (symbols) {
+      return `<span class="symbols">${symbols}</span>`;
+    }
   });
 };
 

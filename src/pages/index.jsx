@@ -1,3 +1,4 @@
+import { FileCard } from "../components/common.jsx";
 import icons from "../components/icons.jsx";
 import { ExternalLink } from "../components/markdown.jsx";
 
@@ -39,6 +40,22 @@ const projects = [
   },
 ];
 
+const Project = (project) => {
+  return (
+    <ExternalLink href={project.url}>
+      <h2>
+        <icons.folder /> {project.title}
+      </h2>
+      <p>
+        <em>{project.description}</em>
+      </p>
+      <p>
+        <span class="card-tag">{project.language}</span>
+      </p>
+    </ExternalLink>
+  );
+};
+
 const tech = [
   { src: "/assets/icons/javascript.svg", alt: "JavaScript" },
   { src: "/assets/icons/typescript.svg", alt: "TypeScript" },
@@ -56,48 +73,8 @@ const tech = [
   { src: "/assets/icons/visual-studio-code.svg", alt: "Visual Studio Code" },
 ];
 
-const tools = [
-  {
-    title: "Password Generator",
-    description: "Need a good random password with high entropy? Use my password generator for the best results!",
-    url: "/tools/password-generator",
-    category: "Utility",
-  },
-];
-
-const Project = (project) => {
-  return (
-    <ExternalLink href={project.url}>
-      <h2>
-        <icons.folder /> {project.title}
-      </h2>
-      <p>
-        <em>{project.description}</em>
-      </p>
-      <p>
-        <span class="card-tag">{project.language}</span>
-      </p>
-    </ExternalLink>
-  );
-};
-
-const Tool = (tool) => {
-  return (
-    <a href={tool.url}>
-      <h2>
-        <icons.wrench /> {tool.title}
-      </h2>
-      <p>
-        <em>{tool.description}</em>
-      </p>
-      <p>
-        <span class="card-tag">{tool.category}</span>
-      </p>
-    </a>
-  );
-};
-
-export default () => {
+export default ({ ctx }) => {
+  const tools = ctx.app.files.filter((t) => t.meta?.type === "tool");
   return (
     <>
       <div class="home-header">
@@ -120,8 +97,8 @@ export default () => {
       </section>
       <section>
         <h2>Tools</h2>
-        <div class="card-grid" style="--grid:1">
-          {tools.map(Tool)}
+        <div class="card-grid">
+          {tools.map((file) => <FileCard file={file} icon="wrench" />)}
         </div>
       </section>
     </>

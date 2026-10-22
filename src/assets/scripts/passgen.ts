@@ -19,7 +19,7 @@ function getRandomValue() {
   return bytes[bytesIndex++];
 }
 
-function getRandomInt(max) {
+function getRandomInt(max: number) {
   const x = MAX_LEN - (MAX_LEN % max);
   let int;
   do {
@@ -28,11 +28,16 @@ function getRandomInt(max) {
   return int % max;
 }
 
-function getRandomIndex(indexable) {
+interface Indexable<T> {
+  [K: number]: T;
+  length: number;
+}
+
+function getRandomIndex<T>(indexable: Indexable<T>) {
   return indexable[getRandomInt(indexable.length)];
 }
 
-function getRandomString(len, charset) {
+function getRandomString(len: number, charset: string) {
   let str = "";
   for (let i = 0; i < len; i++) {
     str += getRandomIndex(charset);
@@ -40,7 +45,15 @@ function getRandomString(len, charset) {
   return str;
 }
 
-function generatePassword(opts) {
+interface GeneratePasswordOptions {
+  len: number;
+  lower?: boolean;
+  upper?: boolean;
+  digits?: boolean;
+  symbols?: boolean;
+}
+
+function generatePassword(opts: GeneratePasswordOptions) {
   if (opts.len < MIN_LEN || opts.len > MAX_LEN) {
     throw new Error("Invalid password length.");
   }
@@ -64,3 +77,4 @@ function generatePassword(opts) {
 }
 
 export { CharacterSet, generatePassword, getRandomIndex, getRandomInt, getRandomString, getRandomValue };
+export type { GeneratePasswordOptions, Indexable };

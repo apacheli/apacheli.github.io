@@ -6,7 +6,7 @@ const PageLayout = ({ ctx }) => {
       <CommonHead ctx={ctx} />
       <CommonBody ctx={ctx}>
         <main class="content">
-          {ctx.file.render(ctx)}
+          {ctx.file.render({ ctx })}
         </main>
       </CommonBody>
     </html>

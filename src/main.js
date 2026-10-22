@@ -20,8 +20,7 @@ const layouts = {
 };
 
 const transpiler = new Bun.Transpiler({
-  autoImportJSX: true,
-  loader: "js",
+  loader: "ts",
   minifyWhitespace: true,
 });
 

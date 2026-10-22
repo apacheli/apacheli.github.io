@@ -5,6 +5,7 @@ export const meta = {
   title: "Password Generator",
   description: "Need a good random password with high entropy? Use my password generator for the best results!",
   type: "tool",
+  tag: "Utility",
   scripts: [
     "/assets/scripts/password-generator.js",
   ],

@@ -40,9 +40,9 @@ input[type="text"]:focus {
 }
 
 .result-small {
-  line-height: inherit;
   font-family: var(--font-code);
   font-size: 87.5%;
+  line-height: inherit;
   text-align: center;
   width: 4rem;
 }
@@ -69,4 +69,12 @@ button:hover {
 
 button:active {
   background-color: var(--background-dim-2);
+}
+
+.digits {
+  background-color: #26ca3480;
+}
+
+.symbols {
+  background-color: #e7312480;
 }
