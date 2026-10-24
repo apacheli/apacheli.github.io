@@ -1,9 +1,10 @@
 import { join } from "node:path";
 import { render } from "@apacheli/jsx";
 
+import css from "bluejay/lib/plugins/css.js";
 import extension from "bluejay/lib/plugins/extension.js";
+import js from "bluejay/lib/plugins/js.js";
 import jsx from "bluejay/lib/plugins/jsx.js";
-import lightningCss from "bluejay/lib/plugins/lightning_css.js";
 import markdown from "bluejay/lib/plugins/markdown.js";
 
 import { renderMarkdown } from "./components/markdown.jsx";
@@ -18,11 +19,6 @@ const layouts = {
   "page": PageLayout,
   "tool": ToolLayout,
 };
-
-const transpiler = new Bun.Transpiler({
-  loader: "ts",
-  minifyWhitespace: true,
-});
 
 const dist = join(Bun.cwd, "./dist");
 const dev = Bun.env.NODE_ENV === "development";
@@ -54,21 +50,20 @@ export default {
     ],
   },
   plugins: [
-    async (app) => {
-      for (const file of app.files) {
-        if (/\.[jt]s$/i.test(file.path)) {
-          file.content = await transpiler.transform(await Bun.file(file.path).text());
-        }
-      }
-    },
-    lightningCss({
-      minify: true,
-    }),
-    jsx(),
-    markdown(Bun.YAML.parse, renderMarkdown),
     extension({
       ".html": /\.(?:md|[jt]sx)$/i,
       ".js": /\.[jt]s$/i,
+    }),
+    css({
+      minify: true,
+    }),
+    js({
+      loader: "ts",
+      minifyWhitespace: true,
+    }),
+    jsx(),
+    markdown({
+      parse: renderMarkdown,
     }),
     (app) => {
       app.files.sort((a, b) => a.url.localeCompare(b.url));
