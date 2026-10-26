@@ -66,8 +66,6 @@ export default {
       parse: renderMarkdown,
     }),
     (app) => {
-      app.files.sort((a, b) => a.url.localeCompare(b.url));
-
       app.posts = app.files.filter((f) => f.meta?.type === "blog");
       app.posts.forEach((f) => {
         f.meta.date = new Date(f.meta.date);
@@ -76,14 +74,30 @@ export default {
       app.posts.forEach((f, i) => {
         f.meta.index = i;
       });
-
-      const destination = mode === "build" ? dist : `http://localhost:${port}`;
+    },
+    (app) => {
       for (const file of app.files) {
-        console.log(`    \x1b[32m\u2192\x1b[39m \x1b[90m${destination}\x1b[36m${file.url}\x1b[39m`);
         if (file.render !== undefined) {
           const Layout = layouts[file.meta?.type] ?? PageLayout;
           file.content = "<!DOCTYPE html>" + render(<Layout ctx={{ app, file }} />);
         }
+      }
+    },
+    (app) => {
+      const sitemap = {
+        url: "/sitemap.txt",
+        content: "",
+      };
+      app.files.push(sitemap);
+      app.files.sort((a, b) => a.url.localeCompare(b.url));
+      for (const file of app.files) {
+        sitemap.content += `${Bun.env.BLUEJAY_URL}${file.url}\n`;
+      }
+    },
+    (app) => {
+      const destination = mode === "build" ? dist : `http://localhost:${port}`;
+      for (const file of app.files) {
+        console.log(`    \x1b[32m\u2192\x1b[39m \x1b[90m${destination}\x1b[36m${file.url}\x1b[39m`);
       }
     },
   ],

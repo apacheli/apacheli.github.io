@@ -38,9 +38,7 @@ const BlogLayout = ({ ctx }) => {
               <span class="card-tag">{ctx.file.meta.tag}</span> &bull; {dtf.format(ctx.file.meta.date)}
             </p>
           </header>
-          <main class="markdown">
-            {ctx.file.render(ctx)}
-          </main>
+          <main class="markdown">{ctx.file.render(ctx)}</main>
           <footer>
             <h2>Share</h2>
             <p>
