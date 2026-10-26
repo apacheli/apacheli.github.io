@@ -50,6 +50,8 @@ export default {
     ],
   },
   plugins: [
+    console.clear,
+    () => console.time(`bluejay ${mode}`),
     extension({
       ".html": /\.(?:md|[jt]sx)$/i,
       ".js": /\.[jt]s$/i,
@@ -100,5 +102,6 @@ export default {
         console.log(`    \x1b[32m\u2192\x1b[39m \x1b[90m${destination}\x1b[36m${file.url}\x1b[39m`);
       }
     },
+    () => console.timeEnd(`bluejay ${mode}`),
   ],
 };
