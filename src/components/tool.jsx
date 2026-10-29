@@ -11,7 +11,11 @@ const Checkbox = ({ label, ...props }) => {
   );
 };
 
-const Result = ({ id, placeholder }) => <p id={id} class="container result">{placeholder}</p>;
+const Result = ({ id, placeholder }) => (
+  <p id={id} class="container result">
+    {placeholder}
+  </p>
+);
 
 const Slider = ({ id, value, ...props }) => {
   return (

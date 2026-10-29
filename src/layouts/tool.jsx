@@ -8,9 +8,7 @@ const ToolLayout = ({ ctx }) => {
         <link href="/assets/tool.css" rel="stylesheet" />
       </CommonHead>
       <CommonBody ctx={ctx}>
-        <main class="content">
-          {ctx.file.render(ctx)}
-        </main>
+        <main class="content">{ctx.file.render(ctx)}</main>
       </CommonBody>
     </html>
   );

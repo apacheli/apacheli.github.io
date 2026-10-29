@@ -122,7 +122,9 @@ ul {
   display: block;
   padding: 1rem;
   position: relative;
-  transition: background-color var(--duration), color var(--duration);
+  transition:
+    background-color var(--duration),
+    color var(--duration);
 }
 
 .common nav a:hover {
@@ -162,7 +164,9 @@ ul {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  transition: left var(--duration), opacity var(--duration);
+  transition:
+    left var(--duration),
+    opacity var(--duration);
   white-space: nowrap;
   z-index: 1;
 }
@@ -279,7 +283,9 @@ label[for="main-menu"]:hover svg {
     left: 100%;
     opacity: 0;
     position: absolute;
-    transition: opacity var(--duration), transform var(--duration);
+    transition:
+      opacity var(--duration),
+      transform var(--duration);
     top: 0;
     width: 100%;
   }

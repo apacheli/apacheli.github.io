@@ -10,7 +10,9 @@ export default ({ ctx }) => {
     <>
       <h1>Blog</h1>
       <div class="card-grid">
-        {ctx.app.posts.map((file) => <FileCard file={file} icon="newspaper" />)}
+        {ctx.app.posts.map((file) => (
+          <FileCard file={file} icon="newspaper" />
+        ))}
       </div>
     </>
   );

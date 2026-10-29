@@ -5,9 +5,7 @@ const PageLayout = ({ ctx }) => {
     <html lang="en">
       <CommonHead ctx={ctx} />
       <CommonBody ctx={ctx}>
-        <main class="content">
-          {ctx.file.render({ ctx })}
-        </main>
+        <main class="content">{ctx.file.render({ ctx })}</main>
       </CommonBody>
     </html>
   );

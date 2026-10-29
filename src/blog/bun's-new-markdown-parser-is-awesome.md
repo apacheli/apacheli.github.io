@@ -106,10 +106,7 @@ const replaceExtension = (name, ext) => {
 for (const page of await readdir(PAGES_SRC)) {
   const mod = await import(join(PAGES_SRC, page));
   const html = render(<mod.default />);
-  await Bun.write(
-    join(PAGES_DIST, replaceExtension(page, ".html")),
-    html,
-  );
+  await Bun.write(join(PAGES_DIST, replaceExtension(page, ".html")), html);
 }
 ```
 
@@ -142,10 +139,7 @@ for (const page of await readdir(BLOGS_SRC)) {
   const file = Bun.file(join(BLOGS_SRC, page));
   const component = Bun.markdown.react(await file.text());
   const html = render(component);
-  await Bun.write(
-    join(BLOGS_DIST, replaceExtension(page, ".html")),
-    html,
-  );
+  await Bun.write(join(BLOGS_DIST, replaceExtension(page, ".html")), html);
 }
 ```
 
@@ -219,10 +213,7 @@ const parseFrontmatter = (text) => {
   if (text.startsWith("---")) {
     const end = text.indexOf("\n---", 3);
     if (end > -1) {
-      return [
-        text.substring(end + 4),
-        Bun.YAML.parse(text.substring(3, end)),
-      ];
+      return [text.substring(end + 4), Bun.YAML.parse(text.substring(3, end))];
     }
     // Optionally, throw an error here
   }
@@ -247,10 +238,7 @@ const parseFrontmatter = (text) => {
     if (text.startsWith(delimiter)) {
       const end = text.indexOf(`\n${delimiter}`, delimiter.length);
       if (end > -1) {
-        return [
-          text.substring(end + delimiter.length + 1),
-          parsers[delimiter](text.substring(delimiter.length, end)),
-        ];
+        return [text.substring(end + delimiter.length + 1), parsers[delimiter](text.substring(delimiter.length, end))];
       }
       // Optionally, throw an error here
     }

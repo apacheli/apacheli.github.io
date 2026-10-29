@@ -14,10 +14,10 @@ import MarkdownLayout from "./layouts/markdown.jsx";
 import ToolLayout from "./layouts/tool.jsx";
 
 const layouts = {
-  "blog": BlogLayout,
-  "markdown": MarkdownLayout,
-  "page": PageLayout,
-  "tool": ToolLayout,
+  blog: BlogLayout,
+  markdown: MarkdownLayout,
+  page: PageLayout,
+  tool: ToolLayout,
 };
 
 const dist = join(Bun.cwd, "./dist");
@@ -34,20 +34,10 @@ export default {
   index: "/index",
   notFound: "/404",
   map: {
-    "/": [
-      "./pages",
-      "./static",
-      "./system",
-    ],
-    "/assets": [
-      "./assets",
-    ],
-    "/blog": [
-      "./blog",
-    ],
-    "/tools": [
-      "./tools",
-    ],
+    "/": ["./pages", "./static", "./system"],
+    "/assets": ["./assets"],
+    "/blog": ["./blog"],
+    "/tools": ["./tools"],
   },
   plugins: [
     console.clear,

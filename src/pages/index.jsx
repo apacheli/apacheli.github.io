@@ -86,7 +86,9 @@ export default ({ ctx }) => {
       <section>
         <h2>Tech Experience</h2>
         <div class="icon-cards">
-          {tech.map((t) => <img {...t} />)}
+          {tech.map((t) => (
+            <img {...t} />
+          ))}
         </div>
       </section>
       <section>
@@ -98,7 +100,9 @@ export default ({ ctx }) => {
       <section>
         <h2>Tools</h2>
         <div class="card-grid">
-          {tools.map((file) => <FileCard file={file} icon="wrench" />)}
+          {tools.map((file) => (
+            <FileCard file={file} icon="wrench" />
+          ))}
         </div>
       </section>
     </>

@@ -1,5 +1,5 @@
 {
-  "name": "apacheli.github.io",
+  "name": "apache.li",
   "scripts": {
     "build": "BLUEJAY_MODE=build bunx bluejay src/main.js",
     "serve": "BLUEJAY_MODE=serve NODE_ENV=development bunx bluejay src/main.js",
@@ -8,5 +8,8 @@
   "dependencies": {
     "bluejay": "https://github.com/apacheli/bluejay",
     "highlight.js": "^11.12.0"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.4"
   }
 }
