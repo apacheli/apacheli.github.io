@@ -47,8 +47,9 @@ input[type="text"]:focus {
   width: 4rem;
 }
 
-.checkbox {
+.choice {
   align-items: center;
+  display: flex;
   gap: 0.5rem;
   width: max-content;
 }
@@ -71,10 +72,10 @@ button:active {
   background-color: var(--background-dim-2);
 }
 
-.digits {
-  background-color: #26ca3480;
+.pw-digit {
+  color: #26ca34;
 }
 
-.symbols {
-  background-color: #e7312480;
+.pw-symbol {
+  color: #df9f16;
 }

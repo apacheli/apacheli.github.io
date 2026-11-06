@@ -1,27 +1,17 @@
-import { generatePassword } from "./passgen.js";
+import { generatePassword, highlightPassword } from "./passgen.js";
 
+const result = document.getElementById("result");
 const lower = document.getElementById("lower");
 const upper = document.getElementById("upper");
 const digits = document.getElementById("digits");
 const symbols = document.getElementById("symbols");
-const result = document.getElementById("result");
-const slider = document.getElementById("slider");
-const sliderResult = document.getElementById("slider-result");
+const range = document.getElementById("range");
+const rangeResult = document.getElementById("range-result");
 
-const checkboxes = [lower, upper, digits, symbols];
-
-const main = () => {
-  const checked = checkboxes.filter((c) => c.checked);
-  if (checked.length === 1) {
-    checked[0].disabled = true;
-  } else if (checked.length === 2) {
-    checkboxes.forEach((c) => {
-      c.disabled = false;
-    });
-  }
-  sliderResult.value = slider.value;
+const generate = () => {
+  rangeResult.value = range.value;
   const password = generatePassword({
-    len: slider.value,
+    len: range.valueAsNumber,
     lower: lower.checked,
     upper: upper.checked,
     digits: digits.checked,
@@ -30,36 +20,35 @@ const main = () => {
   result.innerHTML = highlightPassword(password);
 };
 
-const highlightPassword = (password) => {
-  return password.replace(/(\d+)|([!@#$%^&*]+)/g, (_, digits, symbols) => {
-    if (digits) {
-      return `<span class="digits">${digits}</span>`;
-    }
-    if (symbols) {
-      return `<span class="symbols">${symbols}</span>`;
-    }
-  });
+const checkbox = function () {
+  if (!(lower.checked || upper.checked || digits.checked || symbols.checked)) {
+    this.checked = true;
+  }
+  generate();
 };
+lower.onclick = checkbox;
+upper.onclick = checkbox;
+digits.onclick = checkbox;
+symbols.onclick = checkbox;
 
-lower.onclick = main;
-upper.onclick = main;
-digits.onclick = main;
-symbols.onclick = main;
-slider.oninput = main;
-document.getElementById("generate-password").onclick = main;
-
-sliderResult.oninput = () => {
-  const value = parseInt(sliderResult.value);
-  if (value < 4 || Number.isNaN(value)) {
+rangeResult.oninput = () => {
+  if (!/^\d+$/.test(rangeResult.value)) {
     return;
   }
-  slider.value = `${Math.min(256, value)}`;
-  main();
+  const value = Math.min(1024, Number(rangeResult.value));
+  if (value < 4) {
+    return;
+  }
+  range.valueAsNumber = value;
+  generate();
 };
+
+range.oninput = generate;
+document.getElementById("generate-password").onclick = generate;
 
 document.getElementById("clipboard").onclick = async () => {
   await navigator.clipboard.writeText(result.textContent);
-  alert("Copied!");
+  alert("Copied password!");
 };
 
-main();
+generate();

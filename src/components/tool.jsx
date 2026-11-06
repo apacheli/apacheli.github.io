@@ -4,7 +4,7 @@ const Row = ({ ...props }) => <div class="margin row" {...props} />;
 
 const Checkbox = ({ label, ...props }) => {
   return (
-    <label class="checkbox row">
+    <label class="choice">
       <input type="checkbox" {...props} />
       {label}
     </label>
@@ -17,7 +17,7 @@ const Result = ({ id, placeholder }) => (
   </p>
 );
 
-const Slider = ({ id, value, ...props }) => {
+const Range = ({ id, value, ...props }) => {
   return (
     <div class="margin row">
       <input type="range" id={id} value={value} {...props} />
@@ -26,4 +26,4 @@ const Slider = ({ id, value, ...props }) => {
   );
 };
 
-export { Checkbox, Container, Result, Row, Slider };
+export { Checkbox, Container, Range, Result, Row };

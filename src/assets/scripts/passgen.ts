@@ -6,9 +6,9 @@ const CharacterSet = {
 };
 
 const MIN_LEN = 4;
-const MAX_LEN = 256;
+const MAX_LEN = 65536;
 
-const bytes = new Uint8Array(256);
+const bytes = new Uint16Array(256);
 let bytesIndex = bytes.length;
 
 function getRandomValue() {
@@ -54,9 +54,6 @@ interface GeneratePasswordOptions {
 }
 
 function generatePassword(opts: GeneratePasswordOptions) {
-  if (opts.len < MIN_LEN || opts.len > MAX_LEN) {
-    throw new Error("Invalid password length.");
-  }
   let set = "";
   if (opts.lower) {
     set += CharacterSet.AlphabetLower;
@@ -76,5 +73,70 @@ function generatePassword(opts: GeneratePasswordOptions) {
   return getRandomString(opts.len, set);
 }
 
-export { CharacterSet, generatePassword, getRandomIndex, getRandomInt, getRandomString, getRandomValue };
+let words!: string[];
+
+async function loadWords() {
+  if (words === undefined) {
+    const response = await fetch("/assets/words.txt");
+    const text = await response.text();
+    words = text.split(/\r?\n/g);
+  }
+}
+
+interface GeneratePassphraseOptions {
+  len: number;
+}
+
+function generatePassphrase(opts: GeneratePassphraseOptions) {
+  const arr = new Array(opts.len);
+  for (let i = 0; i < opts.len; i++) {
+    arr[i] = getRandomIndex(words);
+  }
+  return arr.join("-");
+}
+
+const highlightTable: Record<string, string> = {
+  "-": "pw-symbol",
+};
+for (let i = 0; i < CharacterSet.Digits.length; i++) {
+  highlightTable[CharacterSet.Digits[i]] = "pw-digit";
+}
+for (let i = 0; i < CharacterSet.Symbols.length; i++) {
+  highlightTable[CharacterSet.Symbols[i]] = "pw-symbol";
+}
+
+const highlightPassword = (pw: string) => {
+  let str = "";
+  let y;
+  for (let i = 0; i < pw.length; i++) {
+    const char = pw[i];
+    const x = highlightTable[char];
+    if (x !== y) {
+      if (y !== undefined) {
+        str += "</span>";
+      }
+      if (x !== undefined) {
+        str += `<span class="${x}">`;
+      }
+      y = x;
+    }
+    str += char;
+  }
+  if (y !== undefined) {
+    str += "</span>";
+  }
+  return str;
+};
+
+export {
+  CharacterSet,
+  generatePassword,
+  getRandomIndex,
+  getRandomInt,
+  getRandomString,
+  getRandomValue,
+  generatePassphrase,
+  loadWords,
+  highlightPassword,
+};
 export type { GeneratePasswordOptions, Indexable };
