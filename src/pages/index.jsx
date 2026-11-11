@@ -10,13 +10,13 @@ export const meta = {
 const projects = [
   {
     title: "discord-api-libs",
-    description: "List of open-source Discord API Libraries",
+    description: "List of open-source Discord API Libraries. 270+ stars on GitHub!",
     url: "https://github.com/apacheli/discord-api-libs",
     language: "JavaScript",
   },
   {
     title: "bluejay",
-    description: "Building static pages made easy.",
+    description: "Building static pages made easy. Fun fact: My website was built with bluejay!",
     url: "https://github.com/apacheli/bluejay",
     language: "JavaScript",
   },
@@ -28,7 +28,7 @@ const projects = [
   },
   {
     title: "SoConns",
-    description: "Share your social connections with bluejay.",
+    description: "Share your social connections with bluejay and easily host them on GitHub Pages.",
     url: "https://github.com/apacheli/soconns",
     language: "TypeScript",
   },

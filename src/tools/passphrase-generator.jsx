@@ -1,5 +1,5 @@
 import { renderMarkdown } from "../components/markdown.jsx";
-import { Checkbox, Container, Range, Result, Row } from "../components/tool.jsx";
+import { Container, Range, Result, Row } from "../components/tool.jsx";
 
 export const meta = {
   title: "Passphrase Generator",
